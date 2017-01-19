@@ -3,7 +3,7 @@
 # # # # # # # # # # # # #
 
 # Basic
-name:               "Kiko Plus"
+name:               "Eugene"
 
 author:
   github:           ebagdasa
@@ -27,7 +27,7 @@ baseurl:            "/" # the subpath of your site, e.g. /blog
 
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-timezone:           Asia/Seoul
+timezone:           America/New_York
 permalink:          /:year-:month-:day/:title/
 
 # Pagination
