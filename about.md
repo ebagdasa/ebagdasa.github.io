@@ -3,9 +3,7 @@ title: About
 permalink: /about/
 ---
 
-#### Contact
-
-ebagdasa ∆ cs.cornell.edu
+ebagdasa ≈ cs.cornell.edu
 
 My name is Eugene (in Russian: "Женя") Bagdasaryan. I am a 1st year PhD student at Cornell University.
 
