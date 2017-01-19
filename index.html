@@ -13,7 +13,7 @@ layout: default
     {% if nav.url contains 'http://' or nav.url contains 'https://' %}
     <a href="{{ nav.url }}">{{ nav.name }}</a>
     {% else %}
-    <a href="{{ nav.url | prepend: site.url }}">{{ nav.name }}</a>
+    <a href="{{ nav.url | prepend: site.baseurl | prepend: site.url }}">{{ nav.name }}</a>
     {% endif %}
     {% endfor %}
   </nav>

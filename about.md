@@ -14,4 +14,4 @@ Before I had been working for Cisco in Boston, MA and Moscow, Russia and studied
 
 I am interested in building software personal assistants.
 
-![profile](/images/zhenya.jpg){:class="img_profile"}
+![profile]({{ site.url }}/images/zhenya.jpg){:class="img_profile"}
