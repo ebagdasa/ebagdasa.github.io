@@ -78,5 +78,6 @@ defaults:
 gems:
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:            [vendor]
