@@ -6,17 +6,11 @@
 name:               "Kiko Plus"
 
 author:
-  # facebook:
-  # twitter:          your-id
   github:           ebagdasa
-  # linkedin:         your-id
-  # medium:           your-id
-  # tumblr:           your-id
-  # email:            your-id@your-email.com
 
 copyright:
   year:             2017
-  name:             Eugene Bagdasaryan
+  name:             "Eugene Bagdasaryan"
 
 # Google-analytics
 google-analytics:
@@ -29,7 +23,7 @@ disqus:
 # URL
 url:                "https://ebagdasa.me" # the base hostname & protocol for your site
 # url:                "http://localhost:4000" # use this url when develop
-baseurl:            "/blog # the subpath of your site, e.g. /blog
+baseurl:            "/" # the subpath of your site, e.g. /blog
 
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
