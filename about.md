@@ -9,6 +9,9 @@ My name is Eugene (in Russian: "Женя") Bagdasaryan. I am a 1st year PhD stud
 
 Before I had been working for Cisco in Boston, MA and Moscow, Russia and studied at Bauman Moscow State Technical University.
 
+
 #### Research interests
 
 I am interested in building software personal assistants.
+
+![profile](/images/zhenya.jpg){:class="img-profile"}

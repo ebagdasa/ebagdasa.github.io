@@ -28,6 +28,11 @@ body {
   }
 }
 
+.img-profile {
+height: 500px;
+margin-left: auto;
+margin-right: auto;
+}
 
 /*--------------
   Header
@@ -152,7 +157,7 @@ body {
       }
     }
   }
-  
+
   &-share {
     margin-bottom: 1rem;
   }
@@ -166,7 +171,7 @@ body {
 .list {
   &-post {
     padding: 4% 2%;
-    
+
     &:hover {
       background-color: $background-over-color;
       border-color: transparent;
