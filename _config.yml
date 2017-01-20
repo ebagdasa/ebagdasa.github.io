@@ -7,6 +7,7 @@ name:               "Eugene Bagdasaryan"
 
 author:
   github:           ebagdasa
+  twitter:          ebagdasa
 
 copyright:
   year:             2017
@@ -19,7 +20,7 @@ google-analytics:
 
 # Disqus
 disqus:
-  id:               "ebagdasa"
+  id:               "ebagdasa-me"
 
 # URL
 url:                "http://ebagdasa.me" # the base hostname & protocol for your site

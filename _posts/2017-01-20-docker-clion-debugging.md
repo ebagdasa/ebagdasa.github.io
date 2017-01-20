@@ -1,13 +1,15 @@
 ---
-layout: default
-title: Docker integration
-nav: assignments
+layout: post
+title: C-program with CLion and Docker
 comments: true
+description: "How to configure Remote Debugging of C-program with CLion and Docker"
+date: 2017-01-20
+tags: [clion, c, docker, debugging]
+comments: true
+share: true
 ---
 
-## Remote development using containers
-
-This article would help people who used IDEs a lot and got used to Remote development, autocomplete and other features. However, Remote deployment and debugging for C is not an easy way to setup, therefore we have prepared some scripts and suggestions to setup your dev environment.
+This article would help people who used IDEs a lot and got used to Remote development, autocomplete and other features. However, Remote deployment and debugging for C is not an easy way to setup, therefore we have prepared some scripts and suggestions to setup your dev environment. The Docker containers are easy and lightweight tool to quickly deploy applications.
 
 **Disclaimer 1** The code might contain bugs and the offered solution might have unknown issues in your environment, please use provided ideas at your own risk, as it might slow down your progress.
 
@@ -19,7 +21,7 @@ If you like to develop in CLI, containers might be an easy way to go.
 #### Install steps
 
 1.  Install **Docker** on your OS
-2.  Install **CLion IDE** [**https://www.jetbrains.com/clion/download/**](https://www.jetbrains.com/clion/download/) and get a student license: [**https://www.jetbrains.com/student/**](https://www.jetbrains.com/student/).
+2.  Install **CLion IDE**: [https://www.jetbrains.com/clion/download/](https://www.jetbrains.com/clion/download/). If you are student you can get a student license: [https://www.jetbrains.com/student/](https://www.jetbrains.com/student/).
 3.  Create a Docker image. You can just download an image from Dockerhub: `docker pull ebagdasa/cs5450_p1` or create it from this Dockerfile:
 
     ~~~ bash
@@ -59,7 +61,7 @@ If you like to develop in CLI, containers might be an easy way to go.
 
    This option `--security-opt seccomp:unconfined` is required to allow remote debugger to run.
 
-   If you want to run sever and client containers you can start them both and then communicate through Docker network (`172.17.0.0/16`), but in this project it is redundant.
+   *Tip:* If you want to run multiple containers you can start them both and then communicate through Docker network (`172.17.0.0/16`).
 
 6.  Try to SSH into your container `ssh -p 3022 root@127.0.0.1`. The password is `root`. You can copy your SSH public key from your machine.
 
@@ -76,20 +78,20 @@ This is the sample config on MacOS:
     ~~~ bash
     #!/usr/bin/env bash
 
-    OUTPUT="$(ps -ef | grep gdbserver | awk '/echo_server/ { print $2}')"
+    OUTPUT="$(ps -ef | grep gdbserver | awk '/example/ { print $2}')"
     echo "gdbserver PID: $OUTPUT"
     kill -9 "$OUTPUT"
-    OUTPUT="$(ps -aux | awk '/echo_server/' | awk 'NR==1{print $2}')"
+    OUTPUT="$(ps -aux | awk '/example/' | awk 'NR==1{print $2}')"
     echo "the running program $OUTPUT"
     kill -9 "$OUTPUT"
     sleep 5
     make clean
     make
-    gcc -g -o server echo_server.c
-    gdbserver 127.0.0.1:7777 ./echo_server &
+    gcc -g -o example example.c
+    gdbserver 127.0.0.1:7777 ./example &
     ~~~
 
-9.  After the script run **server** file back to laptop `scp -P 3022 root@127.0.0.1:/root/code/server /$YOUR_LOCATION/starter_code/`
+9.  After the script run **server** file back to laptop `scp -P 3022 root@127.0.0.1:/root/code/example /$YOUR_LOCATION/starter_code/`
 
 10. Set breakpoints in CLion and run the Remote Debugger.
 
@@ -107,6 +109,3 @@ This is the sample config on MacOS:
 
 2. Don't forget to copy symbol file
 3. Don't forget to put breakpoints in the reachable code.
-
-
-*If you have problems to get it working, please ask them on Piazza.*
