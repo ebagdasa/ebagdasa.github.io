@@ -1,10 +1,10 @@
 ---
 layout: post
-title: C-program with CLion and Docker
+title: C-program with CLion and Docker containers
 comments: true
-description: "How to configure Remote Debugging of C-program with CLion and Docker"
+description: "How to configure Remote Debugging of C-program with CLion and Docker containers"
 date: 2017-01-20
-tags: [clion, c, docker, debugging]
+tags: [clion, c, docker, debugging, containers, programming]
 comments: true
 share: true
 ---
