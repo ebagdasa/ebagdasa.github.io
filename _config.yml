@@ -12,7 +12,7 @@ author:
 copyright:
   year:             2017
   name:             "Eugene Bagdasaryan"
-  url:              "ebagdasa.me"
+  url:              "cs.cornell.edu/~eugene"
 
 # Google-analytics
 google-analytics:
@@ -23,7 +23,7 @@ disqus:
   id:               "ebagdasa-me"
 
 # URL
-url:                "http://ebagdasa.me" # the base hostname & protocol for your site
+url:                "http://www.cs.cornell.edu/%7Eeugene" # the base hostname & protocol for your site
 # url:                "http://www.cs.cornell.edu/%7Eebagdasa"
 # url:                "http://localhost:4000" # use this url when develop
 baseurl:            "" # the subpath of your site, e.g. /blog

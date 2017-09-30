@@ -3,9 +3,9 @@ title: About
 permalink: /about/
 ---
 
-ebagdasa ≈ cs.cornell.edu
+eugene ≈ cs.cornell.edu
 
-My name is Eugene (in Russian: "Женя") Bagdasaryan. I am a 1st year PhD student at Cornell University.
+My name is Eugene (in Russian: "Женя") Bagdasaryan. I am a 2nd year PhD student at Cornell University.
 
 Before I had been working for Cisco in Boston, MA and Moscow, Russia and studied at Bauman Moscow State Technical University.
 
