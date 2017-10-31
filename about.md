@@ -13,8 +13,10 @@ Before I had been working for Cisco in Boston, MA and Moscow, Russia and got Mas
 #### Research interests
 
 We work on building future intelligent assistants that are highly personalized and capable of helping users live happier and healthier life.
-Specifically, we look at recommender systems that are capable not only to rank the given items, but to anticipate the future user actions and timings of event occurences.
+Specifically, I look at recommender systems that are capable not only to rank the given items,
+ but to anticipate the future user actions using sequential and interval data.
 
-In our lab we use Deep Learning, Reinforcement Learning and NLP methods to build immersive recommendation systems.
+
+This is my latest (10/2017) [resume]({{ site.url }}/assets/files/EvgenyBagdasaryanResume.pdf).
 
 ![profile]({{ site.url }}/images/zhenya.jpg){:class="img_profile"}
