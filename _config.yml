@@ -47,8 +47,6 @@ nav:
     url:            "/about"
   - name:           "Blog"
     url:            "/"
-#  - name:           "Research"
-#    url:            "/research"
   - name:           "Github"
     url:            "https://github.com/ebagdasa/"
 
