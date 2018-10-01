@@ -2,7 +2,7 @@
 layout: post
 title: How To Backdoor Federated Learning?
 comments: true
-description: "Paper that describes an attack on Federated Learning algorithm published on archive"
+description: "Paper that describes an attack on Federated Learning algorithm available on Arxiv"
 date: 2018-07-04
 tags: [paper, research, security, federated learning]
 comments: true
