@@ -12,7 +12,7 @@ I worked for Cisco in Boston, MA and Moscow, Russia and got Master and Bachelor 
 
 #### Research interests
 
-I work on projects to enforce and explore Privacy and Security limitations in Machine Learning and 
+I work on projects to enforce and explore Privacy and Security limitations in Machine Learning. 
 
 
 This is my latest (10/2018) [resume]({{ site.url }}/assets/files/EvgenyBagdasaryanResume.pdf).
