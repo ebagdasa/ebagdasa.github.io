@@ -5,7 +5,7 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
-    <link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.ico"/>
@@ -14,42 +14,129 @@
 <body>
 
 <div class="container">
-    <div class="col">
-        <div class="col s6">
-            <h2>Eugene Bagdasaryan</h2>
-        </div>
-        <h6>email: eugene at cs.cornell.edu</h6>
-    </div>
 
-    <div class="divider"></div>
-    <div class="section">
-        <h5>Bio</h5>
-        <p>Cornell CS PhD student working on Privacy & Security applied to personal data.</p>
-    </div>
-    <div class="divider"></div>
-    <div class="section">
-        <h5>Research papers</h5>
-        <div class="collection">
-            <a href="https://arxiv.org/abs/1905.12101" class="collection-item">Differential Privacy Has Disparate Impact on Model Accuracy [ArXiv, 2019]</a>
-            <a href="https://arxiv.org/abs/1807.00459" class="collection-item">How To Backdoor Federated Learning [ArXiv, 2018]</a>
-            <a href="https://dl.acm.org/citation.cfm?id=3159681" class="collection-item">Openrec: A modular framework for extensible and adaptable recommendation algorithms [WSDM, 2018]</a>
+    <div class="row">
+        <div class="row">
+            <div class="col s12 m12 l2">
+                <img src="assets/images/zhenya_new.jpg" style="height: 150px;margin-top: 30px;"/>
+            </div>
+            <div class="col s6 m6 l6">
+                <h3>Eugene Bagdasaryan</h3>
+                <ul>
+                    <li>
+                        <a href="mailto:eugene@cs.cornell.edu"><i class="material-icons">mail</i></a>
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/ebagdasa?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-screen-name="false" data-dnt="true" data-show-count="false">Follow
+                            @ebagdasa</a>
+                        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+                    </li>
+                    <li>
+                        <a href="https://scholar.google.com/citations?user=_MfoOC8AAAAJ&hl=en">
+                            <img src="assets/images/gs.png" style="height: 20px">Google Scholar</a>
+                    </li>
+                    <li>
+                        <a href="assets/files/EvgenyBagdasaryanResume.pdf">
+                           <i class="material-icons">description</i> Resume</a>
+                    </li>
+                </ul>
+
+            </div>
         </div>
-    </div>
-    <div class="divider"></div>
-    <div class="section">
-        <h5>Links</h5>
-        <div class="col">
-            <div><a href="https://twitter.com/ebagdasa">Twitter</a></div>
-            <div><a href="https://github.com/ebagdasa">Github</a></div>
-            <div><a href="https://scholar.google.com/citations?user=_MfoOC8AAAAJ&hl=en">Google Scholar</a></div>
-            <div><a href="assets/files/EvgenyBagdasaryanResume.pdf">Resume [Oct, 2018]</a></div>
+        <div class="divider"></div>
+        <div class="col s6">
+
+            <div class="section">
+                <h5>Bio</h5>
+                <p>I am a 4th year Cornell CS PhD student working on Privacy & Security applied to personal data,
+                    advised by Prof. Deborah Estrin and Vitaly Shmatikov, and part of <a href="https://smalldata.io">smalldtalab</a>.
+                    My current research focuses on security analysis of Federated Learning and
+                    trade offs regarding the introduction of Differential Privacy.
+                    I work on <a href="https://www.nsf.gov/awardsearch/showAward?AWD_ID=1642120&HistoricalAwards=false">Ancile Project</a>
+                    a system that introduces language-level control of data usage (to be presented at WPES'19).
+                    I am interested in using data that does good and have done work on recommender systems.
+                </p>
+            </div>
         </div>
+        <div class="col s6">
+            <div class="section">
+                <h5>Recent news</h5>
+                <ul class="collection">
+                    <li class="collection-item">
+                        <b>Aug 2019</b>, Presented at <a href="http://privaci.info/ci_symposium.html">Contextual Integrity Symposium</a>
+                        on Contextual Recommendation Sharing.
+                    </li>
+                    <li class="collection-item">
+                        <b>June 2019</b>, <a href="https://www.dli.tech.cornell.edu/doctoralfellows">Digital Life Initiative</a> fellow 2019-2020.
+                    </li>
+                    <li class="collection-item">
+                        <b>Summer 2018</b>, interned at Amazon Alexa recommendation team with Pawel Matykiewicz and Amber Roy Chowdhury.
+                    </li>
+                    <li class="collection-item">
+                        <b>Sep 2017</b>,
+                        <a href="https://medium.com/@nycmedialab/data-for-good-bloomberg-supports-data-scientists-work-with-nonprofits-and-municipalities-to-solve-6d9ce6360ea8">
+                            Bloomberg Data for Good Fellow</a>, worked with iMentor non-profit.
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="divider"></div>
+        <div class="section">
+            <h5>Research papers</h5>
+            <ul class="collapsible" data-collapsible="accordion">
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">face</i>Differential Privacy Has Disparate Impact on Model Accuracy</div>
+                    <div class="collapsible-body">
+                        <p>This project discusses a new trade off between privacy and fairness. We observe
+                            that training a Machine Learning model with Differential Privacy reduces accuracy on
+                            underrepresented groups.</p>
+                        <span><a href="https://arxiv.org/abs/1905.12101" class="collection-item">[ArXiv, 2019]</a></span>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">smartphone</i>How To Backdoor Federated Learning</div>
+                    <div class="collapsible-body">
+                        <p>We introduce a constrain-and-scale attack,
+                            a form of data poisoning, that can stealthily inject a backdoor into one of the participating models
+                            during a single round of Federated Learning training.
+                            This attack can avoid proposed defenses and propagate the backdoor to a global server
+                            that will distribute the compromised model to other participants.</p>
+                        <a href="https://arxiv.org/abs/1807.00459" class="collection-item">[ArXiv, 2018]</a>,
+                        <a href="https://github.com/ebagdasa/backdoor_federated_learning" class="collection-item">
+                            [Code on GitHub]</a>
+                    </div>
+                </li>
+                <li>
+                    <div class="collapsible-header"><i class="material-icons">extension</i>Openrec: A modular framework for extensible and adaptable recommendation algorithms</div>
+                    <div class="collapsible-body">
+                        <p>
+                            An open and modular Python framework that supports extensible and adaptable research in recommender systems.
+                        </p>
+                        <a href="https://dl.acm.org/citation.cfm?id=3159681" class="collection-item">[WSDM, 2018]</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <!--<div class="divider"></div>-->
+        <!--<div class="section">-->
+        <!--<h5>Links</h5>-->
+        <!--<div class="col">-->
+        <!--<div><a href="https://twitter.com/ebagdasa">Twitter</a></div>-->
+        <!--<div><a href="https://github.com/ebagdasa">Github</a></div>-->
+        <!--<div><a href="https://scholar.google.com/citations?user=_MfoOC8AAAAJ&hl=en">Google Scholar</a></div>-->
+        <!--<div><a href="assets/files/EvgenyBagdasaryanResume.pdf">Resume [Oct, 2018]</a></div>-->
+        <!--</div>-->
+        <!--</div>-->
     </div>
 </div>
 
 
 <!-- Compiled and minified JavaScript -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 
 </html>
