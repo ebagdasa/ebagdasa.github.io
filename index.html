@@ -1,11 +1,25 @@
-<html>
+<html lang="en">
 <head>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-90613073-3"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', 'UA-90613073-3');
+    </script>
+
     <title>Eugene Bagdasaryan's website</title>
     <!--Import Google Icon Font-->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <!-- Compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="assets/css/materialize.min.css">
     <!--Let browser know website is optimized for mobile-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/png" href="assets/images/favicon.ico"/>
@@ -18,7 +32,7 @@
     <div class="row">
         <div class="row center-align">
             <div class="push-s1 col s10 m4 l3 ">
-                <img src="assets/images/zhenya_new.jpg" style="height: 150px;margin-top: 30px;"/>
+                <img src="assets/images/zhenya_new.jpg" alt="image" style="height: 150px;margin-top: 30px;"/>
             </div>
 
             <div class="col push-s1 s10 m6 l6">
@@ -41,7 +55,7 @@
 
                     </div>
                     <div class="col s6 m3" style="padding-bottom: 20px;">
-                        <a href="assets/files/EvgenyBagdasaryanResumeFall2020.pdf" class="lighten-1 waves-effect waves-teal btn-flat">
+                        <a href="assets/files/EugeneBagdasaryanResume.pdf" class="lighten-1 waves-effect waves-teal btn-flat">
                             <!--<i class="material-icons">description</i> -->
                             Resume
                         </a>
@@ -57,23 +71,23 @@
                 <h5>Bio</h5>
                 <p style="text-align: justify; text-justify: inter-word;">
                     I am a CS PhD candidate at Cornell Tech working on privacy and security
-                    in context of machine learning systems.
-                    I am co-advised by Professors  <a href="https://destrin.smalldata.io/">Deborah Estrin</a> 
-                    and  <a href="https://www.cs.cornell.edu/~shmat/">Vitaly Shmatikov</a>.
+                    in machine learning systems.
+                    I am co-advised by Professors <a href="https://destrin.smalldata.io/">Deborah Estrin</a>
+                    and <a href="https://www.cs.cornell.edu/~shmat/">Vitaly Shmatikov</a>.
                 </p>
                 <p style="text-align: justify; text-justify: inter-word;">
                     My research focuses on
                     federated learning, differential privacy, and backdoor attacks in ML
-                    (<a href="https://arxiv.org/abs/1905.12101">NeurIPS'19</a>, <a href="https://arxiv.org/abs/1807.00459">AISTATS'20</a>). 
+                    (<a href="https://arxiv.org/abs/1905.12101">NeurIPS'19</a>, <a href="https://arxiv.org/abs/1807.00459">AISTATS'20</a>).
                     My other interests include
                     <a href="https://ancile-project.github.io/">Ancile</a>
-                    that introduces language-level control for data usage
-                    and <a href="https://openrec.ai">OpenRec</a> that proposes modular design for deep learning recommender systems.
-                    Before joining Cornell I worked at Cisco developing and open sourcing code for OpenStack cloud infrastructure.
+                    which introduces language-level control for data usage
+                    and <a href="https://openrec.ai">OpenRec</a> which proposes modular design for deep learning recommender systems.
+                    Before joining Cornell I worked at Cisco as software engineer developing and open sourcing code for OpenStack cloud infrastructure.
                     And during recent internships I worked on Amazon Alexa and Google FL platforms.
                 </p>
-                
-                <p>Happy to collaborate or just chat on these topics, send me an email. </p>
+
+                <p>Happy to collaborate or just chat about these topics, shoot me an email. </p>
             </div>
         </div>
 
@@ -94,14 +108,6 @@
                         <b>Sep 2019</b>, Our <a href="https://arxiv.org/abs/1905.12101">paper</a> that discovers impact of
                         Differential Privacy on model Fairness was accepted to NeurIPS'19.
                     </li>
-                    <!--<li class="collection-item">-->
-                        <!--<b>Aug 2019</b>, Our work on <a href="assets/files/ancile.pdf">Ancile</a> use-based privacy-->
-                         <!--system was accepted to WPES'19.-->
-                    <!--</li>-->
-<!--                    <li class="collection-item">-->
-<!--                        <b>Aug 2019</b>, Presented at <a href="http://privaci.info/ci_symposium.html">Contextual Integrity Symposium</a>-->
-<!--                        on Contextual Recommendation Sharing.-->
-<!--                    </li>-->
                     <li class="collection-item">
                         <b>June 2019</b>, <a href="https://www.dli.tech.cornell.edu/doctoralfellows">Digital Life Initiative</a> fellow 2019-2020.
                     </li>
@@ -151,7 +157,7 @@
                         <div class="collapsible-body">
                             <p>A novel platform that enables control over application's data usage with language level policies
                                 and implementing use-based privacy.</p>
-                            <span><a href="assets/files/ancile.pdf" class="collection-item">[WPES'19]</a>, 
+                            <span><a href="assets/files/ancile.pdf" class="collection-item">[WPES'19]</a>,
                                 <a href="https://github.com/ancile-project/ancile" class="collection-item">[Code]</a>,
                                 <a href="https://docs.google.com/presentation/d/1a2zkEvXLzWJ-CWu2AGl_Bc2pUwKEnnoEKyc17MZbmFQ/edit?usp=sharing" class="collection-item">[Slides]</a>.
                             </span>
@@ -183,25 +189,14 @@
                 </ul>
             </div>
         </div>
-        <!--<div class="divider"></div>-->
-        <!--<div class="section">-->
-        <!--<h5>Links</h5>-->
-        <!--<div class="col">-->
-        <!--<div><a href="https://twitter.com/ebagdasa">Twitter</a></div>-->
-        <!--<div><a href="https://github.com/ebagdasa">Github</a></div>-->
-        <!--<div><a href="https://scholar.google.com/citations?user=_MfoOC8AAAAJ&hl=en">Google Scholar</a></div>-->
-        <!--<div><a href="assets/files/EvgenyBagdasaryanResume.pdf">Resume [Oct, 2018]</a></div>-->
-        <!--</div>-->
-        <!--</div>-->
     </div>
-
-    <div class="footer-copyright right-align">Eugene Bagdasaryan, updated on May 2020.</div>
+    <div class="footer-copyright right-align">Eugene Bagdasaryan, updated on Sep 2020.</div>
 </div>
 
 
 <!-- Compiled and minified JavaScript -->
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script type="text/javascript" src="assets/js/jquery-3.4.1.min.js"></script>
+<script src="assets/js/materialize.min.js"></script>
 <script type="text/javascript" src="assets/js/script.js"></script>
 </body>
 
