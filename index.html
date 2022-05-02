@@ -81,8 +81,8 @@
             <div class="section">
                 <h5>Bio</h5>
                 <p style="text-align: justify; text-justify: inter-word;">
-                    I am a CS PhD candidate at Cornell Tech and an <a target="_blank" href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2021">Apple AI/ML Scholar</a>, working on privacy
-                    and security
+                    I am a CS PhD candidate at Cornell Tech and an <a target="_blank" href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2021">Apple AI/ML Scholar</a>,
+                    working on privacy and security
                     in machine learning and advised by
                     <a target="_blank"
                            href="https://www.cs.cornell.edu/~shmat/">Vitaly
@@ -102,6 +102,8 @@
                     Recently, we proposed a framework for backdoor
                     attacks and defenses (<a target="_blank"
                                              href="https://arxiv.org/abs/2005.03823">USENIX'21</a>).
+                    We also discovered a new attack that modifies large language models and spins the output (<a target="_blank"
+                                             href="https://arxiv.org/abs/2112.05224">S&P'22</a>).
                 </p>
                 <p style="text-align: justify; text-justify: inter-word;">
                     Earlier, I worked on
@@ -111,6 +113,10 @@
                     and <a target="_blank" href="https://openrec.ai">OpenRec</a>
                     &ndash;
                     a modular library for deep recommender systems. Amazon, Apple, and Google hosted me for summer internships.
+                    At Google, I've worked on a new algorithm for building private heatmaps (<a target="_blank"
+                                             href="https://arxiv.org/abs/2111.02356">PETS'22</a>).
+                    At Apple, I've developed a novel way to obtain good tokenizers for private Federated Learning (<a target="_blank"
+                                             href="https://openreview.net/forum?id=rhz7nqYfF-q">FL4NLP@ACL'22</a>).
                     Before starting my PhD, I received engineering degree from <a target="_blank"
                                                            href="https://en.wikipedia.org/wiki/Bauman_Moscow_State_Technical_University">Baumanka</a>
                     and worked at Cisco on OpenStack networking.
@@ -119,22 +125,53 @@
 
                 <p>In my free time I play water polo and (used to...)
                     travel.</p>
+
+                <b>E-mail</b>: eugene<i class="material-icons" style="font-size: 0.8em">alternate_email</i>cs.cornell.edu
             </div>
             <div class="section">
                 <h5>Research papers</h5>
                 <ul class="collapsible" data-collapsible="accordion">
                     <li>
                         <div class="collapsible-header">
-                            <i class="material-icons">campaign</i>Spinning Language Models for Propaganda-As-A-Service
+                            <i class="material-icons">map</i>Towards Sparse Federated Analytics: Location Heatmaps under Distributed Differential Privacy with Secure Aggregation
+                        </div>
+                        <div class="collapsible-body">
+                            <p>A new algorithm for building heatmaps with local-like differential privacy. </p>
+                             <b>Word done at Google.</b>
+                            <span><a target="_blank"
+                                     href="https://arxiv.org/abs/2111.02356"
+                                     class="collection-item">[to appear in PETS'22]</a>,
+                                <a target="_blank"
+                                   href="https://github.com/google-research/federated/tree/master/analytics/location_heatmaps"
+                                   class="collection-item">[Code]</a>.
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">campaign</i>Spinning Language Models: Risks of Propaganda-as-a-Service and Countermeasures
                         </div>
                         <div class="collapsible-body">
                             <p>We discover new capabilities of large language models to express attacker-chosen opinions on certain topics while performing tasks like summarization, translation, and language generation.</p>
                             <span><a target="_blank"
                                      href="https://arxiv.org/abs/2112.05224"
-                                     class="collection-item">[Preprint, 2021]</a>,
+                                     class="collection-item">[to appear in IEEE S&P'22]</a>,
                                 <a target="_blank"
                                    href="https://github.com/ebagdasa/propaganda_as_a_service"
                                    class="collection-item">[Code]</a>.
+                            </span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="collapsible-header">
+                            <i class="material-icons">spellcheck</i>Training a Tokenizer for Free with Private Federated Learning
+                        </div>
+                        <div class="collapsible-body">
+                            <p>Tokenization is an important part of training a good language model, however in private federated learning where user data are not available generic tokenization methods reduce performance. We show how to obtain a good tokenizer without spending additional privacy budget.</p>
+                            <b>Word done at Apple.</b>
+                            <span><a target="_blank"
+                                     href="https://openreview.net/forum?id=rhz7nqYfF-q"
+                                     class="collection-item">[FL4NLP@ACL'22]</a>,
                             </span>
                         </div>
                     </li>
@@ -275,7 +312,17 @@
                 <h5>Recent news</h5>
                 <ul class="collection">
                     <li class="collection-item">
-                        <b>Dec 2021</b>, our research on propaganda was covered by <a target="_blank" href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused/">VentureBeat</a>.
+                        <b>May 2022</b>, a <a target="_blank" href="https://arxiv.org/abs/2111.02356">paper</a> with Google accepted to PETS'22.
+                    </li>
+                    <li class="collection-item">
+                        <b>Apr 2022</b>, a propaganda-as-a-service paper accepted to <a target="_blank" href="https://www.computer.org/csdl/proceedings-article/sp/2022/131600b532/1CIO7BDk9sA">S&P'22</a>.
+                    </li>
+                    <li class="collection-item">
+                        <b>Mar 2021</b>, a tokenization <a target="_blank" href="https://openreview.net/forum?id=rhz7nqYfF-q">paper</a> accepted to FL4NLP workshop at ACL'22.
+                    </li>
+
+                    <li class="collection-item">
+                        <b>Apr 2021</b>, our research on propaganda was covered by <a target="_blank" href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused/">VentureBeat</a>.
                     </li>
                     <li class="collection-item">
                         <b>Aug 2021</b>, our blind backdoors paper was covered on <a target="_blank" href="https://www.zdnet.com/article/cornell-university-researchers-discover-code-poisoning-attack/">ZDNet</a>.
