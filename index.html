@@ -22,12 +22,6 @@
 <!--    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />-->
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Unna">
-    <style>
-        h3 {
-            font-family: 'Unna', serif;
-            font-size: 48px;
-        }
-    </style>
 
     <!-- Compiled and minified CSS -->
     <link rel="stylesheet" href="assets/css/materialize.min.css">
@@ -35,6 +29,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link rel="shortcut icon" type="image/png"
           href="assets/images/favicon.ico"/>
+    <style>
+        h3 {
+            font-family: 'Unna', serif;
+            font-size: 48px;
+        }
+        a { color: #1a7caa; }
+    </style>
 
 </head>
 <body>
@@ -81,14 +82,12 @@
         <div class="col push-s1 s10 m6 l6">
 
             <div class="section">
-                <b>News:</b>
-                    If you are interested in working with me please apply to UMass PhD, also feel to reach out if you have any questions!
+
 
                 <h5>Bio</h5>
                 <p style="text-align: justify; text-justify: inter-word;">
-                    I am an Assistant Professor at <a target="_blank"
-                                                                                               href="https://www.cics.umass.edu/">UMass Amherst CICS</a> starting Fall 2024.
-                    This year I am spending at Google Research as a Research Scientist working with
+                    I will join <a target="_blank" href="https://www.cics.umass.edu/">UMass Amherst CICS</a> as an Assistant Professor in Fall'24.
+                    This year I am spending at Google Research with
                     <a target="_blank" href="https://kairouzp.github.io/">Peter Kairouz</a>.
                     Recently, I completed my PhD at <a target="_blank"
                                                            href="https://tech.cornell.edu/">Cornell Tech</a> advised by
@@ -96,43 +95,49 @@
                            href="https://www.cs.cornell.edu/~shmat/">Vitaly
                     Shmatikov</a> and
                      <a target="_blank" href="https://destrin.tech.cornell.edu/">Deborah
-                        Estrin</a>.
+                        Estrin</a>. My research was recognized by <a target="_blank" href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2021">Apple Scholars in AI/ML</a>
+                    and
+                    <a target="_blank"
+                       href="https://www.dli.tech.cornell.edu/doctoralfellows">Digital
+                        Life Initiative</a> fellowships.
 
                 </p>
                 <p style="text-align: justify; text-justify: inter-word;">
                     My work focuses on security and privacy in emerging AI-based systems under real-life conditions and attacks.
-                    My research goal is to build ethical, safe, and private
-                    machine learning systems &ndash; while keeping these systems practical and useful.
-                    During my PhD I demonstrated security drawbacks of Federated
-                    Learning (<a target="_blank"
-                                 href="https://arxiv.org/abs/1807.00459">AISTATS'20</a>)
-                    and fairness implications of Differentially Private ML (<a target="_blank"
-                                 href="https://arxiv.org/abs/1905.12101">NeurIPS'19</a>).
-                    I also proposed new frameworks for research on backdoors (<a target="_blank" href="https://arxiv.org/abs/2005.03823">Backdoors101</a>, <a target="_blank" href="https://arxiv.org/abs/2302.04977">Mithridates</a>)
-                    and a new attack on generative language models
-                    (<a target="_blank" href="https://arxiv.org/abs/2112.05224">S&P'22</a>,
-                    <a target="_blank" href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused">VentureBeat</a>,
-                    <a target="_blank" href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awr">The Economist</a>).
-                    Recently, I showed vulnerability to prompt injection through images and sounds (<a target="_blank"
+<!--                    My research goal is to build ethical, safe, and private-->
+<!--                    machine learning systems &ndash; while keeping these systems practical and useful.-->
+                    During my PhD I worked on backdoor <a target="_blank"
+                                 href="https://arxiv.org/abs/1807.00459">attacks in federated learning</a>
+                    and fairness <a target="_blank"
+                                    href="https://arxiv.org/abs/1905.12101">trade-offs</a> with differential privacy.
+                    We also proposed new frameworks <a target="_blank" href="https://arxiv.org/abs/2005.03823">Backdoors101</a> and
+                    <a target="_blank" href="https://arxiv.org/abs/2302.04977">Mithridates</a> to advance research on backdoors
+                    and a new <a target="_blank" href="https://arxiv.org/abs/2112.05224">attack</a> on generative language models
+                    covered by <a target="_blank" href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused">VentureBeat</a>
+                    and <a target="_blank" href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awr">The Economist</a>.
+                    Recently, I have studied vulnerabilities in multi-modal systems: <a target="_blank"
                     href="https://arxiv.org/abs/2307.10490"
-                    class="collection-item">arxiv</a>) and adversarial alignment in multi-model embedding models (<a target="_blank"
-                                                                                            href="https://arxiv.org/abs/2308.11804"
-                                                                                            class="collection-item">arxiv</a>) .
+                    class="collection-item">instruction injections</a> and <a target="_blank" href="https://arxiv.org/abs/2308.11804"
+                                                                                            class="collection-item">adversarial illusions</a>.
                 </p>
                 <p style="text-align: justify; text-justify: inter-word;">
                     A big focus of my work is data privacy. I worked on
                     <a target="_blank" href="https://ancile-project.github.io/">Ancile</a>
                     &ndash; a framework for language-level control over data
-                    usage. At Google, I designed a new algorithm for building private heatmaps (<a target="_blank"
-                                             href="https://arxiv.org/abs/2111.02356">PETS'22</a>).
-                    At Apple, I developed a novel way to obtain good tokenizers for Private Federated Learning (<a target="_blank"
-                                             href="https://openreview.net/forum?id=rhz7nqYfF-q">FL4NLP@ACL'22</a>).
-                    Before starting my PhD, I received an engineering degree from <a target="_blank"
-                                                           href="https://en.wikipedia.org/wiki/Bauman_Moscow_State_Technical_University">Baumanka</a>
+                    usage. At Google, I designed a new <a target="_blank"
+                                                          href="https://arxiv.org/abs/2111.02356">algorithm</a> for building private heatmaps.
+                    At Apple, I developed a novel <a target="_blank" href="https://openreview.net/forum?id=rhz7nqYfF-q">way</a>
+                    to obtain good tokenizers for private federated learning.
+                    Before starting my PhD, I received an engineering degree from
+                    <a target="_blank" href="https://en.wikipedia.org/wiki/Bauman_Moscow_State_Technical_University">Baumanka</a>
                     and worked at Cisco as a software engineer.
                 </p>
 
                 <p>I grew up in <a target="_blank" href="https://g.co/kgs/8TvnWj">Tashkent</a>. In my free time I play water polo and spend time with family.</p>
+
+                <b>For prospective students:</b>
+                please consider <a target="_blank" href="https://www.cics.umass.edu/degree-program/doctoral">applying</a> to UMass CS PhD. Please reach out but provide
+                some concrete ideas on security and privacy that you are interested in.
 
                 <a rel="me" href="https://sigmoid.social/@eugene"></a>
             </div>
@@ -400,7 +405,7 @@
                         <b>Aug 2024</b>, started as a Research Scientist at Google, joining <a target="_blank" href="https://www.cics.umass.edu/">UMass Amherst</a> as Assistant Professor in Fall'24.
                     </li>
                     <li class="collection-item">
-                        <b>Jul 2023</b>, Defended, thesis:
+                        <b>Jul 2023</b>, Defended PhD thesis:
                         "(Un)trustworthy Machine Learning."
                     </li>
                     <li class="collection-item">
