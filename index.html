@@ -65,6 +65,15 @@
                 color: #48c774;
                 margin-left: 0.5em;
             }
+            
+            /* Tab styles */
+            .tab-content {
+                display: block;
+            }
+            
+            .tab-content.is-hidden {
+                display: none;
+            }
         </style>
         <!-- Google Analytics Script -->
         <script
@@ -81,21 +90,52 @@
         </script>
         <script>
             document.addEventListener("DOMContentLoaded", (event) => {
+                // Email copy functionality
                 const emailText = document.getElementById("email-text");
                 const copyStatus = document.getElementById("copy-status");
 
-                emailText.addEventListener("click", () => {
-                    navigator.clipboard
-                        .writeText(emailText.textContent)
-                        .then(() => {
-                            copyStatus.classList.remove("is-hidden");
-                            setTimeout(() => {
-                                copyStatus.classList.add("is-hidden");
-                            }, 2000);
-                        })
-                        .catch((err) => {
-                            console.error("Failed to copy text: ", err);
+                if (emailText) {
+                    emailText.addEventListener("click", () => {
+                        navigator.clipboard
+                            .writeText(emailText.textContent)
+                            .then(() => {
+                                copyStatus.classList.remove("is-hidden");
+                                setTimeout(() => {
+                                    copyStatus.classList.add("is-hidden");
+                                }, 2000);
+                            })
+                            .catch((err) => {
+                                console.error("Failed to copy text: ", err);
+                            });
+                    });
+                }
+
+                // Tab switching functionality
+                const tabs = document.querySelectorAll('.tabs li');
+                const tabContents = document.querySelectorAll('.tab-content');
+                
+                tabs.forEach(tab => {
+                    tab.addEventListener('click', () => {
+                        // Remove active class from all tabs
+                        tabs.forEach(t => t.classList.remove('is-active'));
+                        
+                        // Add active class to clicked tab
+                        tab.classList.add('is-active');
+                        
+                        // Hide all tab contents
+                        tabContents.forEach(content => {
+                            content.classList.add('is-hidden');
+                            content.classList.remove('is-active');
                         });
+                        
+                        // Show the corresponding tab content
+                        const tabId = tab.getAttribute('data-tab');
+                        const tabContent = document.getElementById(`${tabId}-content`);
+                        if (tabContent) {
+                            tabContent.classList.remove('is-hidden');
+                            tabContent.classList.add('is-active');
+                        }
+                    });
                 });
             });
         </script>
@@ -223,199 +263,249 @@
 
                         <div class="columns is-desktop">
                             <div class="column is-8-desktop">
-                                <div class="content mt-6">
-                                    <h3>Bio</h3>
-                                    <p>
-                                        Eugene is an Assistant Professor at
-                                        <a
-                                            href="https://www.cics.umass.edu/"
-                                            target="_blank"
-                                            >UMass Amherst CICS</a
-                                        >. Eugene's work focuses on security and
-                                        privacy in emerging AI-based systems and
-                                        agentic use-cases under real-life
-                                        conditions and attacks.
-                                    </p>
-                                    <p>
-                                        He completed his PhD at
-                                        <a
-                                            href="https://tech.cornell.edu/"
-                                            target="_blank"
-                                            >Cornell Tech</a
-                                        >
-                                        advised by
-                                        <a
-                                            href="https://www.cs.cornell.edu/~shmat/"
-                                            target="_blank"
-                                            >Vitaly Shmatikov</a
-                                        >
-                                        and
-                                        <a
-                                            href="https://destrin.tech.cornell.edu/"
-                                            target="_blank"
-                                            >Deborah Estrin</a
-                                        >. Eugene's research was recognized by
-                                        <a
-                                            href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2021"
-                                            target="_blank"
-                                            >Apple Scholars in AI/ML</a
-                                        >
-                                        and
-                                        <a
-                                            href="https://www.dli.tech.cornell.edu/doctoralfellows"
-                                            target="_blank"
-                                            >Digital Life Initiative</a
-                                        >
-                                        fellowships and Usenix Security
-                                        Distinguished Paper
-                                        <a
-                                            href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
-                                            target="_blank"
-                                            >Award</a
-                                        >. He received an engineering degree
-                                        from
-                                        <a
-                                            href="https://en.wikipedia.org/wiki/Bauman_Moscow_State_Technical_University"
-                                            target="_blank"
-                                            >Baumanka</a
-                                        >
-                                        and worked at Cisco as a software
-                                        engineer. Eugene has extensive industry
-                                        experience (Cisco, Amazon, Apple) and
-                                        spends part of his time as a Research
-                                        Scientist at Google.
+                                <!-- Tabs -->
+                                <div class="tabs is-boxed mt-4">
+                                    <ul>
+                                        <li class="is-active" data-tab="bio">
+                                            <a>Bio</a>
+                                        </li>
+                                        <li data-tab="research">
+                                            <a>Research</a>
+                                        </li>
+                                        <li data-tab="teaching">
+                                            <a>Teaching</a>
+                                        </li>
+                                        <li data-tab="service">
+                                            <a>Service</a>
+                                        </li>
+                                    </ul>
+                                </div>
 
-                                    <p>
-                                        Eugene grew up in
-                                        <a
-                                            href="https://g.co/kgs/8TvnWj"
-                                            target="_blank"
-                                            >Tashkent</a
-                                        >
-                                        and plays water polo.
-                                    </p>
-                                    </p>
-                                    <h3>Research:</h3>
-                                    <p>
-                                        <strong>Security: </strong>He worked on
-                                        backdoor
-                                        <a
-                                            href="https://arxiv.org/abs/1807.00459"
-                                            target="_blank"
-                                            >attacks in federated learning</a
-                                        >
-                                        and proposed new frameworks
-                                        <a
-                                            href="https://arxiv.org/abs/2005.03823"
-                                            target="_blank"
-                                            >Backdoors101</a
-                                        >
-                                        and
-                                        <a
-                                            href="https://arxiv.org/abs/2302.04977"
-                                            target="_blank"
-                                            >Mithridates</a
-                                        >, and a new
-                                        <a
-                                            href="https://arxiv.org/abs/2112.05224"
-                                            target="_blank"
-                                            >attack</a
-                                        >
-                                        on generative language models covered by
-                                        <a
-                                            href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused"
-                                            target="_blank"
-                                            >VentureBeat</a
-                                        >
-                                        and
-                                        <a
-                                            href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awr"
-                                            target="_blank"
-                                            >The Economist</a
-                                        >. Recent work includes studies on
-                                        vulnerabilities in multi-modal systems:
-                                        <a
-                                            href="https://arxiv.org/abs/2407.08970"
-                                            target="_blank"
-                                            >instruction injections</a
-                                        >,
-                                        <a
-                                            href="https://arxiv.org/abs/2308.11804"
-                                            target="_blank"
-                                            >adversarial illusions</a
-                                        >
-                                        and adding
-                                        <a
-                                            href="https://arxiv.org/abs/2406.15213"
-                                            target="_blank"
-                                            >biases to text-to-image models</a
-                                        >.
-                                    </p>
-                                    <p>
-                                        <strong>Privacy: </strong>Eugene worked
-                                        on the
-                                        <a
-                                            href="https://ancile-project.github.io/"
-                                            target="_blank"
-                                            >Air Gap</a
-                                        >
-                                        privacy protection for LLM Agents and
-                                        <a
-                                            href="https://arxiv.org/abs/2408.02373"
-                                            target="_blank"
-                                            >operationalizing</a
-                                        >
-                                        Contextual Integrity. He worked on
-                                        aspects of differential privacy
-                                        including fairness
-                                        <a
-                                            href="https://arxiv.org/abs/1905.12101"
-                                            target="_blank"
-                                            >trade-offs</a
-                                        >, applications to
-                                        <a
-                                            href="https://arxiv.org/abs/2111.02356"
-                                            target="_blank"
-                                            >location heatmaps</a
-                                        >, and tokenization
-                                        <a
-                                            href="https://openreview.net/forum?id=rhz7nqYfF-q"
-                                            target="_blank"
-                                            >methods</a
-                                        >
-                                        for private federated learning.
-                                        Additionally he helped to build the
-                                        <a
-                                            href="https://github.com/ancile-project/ancile"
-                                            target="_blank"
-                                            >Ancile</a
-                                        >
-                                        system that enforces use-based privacy
-                                        of user data.
-                                    </p>
+                                <!-- Tab Content -->
+                                <div class="content">
+                                    <!-- Bio Tab -->
+                                    <div id="bio-content" class="tab-content is-active">
+                                        <p>
+                                            Eugene is an Assistant Professor at
+                                            <a
+                                                href="https://www.cics.umass.edu/"
+                                                target="_blank"
+                                                >UMass Amherst CICS</a
+                                            >. Eugene's work focuses on security and
+                                            privacy in emerging AI-based systems and
+                                            agentic use-cases under real-life
+                                            conditions and attacks.
+                                        </p>
+                                        <p>
+                                            He completed his PhD at
+                                            <a
+                                                href="https://tech.cornell.edu/"
+                                                target="_blank"
+                                                >Cornell Tech</a
+                                            >
+                                            advised by
+                                            <a
+                                                href="https://www.cs.cornell.edu/~shmat/"
+                                                target="_blank"
+                                                >Vitaly Shmatikov</a
+                                            >
+                                            and
+                                            <a
+                                                href="https://destrin.tech.cornell.edu/"
+                                                target="_blank"
+                                                >Deborah Estrin</a
+                                            >. Eugene's research was recognized by
+                                            <a
+                                                href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2021"
+                                                target="_blank"
+                                                >Apple Scholars in AI/ML</a
+                                            >
+                                            and
+                                            <a
+                                                href="https://www.dli.tech.cornell.edu/doctoralfellows"
+                                                target="_blank"
+                                                >Digital Life Initiative</a
+                                            >
+                                            fellowships and Usenix Security
+                                            Distinguished Paper
+                                            <a
+                                                href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
+                                                target="_blank"
+                                                >Award</a
+                                            >. He received an engineering degree
+                                            from
+                                            <a
+                                                href="https://en.wikipedia.org/wiki/Bauman_Moscow_State_Technical_University"
+                                                target="_blank"
+                                                >Baumanka</a
+                                            >
+                                            and worked at Cisco as a software
+                                            engineer. Eugene has extensive industry
+                                            experience (Cisco, Amazon, Apple) and
+                                            spends part of his time as a Research
+                                            Scientist at Google.
+                                        </p>
+                                        <p>
+                                            Eugene grew up in
+                                            <a
+                                                href="https://g.co/kgs/8TvnWj"
+                                                target="_blank"
+                                                >Tashkent</a
+                                            >
+                                            and plays water polo.
+                                        </p>
 
-                                    <p>
-                                        <strong>Announcement 1:</strong>
-                                        I am looking for PhD students (<a
-                                            href="https://www.cics.umass.edu/degree-program/doctoral"
-                                            target="_blank"
-                                            >apply</a
-                                        >) and post-docs to work on attacks on
-                                        LLM agents and generative models. Please
-                                        reach out over email!
-                                    </p>
-                                    <p>
-                                        <strong>Announcement 2:</strong> We
-                                        are running a
-                                        <a
-                                            href="https://aisec.cs.umass.edu"
-                                            target="_blank"
-                                            >seminar CS 692PA</a
-                                        >
-                                        on Privacy and Security for GenAI
-                                        models, please sign up if you are
-                                        interested. See CS 360 syllabus <a target="_blank" href="classes/cs360.html">here</a>.
-                                    </p>
+                                        <p>
+                                            <strong>Announcement 1:</strong>
+                                            I am looking for PhD students (<a
+                                                href="https://www.cics.umass.edu/degree-program/doctoral"
+                                                target="_blank"
+                                                >apply</a
+                                            >) and post-docs to work on attacks on
+                                            LLM agents and generative models. Please
+                                            reach out over email!
+                                        </p>
+                                        <p>
+                                            <strong>Announcement 2:</strong> We
+                                            are running a
+                                            <a
+                                                href="https://aisec.cs.umass.edu"
+                                                target="_blank"
+                                                >seminar CS 692PA</a
+                                            >
+                                            on Privacy and Security for GenAI
+                                            models, please sign up if you are
+                                            interested. See CS 360 syllabus <a target="_blank" href="classes/cs360.html">here</a>.
+                                        </p>
+                                    </div>
+
+                                    <!-- Research Tab -->
+                                    <div id="research-content" class="tab-content is-hidden">
+                                        <p>
+                                            <strong>Security: </strong>He worked on
+                                            backdoor
+                                            <a
+                                                href="https://arxiv.org/abs/1807.00459"
+                                                target="_blank"
+                                                >attacks in federated learning</a
+                                            >
+                                            and proposed new frameworks
+                                            <a
+                                                href="https://arxiv.org/abs/2005.03823"
+                                                target="_blank"
+                                                >Backdoors101</a
+                                            >
+                                            and
+                                            <a
+                                                href="https://arxiv.org/abs/2302.04977"
+                                                target="_blank"
+                                                >Mithridates</a
+                                            >, and a new
+                                            <a
+                                                href="https://arxiv.org/abs/2112.05224"
+                                                target="_blank"
+                                                >attack</a
+                                            >
+                                            on generative language models covered by
+                                            <a
+                                                href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused"
+                                                target="_blank"
+                                                >VentureBeat</a
+                                            >
+                                            and
+                                            <a
+                                                href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awr"
+                                                target="_blank"
+                                                >The Economist</a
+                                            >. Recent work includes studies on
+                                            vulnerabilities in multi-modal systems:
+                                            <a
+                                                href="https://arxiv.org/abs/2407.08970"
+                                                target="_blank"
+                                                >instruction injections</a
+                                            >,
+                                            <a
+                                                href="https://arxiv.org/abs/2308.11804"
+                                                target="_blank"
+                                                >adversarial illusions</a
+                                            >
+                                            and adding
+                                            <a
+                                                href="https://arxiv.org/abs/2406.15213"
+                                                target="_blank"
+                                                >biases to text-to-image models</a
+                                            >.
+                                        </p>
+                                        <p>
+                                            <strong>Privacy: </strong>Eugene worked
+                                            on the
+                                            <a
+                                                href="https://ancile-project.github.io/"
+                                                target="_blank"
+                                                >Air Gap</a
+                                            >
+                                            privacy protection for LLM Agents and
+                                            <a
+                                                href="https://arxiv.org/abs/2408.02373"
+                                                target="_blank"
+                                                >operationalizing</a
+                                            >
+                                            Contextual Integrity. He worked on
+                                            aspects of differential privacy
+                                            including fairness
+                                            <a
+                                                href="https://arxiv.org/abs/1905.12101"
+                                                target="_blank"
+                                                >trade-offs</a
+                                            >, applications to
+                                            <a
+                                                href="https://arxiv.org/abs/2111.02356"
+                                                target="_blank"
+                                                >location heatmaps</a
+                                            >, and tokenization
+                                            <a
+                                                href="https://openreview.net/forum?id=rhz7nqYfF-q"
+                                                target="_blank"
+                                                >methods</a
+                                            >
+                                            for private federated learning.
+                                            Additionally he helped to build the
+                                            <a
+                                                href="https://github.com/ancile-project/ancile"
+                                                target="_blank"
+                                                >Ancile</a
+                                            >
+                                            system that enforces use-based privacy
+                                            of user data.
+                                        </p>
+                                    </div>
+
+                                    <!-- Teaching Tab -->
+                                    <div id="teaching-content" class="tab-content is-hidden">
+                                        <h3>Courses</h3>
+                                        <p>
+                                            <strong>CS 360:</strong> Security <a target="_blank" href="classes/cs360.html">Syllabus</a>
+                                        </p>
+                                        <p>
+                                            <strong>CS 692PA:</strong> <a
+                                                href="https://aisec.cs.umass.edu"
+                                                target="_blank"
+                                                >Seminar on Privacy and Security for GenAI models</a>
+                                        </p>
+                                    </div>
+                                    
+                                    <!-- Service Tab -->
+                                    <div id="service-content" class="tab-content is-hidden">
+                                        <h3>Academic Service</h3>
+                                        <p>
+                                            <strong>Conference Program Committees:</strong>
+                                        </p>
+                                        <ul>
+                                            <li>USENIX Security</li>
+                                            <li>ACM CCS</li>
+                                            <li>IEEE S&P (Oakland)</li>
+                                        </ul>
+                                    </div>
                                     <a
                                         rel="me"
                                         href="https://sigmoid.social/@eugene"
