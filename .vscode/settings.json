@@ -1,0 +1,5 @@
+{
+    "editor.wordWrapColumn": 300,
+    "editor.wrappingStrategy": "advanced",
+    "rewrap.wrappingColumn": 120
+}
