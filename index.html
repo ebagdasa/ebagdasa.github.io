@@ -182,6 +182,34 @@
                 padding-bottom: 0.5rem;
             }
             
+            /* News item icons */
+            .recent-news ul li {
+                display: flex;
+                align-items: flex-start;
+                margin-bottom: 1.2rem;
+                line-height: 1.6;
+            }
+            
+            .recent-news ul li i {
+                margin-top: 0.1rem;
+                flex-shrink: 0;
+                width: 1.2rem;
+                margin-right: 0.5rem;
+            }
+            
+            .recent-news ul li .news-content {
+                flex: 1;
+                min-width: 0;
+                word-wrap: break-word;
+                overflow-wrap: break-word;
+            }
+            
+            .text-primary { color: var(--secondary-color) !important; }
+            .text-success { color: var(--accent-color) !important; }
+            .text-warning { color: #f39c12 !important; }
+            .text-danger { color: #e74c3c !important; }
+            .text-info { color: #3498db !important; }
+            
             /* Section styles */
             .section-content {
                 padding: 2rem 0;
@@ -759,51 +787,76 @@ Bagdasaryan</span> -->
                                     <h2 class="title is-4">Recent News</h2>
                                     <div class="content">
                                         <ul>
-                                            <li><strong>June 2025</strong>
-                                            A paper on <a href="https://arxiv.org/abs/2406.15213"
-                                            target="_blank">backdooring bias</a>
-                                            and a paper on <a href="https://arxiv.org/abs/2407.08970"
-                                            target="_blank">self-interpreting images</a>
-                                            will appear at USENIX Security'25.
+                                            <li>
+                                                <i class="fas fa-file-alt text-primary"></i>
+                                                <div class="news-content">
+                                                    <strong>June 2025</strong>
+                                                    Two papers were accepted to USENIX Security'25: one on <a href="https://arxiv.org/abs/2406.15213"
+                                                    target="_blank">backdooring bias</a>
+                                                    and one on <a href="https://arxiv.org/abs/2407.08970"
+                                                    target="_blank">self-interpreting images</a>.
+                                                </div>
                                             </li>
                                             
-                                            <li><strong>May 2025</strong>
-                                            I gave an invited talk at IEEE S&P'25 <a
-                                            href="https://sites.google.com/ucsd.edu/sagai25-ieee-sp/program"
-                                            target="_blank">SAGAI Workshop</a> on contextual defenses for agents. <a
-                                            href="https://drive.google.com/file/d/1DaiBDz4Yos0okZijblcMSJgr89lglple/view?usp=sharing"
-                                            target="_blank">[slides]</a>
-                                            </li>
-                                            <li><strong>March 2024</strong>
-                                            I gave a tutorial at AAAI'25 <a href="https://ppai-workshop.github.io/"
-                                            target="_blank">PPAI Workshop</a>
-                                            on contextual integrity for AI agents.
-                                            </li>
-                                            <li><strong>March 2024</strong>
-                                            I gave a keynote at AAAI'25 <a
-                                            href="https://sites.google.com/view/dai-2025/" target="_blank">Deployable AI
-                                            Workshop</a>
-                                            about attacks on inference-heavy pipelines.
+                                            <li>
+                                                <i class="fas fa-microphone text-success"></i>
+                                                <div class="news-content">
+                                                    <strong>May 2025</strong>
+                                                    I gave an invited talk at IEEE S&P'25 <a
+                                                    href="https://sites.google.com/ucsd.edu/sagai25-ieee-sp/program"
+                                                    target="_blank">SAGAI Workshop</a> on contextual defenses for agents. 
+                                                    <i class="fas fa-presentation-screen text-info mr-1"></i>
+                                                    <a href="https://drive.google.com/file/d/1DaiBDz4Yos0okZijblcMSJgr89lglple/view?usp=sharing"
+                                                    target="_blank">[slides]</a>
+                                                </div>
                                             </li>
                                             <li>
-                                                <strong>July 2024</strong> – At CCS'24 we will show how to defend
-                                                against poisoning without modifying an ML pipeline with
-                                                <a href="https://arxiv.org/abs/2302.04977" target="_blank"
-                                                >Mithridates</a >.
+                                                <i class="fas fa-chalkboard-user text-warning"></i>
+                                                <div class="news-content">
+                                                    <strong>March 2024</strong>
+                                                    I gave a tutorial at AAAI'25 <a href="https://ppai-workshop.github.io/"
+                                                    target="_blank">PPAI Workshop</a>
+                                                    on contextual integrity for AI agents.
+                                                </div>
                                             </li>
                                             <li>
-                                                <strong>July 2024</strong> – Privacy-conscious
-                                                <a href="https://arxiv.org/abs/2405.05175" target="_blank" >agents</a >
-                                                will appear at CCS'24.
+                                                <i class="fas fa-star text-danger"></i>
+                                                <div class="news-content">
+                                                    <strong>March 2024</strong>
+                                                    I gave a keynote at AAAI'25 <a
+                                                    href="https://sites.google.com/view/dai-2025/" target="_blank">Deployable AI
+                                                    Workshop</a>
+                                                    about attacks on inference-heavy pipelines.
+                                                </div>
                                             </li>
                                             <li>
-                                                <strong>May 2024</strong> – 
-                                                <a
-                                                href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
-                                                target="_blank" >Adversarial Illusions</a >
-                                                received
-                                                <strong >Distinguished Paper Award</strong >
-                                                at USENIX Security'24.
+                                                <i class="fas fa-shield-alt text-primary"></i>
+                                                <div class="news-content">
+                                                    <strong>Oct 2024</strong> - At CCS'24 I talked about how to defend
+                                                    against backdoor poisoning with
+                                                    <a href="https://arxiv.org/abs/2302.04977" target="_blank"
+                                                    >Mithridates</a >.
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-user-secret text-primary"></i>
+                                                <div class="news-content">
+                                                    <strong>July 2024</strong> - Privacy-conscious
+                                                    <a href="https://arxiv.org/abs/2405.05175" target="_blank" >agents</a >
+                                                    accepted to CCS'24.
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-trophy text-warning"></i>
+                                                <div class="news-content">
+                                                    <strong>May 2024</strong> – 
+                                                    <a
+                                                    href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
+                                                    target="_blank" >Adversarial Illusions</a >
+                                                    received
+                                                    <strong >Distinguished Paper Award</strong >
+                                                    at USENIX Security'24.
+                                                </div>
                                             </li>
                                             <!-- Add more news items here -->
                                         </ul>
