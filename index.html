@@ -182,19 +182,97 @@
                 padding-bottom: 0.5rem;
             }
             
-            /* Tab styles */
-            .tab-content {
-                display: block;
+            /* Section styles */
+            .section-content {
+                padding: 2rem 0;
+                border-bottom: 1px solid var(--border-color);
                 animation: fadeIn 0.3s ease;
             }
             
-            .tab-content.is-hidden {
-                display: none;
+            .section-content:last-of-type {
+                border-bottom: none;
+            }
+            
+            .section-content h2.title {
+                color: var(--secondary-color);
+                margin-bottom: 1.5rem;
+                padding-bottom: 0.5rem;
+                border-bottom: 2px solid var(--border-color);
+            }
+            
+            .section-content h3 {
+                color: var(--text-color);
+                margin-top: 1.5rem;
+                margin-bottom: 1rem;
             }
             
             @keyframes fadeIn {
                 from { opacity: 0; }
                 to { opacity: 1; }
+            }
+            
+            /* Navigation Bar Styles */
+            .section-nav {
+                position: sticky;
+                top: 0;
+                background-color: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                border-bottom: 1px solid var(--border-color);
+                margin-bottom: 2rem;
+                z-index: 100;
+                padding: 0.5rem 0;
+            }
+            
+            .nav-container {
+                display: flex;
+                justify-content: center;
+                gap: 0.5rem;
+            }
+            
+            .nav-item {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+                padding: 0.75rem 1.25rem;
+                border-radius: 6px;
+                text-decoration: none;
+                color: var(--text-color);
+                font-weight: 500;
+                transition: all 0.3s ease;
+                border: 1px solid transparent;
+            }
+            
+            .nav-item:hover {
+                background-color: var(--light-bg);
+                color: var(--secondary-color);
+                transform: translateY(-1px);
+                border-color: var(--border-color);
+                border-bottom: 1px solid transparent;
+            }
+            
+            .nav-item.active {
+                background-color: var(--secondary-color);
+                color: white;
+                border-color: var(--secondary-color);
+                border-bottom: 1px solid var(--secondary-color);
+            }
+            
+            .nav-item i {
+                font-size: 0.9rem;
+            }
+            
+            .nav-item span {
+                font-size: 0.95rem;
+            }
+            
+            /* Smooth scrolling */
+            html {
+                scroll-behavior: smooth;
+            }
+            
+            /* Scroll offset to account for sticky nav */
+            section[id] {
+                scroll-margin-top: 80px;
             }
             
             /* Mobile adjustments */
@@ -203,13 +281,30 @@
                     padding: 2rem 1rem;
                 }
                 
-                .tabs.is-boxed a {
-                    padding: 0.4rem 0.6rem;
+                .nav-container {
+                    gap: 0.25rem;
+                }
+                
+                .nav-item {
+                    padding: 0.6rem 0.8rem;
                     font-size: 0.85rem;
                 }
                 
-                .tabs.is-boxed a i {
-                    margin-right: 0.1rem !important;
+                .nav-item span {
+                    display: none;
+                }
+                
+                .nav-item i {
+                    font-size: 1rem;
+                    margin: 0;
+                }
+                
+                section[id] {
+                    scroll-margin-top: 70px;
+                }
+                
+                .section-nav {
+                    padding: 0.4rem 0;
                 }
                 
                 .title.is-2 {
@@ -276,33 +371,59 @@
                     });
                 }
 
-                // Tab switching functionality
-                const tabs = document.querySelectorAll('.tabs li');
-                const tabContents = document.querySelectorAll('.tab-content');
-                
-                tabs.forEach(tab => {
-                    tab.addEventListener('click', () => {
-                        // Remove active class from all tabs
-                        tabs.forEach(t => t.classList.remove('is-active'));
+                // Section navigation functionality
+                const navItems = document.querySelectorAll('.nav-item');
+                const sections = document.querySelectorAll('section[id]');
+
+                // Handle navigation clicks
+                navItems.forEach(item => {
+                    item.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        const targetId = item.getAttribute('href').substring(1);
+                        const targetSection = document.getElementById(targetId);
                         
-                        // Add active class to clicked tab
-                        tab.classList.add('is-active');
-                        
-                        // Hide all tab contents
-                        tabContents.forEach(content => {
-                            content.classList.add('is-hidden');
-                            content.classList.remove('is-active');
-                        });
-                        
-                        // Show the corresponding tab content
-                        const tabId = tab.getAttribute('data-tab');
-                        const tabContent = document.getElementById(`${tabId}-content`);
-                        if (tabContent) {
-                            tabContent.classList.remove('is-hidden');
-                            tabContent.classList.add('is-active');
+                        if (targetSection) {
+                            targetSection.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
                         }
+                        
+                        // Update active state
+                        navItems.forEach(nav => nav.classList.remove('active'));
+                        item.classList.add('active');
                     });
                 });
+
+                // Update active navigation on scroll
+                function updateActiveNav() {
+                    let currentSection = '';
+                    const scrollPosition = window.scrollY + 100; // Account for sticky nav height
+
+                    sections.forEach(section => {
+                        const sectionTop = section.offsetTop;
+                        const sectionHeight = section.offsetHeight;
+                        
+                        if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                            currentSection = section.getAttribute('id');
+                        }
+                    });
+
+                    navItems.forEach(item => {
+                        const href = item.getAttribute('href').substring(1);
+                        if (href === currentSection) {
+                            item.classList.add('active');
+                        } else {
+                            item.classList.remove('active');
+                        }
+                    });
+                }
+
+                // Listen for scroll events
+                window.addEventListener('scroll', updateActiveNav);
+                
+                // Initial call to set active state
+                updateActiveNav();
             });
         </script>
     </head>
@@ -407,33 +528,40 @@ Bagdasaryan</span> -->
 
                         <div class="columns is-desktop">
                             <div class="column is-8-desktop">
-                                <!-- Tabs -->
-                                <div class="tabs is-boxed mt-5">
-                                    <ul>
-                                        <li class="is-active" data-tab="bio">
-                                            <a><i class="fas fa-user mr-2"></i>Bio</a>
-                                        </li>
-                                        <li data-tab="research">
-                                            <a><i class="fas fa-flask mr-2"></i>Research</a>
-                                        </li>
-                                        <li data-tab="teaching">
-                                            <a><i class="fas fa-chalkboard-teacher mr-2"></i>Teaching</a>
-                                        </li>
-                                        <li data-tab="service">
-                                            <a><i class="fas fa-university mr-2"></i>Service</a>
-                                        </li>
-                                    </ul>
-                                </div>
+                                <!-- Navigation Bar -->
+                                <nav class="section-nav" id="section-nav">
+                                    <div class="nav-container">
+                                        <a href="#about" class="nav-item active">
+                                            <i class="fas fa-user"></i>
+                                            <span>About</span>
+                                        </a>
+                                        <a href="#research" class="nav-item">
+                                            <i class="fas fa-flask"></i>
+                                            <span>Research</span>
+                                        </a>
+                                        <a href="#teaching" class="nav-item">
+                                            <i class="fas fa-chalkboard-teacher"></i>
+                                            <span>Teaching</span>
+                                        </a>
+                                        <a href="#service" class="nav-item">
+                                            <i class="fas fa-university"></i>
+                                            <span>Service</span>
+                                        </a>
+                                    </div>
+                                </nav>
 
-                                <!-- Tab Content -->
-                                <div class="content mt-4">
-                                    <!-- Bio Tab -->
-                                    <div id="bio-content" class="tab-content is-active">
+                                <!-- Main Content -->
+                                <div class="content mt-5">
+                                    <!-- Bio Section -->
+                                    <section id="about" class="section-content">
+                                        <h2 class="title is-4 mb-4">
+                                            <i class="fas fa-user mr-2"></i>About
+                                        </h2>
                                         <p>
                                             Eugene is an Assistant Professor at
                                             <a href="https://www.cics.umass.edu/" target="_blank" >UMass Amherst CICS</a
                                             >. Eugene's work focuses on security and privacy in emerging AI-based
-                                            systems and agentic use-cases under real-life conditions and attacks. 
+                                            systems and agents under real-life conditions and attacks. 
                                             He also spends time at Google working on contextual integrity
                                             and privacy-conscious agents.
                                         </p>
@@ -480,20 +608,23 @@ Bagdasaryan</span> -->
                                             on Privacy and Security for GenAI models, please sign up if you are
                                             interested.
                                         </p>
-                                    </div>
+                                    </section>
 
-                                    <!-- Research Tab -->
-                                    <div id="research-content" class="tab-content is-hidden">
+                                    <!-- Research Section -->
+                                    <section id="research" class="section-content mt-6">
+                                        <h2 class="title is-4 mb-4">
+                                            <i class="fas fa-flask mr-2"></i>Research
+                                        </h2>
                                         <p>
                                             <strong>Security: </strong>He worked on backdoor
                                             <a href="https://arxiv.org/abs/1807.00459" target="_blank" >attacks in
                                             federated learning</a >
-                                            and proposed new frameworks
+                                            and proposed frameworks
                                             <a href="https://arxiv.org/abs/2005.03823" target="_blank" >Backdoors101</a
                                             >
                                             and
                                             <a href="https://arxiv.org/abs/2302.04977" target="_blank" >Mithridates</a
-                                            >, and a new
+                                            >, and an
                                             <a href="https://arxiv.org/abs/2112.05224" target="_blank" >attack</a >
                                             on generative language models covered by
                                             <a
@@ -502,23 +633,22 @@ Bagdasaryan</span> -->
                                             and
                                             <a
                                             href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awr"
-                                            target="_blank" >The Economist</a >. Recent work includes studies on
-                                            vulnerabilities in multi-modal systems:
+                                            target="_blank" >The Economist</a >. He studied
+                                            vulnerabilities in multi-modal and agentic systems:
                                             <a href="https://arxiv.org/abs/2407.08970" target="_blank" >instruction
                                             injections</a >,
                                             <a href="https://arxiv.org/abs/2308.11804" target="_blank" >adversarial
                                             illusions</a >
                                             and adding
                                             <a href="https://arxiv.org/abs/2406.15213" target="_blank" >biases to
-                                            text-to-image models</a >.
+                                            text-to-image models</a >. He recently did an <a href="https://arxiv.org/abs/2502.02542" target="_blank" >OverThink</a> attack on reasoning models.
                                         </p>
                                         <p>
                                             <strong>Privacy: </strong>Eugene worked on the
                                             <a href="https://ancile-project.github.io/" target="_blank" >Air Gap</a >
-                                            privacy protection for LLM Agents and
+                                            privacy protection for AI Agents and
                                             <a href="https://arxiv.org/abs/2408.02373" target="_blank"
-                                            >operationalizing</a >
-                                            Contextual Integrity. He worked on aspects of differential privacy including
+                                            >Contextual Integrity</a >. He worked on aspects of differential privacy including
                                             fairness
                                             <a href="https://arxiv.org/abs/1905.12101" target="_blank" >trade-offs</a >,
                                             applications to
@@ -532,11 +662,29 @@ Bagdasaryan</span> -->
                                             system that enforces use-based privacy of user data.
                                         </p>
 
-                                        
-                                    </div>
+                                        <p>PhD students: <a href="https://www.securegradients.com/" target="_blank">Abhinav
+                                        Kumar</a>.
+                                        Collaborators: 
+                                        <a href="https://people.cs.umass.edu/~amir/" target="_blank">Amir Houmansadr</a>,
+                                        <a href="https://groups.cs.umass.edu/shlomo/" target="_blank">Shlomo Zilberstein</a>,
+                                        <a href="https://people.cs.umass.edu/~brian/" target="_blank">Brian Levine</a>,
+                                        <a href="https://kylewray.com/" target="_blank">Kyle Wray</a>,
+                                        <a href="https://ali7naseh.github.io/" target="_blank">Ali Naseh</a>,
+                                        <a href="https://jrohsc.github.io/" target="_blank">Jaechul Roh</a>,
+                                        <a href="https://dzungvpham.github.io/" target="_blank">Dzung Pham</a>,
+                                        <a href="https://scholar.google.com/citations?user=AyI0uIYAAAAJ&hl=en" target="_blank">June Jeong</a>,
+                                        and many others.
+                                        </p>
 
-                                    <!-- Teaching Tab -->
-                                    <div id="teaching-content" class="tab-content is-hidden">
+
+                                        
+                                    </section>
+
+                                    <!-- Teaching Section -->
+                                    <section id="teaching" class="section-content mt-6">
+                                        <h2 class="title is-4 mb-4">
+                                            <i class="fas fa-chalkboard-teacher mr-2"></i>Teaching
+                                        </h2>
                                         <h3>Courses</h3>
                                         <p>
                                             <strong>CS 360:</strong>
@@ -551,10 +699,13 @@ Bagdasaryan</span> -->
                                         <p>
                                             <strong>CS 690:</strong> Trustworthy and Responsible AI, FA'25 (link TBD)
                                         </p>
-                                    </div>
+                                    </section>
                                     
-                                    <!-- Service Tab -->
-                                    <div id="service-content" class="tab-content is-hidden">
+                                    <!-- Service Section -->
+                                    <section id="service" class="section-content mt-6">
+                                        <h2 class="title is-4 mb-4">
+                                            <i class="fas fa-university mr-2"></i>Service
+                                        </h2>
                                         <h3>Academic Service</h3>
                                         <p>
                                             <strong>Program Committees:</strong>
@@ -578,16 +729,14 @@ Bagdasaryan</span> -->
                                                    Eugene co-organizes
                                                    <a href="http://plair.cs.umass.edu/" target="_blank"
                                                    ><strong>PLAIR</strong></a>
-                                                   (Pioneer Leaders in AI and Robotics), an innovative outreach program
+                                                   (Pioneer Leaders in AI and Robotics), an outreach program
                                                    that introduces high school students across Western Massachusetts to
-                                                   the exciting world of robotics and AI safety. Through research
-                                                   projects and mentorship, we aim to introduce students to the
-                                                   fundamentals of AI and robotics.
+                                                   the world of robotics and AI safety.
                                                 </p>
                                                 <p>
-                                                   <strong>Interested in getting involved?</strong> Whether you're a
-                                                   student, educator, or fellow researcher passionate about broadening
-                                                   participation in computing, I'd love to hear from you!
+                                                   <strong>Interested in getting involved?</strong> If you are a
+                                                   student, educator, or a researcher passionate about broadening
+                                                   participation in computing, please reach out.
                                                 </p>
                                             </div>
                                             <div class="column is-4">
@@ -599,7 +748,7 @@ Bagdasaryan</span> -->
                                             </div>
                                         </div>
                                         
-                                    </div>
+                                    </section>
 
                                     <a rel="me" href="https://sigmoid.social/@eugene" ></a>
                                 </div>
