@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CS690: Trustworthy and Responsible AI (TRAI) Syllabus</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap" />
+    <link rel="shortcut icon" type="image/png" href="../assets/images/favicon.ico" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <style>
+        :root {
+            --primary-color: #3273dc;
+            --secondary-color: #1a7caa;
+            --accent-color: #48c774;
+            --text-color: #363636;
+            --light-bg: #f5f7fa;
+            --border-color: #eaeaea;
+        }
+        body {
+            font-family: "Source Sans 3", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: #ffffff;
+        }
+        .title, h1, h2, h3, h4, h5, h6 {
+            font-family: "Source Serif 4", Georgia, serif;
+            font-weight: 600;
+            color: #222;
+            line-height: 1.2;
+        }
+        .container {
+            max-width: 900px !important;
+        }
+        .section {
+            padding: 2.5rem 1.5rem;
+        }
+        .section-nav {
+            position: sticky;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+            margin-bottom: 2rem;
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1.25rem;
+            border-radius: 6px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        .nav-item:hover, .nav-item.active {
+            background-color: var(--secondary-color);
+            color: white;
+            border-color: var(--secondary-color);
+        }
+        .content ul {
+            list-style-type: disc;
+            margin-left: 1.5rem;
+        }
+        .content ul li {
+            margin-bottom: 0.5rem;
+        }
+        .footer {
+            background-color: var(--light-bg);
+            padding: 2rem 1.5rem;
+            font-size: 0.9rem;
+        }
+        @media screen and (max-width: 768px) {
+            .container { max-width: 100% !important; }
+            .section { padding: 1.5rem 0.5rem; }
+            .nav-container { gap: 0.25rem; }
+            .nav-item { padding: 0.6rem 0.8rem; font-size: 0.95rem; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="section-nav">
+        <div class="nav-container">
+            <a href="#overview" class="nav-item active">Overview</a>
+            <a href="#expectations" class="nav-item">Expectations</a>
+            <a href="#syllabus" class="nav-item">Syllabus</a>
+            <a href="#related" class="nav-item">Related Courses</a>
+        </div>
+    </nav>
+    <section class="section">
+        <div class="container">
+            <h1 class="title is-2" id="overview">TRAI: Trustworthy and Responsible AI</h1>
+            <div class="content">
+                <p><strong>Instructor:</strong> Eugene Bagdasarian<br>
+                <strong>Time:</strong> MoWe 2:30PM - 3:45PM<br>
+                <strong>Location:</strong> Computer Science Bldg rm 142<br>
+                <strong>Semester:</strong> Fall 2025 (Sep 2 – Dec 9)<br>
+                </p>
+                <p>In the era of intelligent assistants, autonomous agents, and self-driving cars we expect AI systems to not cause harm and withstand adversarial attacks. In this course you will learn advanced methods of building AI models and systems that mitigate privacy, security, societal, and environmental risks. We will go deep into attack vectors and what type of guarantees current research can and cannot provide for modern generative models. The course will feature extensive hands-on experience with model training and regular discussion of key research papers. <strong>Students are required to have taken NLP, general ML, and security classes before taking this course.</strong></p>
+            </div>
+
+            <h2 class="title is-4 mt-5" id="expectations">Expectations</h2>
+            <div class="content">
+                <ul>
+                    <li>Required reading and quizzes before each class</li>
+                    <li>One group presentation (4 people) at a class on the selected topic</li>
+                    <li>3 Homeworks: 1 privacy, 1 security, 1 societal/environmental</li>
+                    <li>Group Research Project (4 people)</li>
+                </ul>
+            </div>
+
+            <h2 class="title is-4 mt-5" id="syllabus">Syllabus: Weekly Schedule</h2>
+            <div class="content">
+                <p><strong>Class meetings are numbered below. Use the last column to add links to slides, readings, or assignments for each session.</strong></p>
+                <table class="table is-striped is-fullwidth">
+                  <caption class="has-text-weight-semibold" style="caption-side: top; text-align: left; padding-bottom: 0.5em;">Fall 2025 Class Schedule</caption>
+                  <thead>
+                    <tr>
+                      <th>Class #</th>
+                      <th>Date</th>
+                      <th>Topic</th>
+                      <th>Notes</th>
+                      <th>Links/Slides/Assignments</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>1</td><td>Wed, Sep 3</td><td>Course Introduction. Types of AI Harms – Privacy, Security, Fairness, Societal/Environmental</td><td>First Day of Classes</td><td></td></tr>
+                    <tr><td>2</td><td>Mon, Sep 8</td><td>Brief Intro to GenAI. Part 1. Training, alignment, inference.</td><td>Last day to add/drop (UG/ND)</td><td></td></tr>
+                    <tr><td>3</td><td>Wed, Sep 10</td><td>Brief Intro to GenAI. Part 2. Agents and Multi-agent systems</td><td></td><td></td></tr>
+                    <tr><td>4</td><td>Mon, Sep 15</td><td>Who is the adversary? Evil AI, governments, and hackers</td><td>Last day to add/drop (Grad)</td><td></td></tr>
+                    <tr><td>5</td><td>Wed, Sep 17</td><td>Privacy. Training Data Attacks</td><td></td><td></td></tr>
+                    <tr><td>6</td><td>Mon, Sep 22</td><td>Privacy. Differential Privacy, Part 1. Basics</td><td></td><td></td></tr>
+                    <tr><td>7</td><td>Wed, Sep 24</td><td>Privacy. Differential Privacy, Part 2. In-Context Learning, Private Evolution</td><td></td><td></td></tr>
+                    <tr><td>8</td><td>Mon, Sep 29</td><td>Privacy. Data Analytics, PII Filtering with LLMs</td><td></td><td></td></tr>
+                    <tr><td>9</td><td>Wed, Oct 1</td><td>Privacy. Contextual Integrity</td><td></td><td></td></tr>
+                    <tr><td>10</td><td>Mon, Oct 6</td><td>Privacy. Student Panel + Future Directions Discussions</td><td></td><td></td></tr>
+                    <tr><td>11</td><td>Wed, Oct 8</td><td>Project Presentations. Part 1.</td><td></td><td></td></tr>
+                    <tr><td>12</td><td>Mon, Oct 13</td><td></td><td><strong>Holiday – Indigenous People's Day (No Class)</strong></td><td></td></tr>
+                    <tr><td>13</td><td>Wed, Oct 15</td><td>Project Presentations. Part 2.</td><td></td><td></td></tr>
+                    <tr><td>14</td><td>Mon, Oct 20</td><td>Security. Threat Models in Generative AI Area</td><td></td><td></td></tr>
+                    <tr><td>15</td><td>Wed, Oct 22</td><td>Security. Adversarial Examples in Multi-modal systems</td><td></td><td></td></tr>
+                    <tr><td>16</td><td>Mon, Oct 27</td><td>Security. Robustness and Certifiability</td><td></td><td></td></tr>
+                    <tr><td>17</td><td>Wed, Oct 29</td><td>Security. Poisoning and Backdoors</td><td>Last day to Drop (Grad/UG)</td><td></td></tr>
+                    <tr><td>18</td><td>Mon, Nov 3</td><td>Security. Alignment Attacks</td><td></td><td></td></tr>
+                    <tr><td>19</td><td>Wed, Nov 5</td><td>Security. Principled Defenses</td><td></td><td></td></tr>
+                    <tr><td>20</td><td>Mon, Nov 10</td><td>Security. Student Panel + Future Directions</td><td>Spring 2026 Registration begins</td><td></td></tr>
+                    <tr><td>21</td><td>Tue, Nov 11</td><td></td><td><strong>Holiday – Veterans' Day (No Class)</strong></td><td></td></tr>
+                    <tr><td>22</td><td>Wed, Nov 12</td><td>Societal. Model Fairness and Biases</td><td></td><td></td></tr>
+                    <tr><td>23</td><td>Mon, Nov 17</td><td>Societal. Mechanistic Interpretability</td><td></td><td></td></tr>
+                    <tr><td>24</td><td>Wed, Nov 19</td><td>Societal. Propaganda, Misinformation and Deception</td><td></td><td></td></tr>
+                    <tr><td>25</td><td>Mon, Nov 24</td><td>Societal. Social Norms and Dilemmas</td><td></td><td></td></tr>
+                    <tr><td>26</td><td>Tue, Nov 25</td><td></td><td><strong>Thanksgiving recess begins after last class</strong></td><td></td></tr>
+                    <tr><td>27</td><td>Mon, Dec 1</td><td>Societal. Trade-offs between different values</td><td>Classes resume</td><td></td></tr>
+                    <tr><td>28</td><td>Wed, Dec 3</td><td>Societal. Student panel and future directions</td><td></td><td></td></tr>
+                    <tr><td>29</td><td>Mon, Dec 8</td><td>Environmental. Resource Overhead Attacks</td><td></td><td></td></tr>
+                    <tr><td>30</td><td>Tue, Dec 9</td><td>Final Project Presentations. Part 1 & 2.</td><td>Last Day of Classes</td><td></td></tr>
+                  </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <p>© UMass Amherst • CS690 Trustworthy and Responsible AI • Last updated June 2025</p>
+        </div>
+    </footer>
+    <script>
+        // Simple nav highlight on click
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', function(e) {
+                document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+</html>
