@@ -42,9 +42,18 @@
                 margin-bottom: 0.5rem;
             }
             
-            .container {
-                max-width: 1080px !important;
-            }
+            /* Or use a more responsive approach */
+@media screen and (min-width: 1024px) {
+    .container {
+        max-width: 1300px !important;
+    }
+}
+
+@media screen and (min-width: 1600px) {
+    .container {
+        max-width: 1600px !important;
+    }
+}
             
             a {
                 color: var(--secondary-color);
@@ -491,7 +500,7 @@
         <section class="section">
             <div class="container">
                 <div class="columns is-centered">
-                    <div class="column is-10">
+                    <div class="column is-10  is-12-desktop is-10-widescreen">
                         <div class="columns is-vcentered">
                             <div class="column is-3">
                                 <div class="profile-image-container">
@@ -555,7 +564,7 @@ Bagdasaryan</span> -->
 </div> -->
 
                         <div class="columns is-desktop">
-                            <div class="column is-10-desktop">
+                            <div class="column is-8-desktop">
                                 <!-- Navigation Bar -->
                                 <nav class="section-nav" id="section-nav">
                                     <div class="nav-container">
@@ -824,7 +833,7 @@ Bagdasaryan</span> -->
                                 </div>
                             </div>
 
-                            <div class="column is-6-desktop">
+                            <div class="column is-4-desktop">
                                 <div class="recent-news">
                                     <h2 class="title is-4">Recent News</h2>
                                     <div class="content">
