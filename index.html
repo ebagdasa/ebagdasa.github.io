@@ -312,6 +312,47 @@
                 scroll-margin-top: 80px;
             }
             
+            /* Clean border styles for research topics */
+            .topic-entry-left {
+                border-left: 4px solid #48c774;
+                border-radius: 0 8px 8px 0;
+                background: linear-gradient(135deg, #f9fafb 0%, #f0f8f0 100%);
+                margin-left: 0;
+                margin-right: 2rem;
+            }
+            
+            .topic-entry-right {
+                border-right: 4px solid #3273dc;
+                border-radius: 8px 0 0 8px;
+                background: linear-gradient(225deg, #f9fafb 0%, #f0f6ff 100%);
+                margin-right: 0;
+                margin-left: 2rem;
+            }
+            
+            .topic-entry-alt {
+                border-left: 4px solid #f39c12;
+                border-radius: 0 8px 8px 0;
+                background: linear-gradient(135deg, #f9fafb 0%, #fff8f0 100%);
+                margin-left: 0;
+                margin-right: 2rem;
+            }
+            
+            /* Short underlines for project titles */
+            .short-underline {
+                position: relative;
+                border-bottom: none !important;
+            }
+            
+            .short-underline::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 60%;
+                height: 2px;
+                background-color: var(--secondary-color);
+            }
+            
             /* Mobile adjustments */
             @media screen and (max-width: 768px) {
                 .section {
@@ -370,6 +411,33 @@
                     width: 150px;
                     height: 150px;
                     margin-bottom: 1.5rem;
+                }
+                
+                .paper-entry-left,
+                .paper-entry-right,
+                .paper-entry-alt {
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    border-radius: 8px !important;
+                    border-left: 4px solid !important;
+                    border-right: none !important;
+                }
+                
+                .paper-entry-left::before,
+                .paper-entry-right::before,
+                .paper-entry-alt::before {
+                    left: -6px !important;
+                    right: auto !important;
+                }
+                
+                .topic-entry-left,
+                .topic-entry-right,
+                .topic-entry-alt {
+                    margin-left: 0 !important;
+                    margin-right: 0 !important;
+                    border-radius: 8px !important;
+                    border-left: 4px solid !important;
+                    border-right: none !important;
                 }
             }
         </style>
@@ -465,7 +533,7 @@
         </script>
     </head>
     <body>
-        <i class="fa-brands fa-google-scholar"></i>
+        <!-- <i class="fa-brands fa-google-scholar"></i> -->
         <!-- <nav
     class="navbar is-light"
     role="navigation"
@@ -580,6 +648,14 @@ Bagdasaryan</span> -->
                                             <i class="fas fa-flask"></i>
                                             <span>Research</span>
                                         </a>
+                                        <!-- <a href="#selected-papers" class="nav-item">
+                                            <i class="fas fa-star"></i>
+                                            <span>Papers</span>
+                                        </a> -->
+                                        <a href="#impact" class="nav-item">
+                                            <i class="fas fa-chart-line"></i>
+                                            <span>Impact</span>
+                                        </a>
                                         <a href="#teaching" class="nav-item">
                                             <i class="fas fa-chalkboard-teacher"></i>
                                             <span>Teaching</span>
@@ -603,7 +679,11 @@ Bagdasaryan</span> -->
                                             <a href="https://www.cics.umass.edu/" target="_blank" >UMass Amherst CICS</a
                                             >. In our group, we look at security and privacy attack vectors for AI
                                             systems deployed in real-life. 
-                                            I am part-time at Google working on <a href="https://arxiv.org/abs/2405.05175" target="_blank" >privacy-conscious agents</a>.
+                                            I co-lead <a href="https://aisec.cs.umass.edu" target="_blank" >AI Security
+                                            Lab</a> at UMass with <a href="https://people.cs.umass.edu/~amir/">Amir Houmansadr</a> and co-lead <a href="https://www.umass.edu/ai4sci/"
+                                            target="_blank" >AI Safety Initiative</a> with 
+                                            <a href="https://www.cics.umass.edu/about/directory/shlomo-zilberstein" target="_blank">Shlomo Zilberstein</a>.
+                                            I am also part-time at Google working on <a href="https://arxiv.org/abs/2405.05175" target="_blank" >privacy-conscious agents</a>.
                                         </p>
                                         <p>
                                             I completed my PhD at
@@ -622,14 +702,13 @@ Bagdasaryan</span> -->
                                             fellowships, and Usenix Security Distinguished Paper
                                             <a
                                             href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
-                                            target="_blank" >Award</a >. At UMass, we got
+                                            target="_blank" >Award</a >. At UMass, we received
                                             <a href="https://www.schmidtsciences.org/safetyscience/" target="_blank">Schmidt Sciences AI Safety Grant</a>.
-                                            I received an engineering degree from
+                                            Before going to the grad school, I got an engineering degree from
                                             <a
                                             href="https://en.wikipedia.org/wiki/Bauman_Moscow_State_Technical_University"
                                             target="_blank" >Baumanka</a >
-                                            and worked at Cisco as a software engineer before going to
-                                            grad school.
+                                            and worked at Cisco as a software engineer.
                                         </p>
                                         <p>
                                             I grew up in
@@ -646,9 +725,10 @@ Bagdasaryan</span> -->
                                         </p>
                                         <p>
                                             <strong>Announcement 2:</strong> We are running a
-                                            <a href="https://aisec.cs.umass.edu" target="_blank" >seminar</a >
-                                            on Privacy and Security for GenAI, please sign up if you are
-                                            interested.
+                                            <a href="https://aisec.cs.umass.edu/seminar/" target="_blank" >seminar</a >
+                                            on AI Safety, Security, and Privacy with incredible speakers, 
+                                            please sign up <a href="https://docs.google.com/forms/d/e/1FAIpQLSfXi-nFmNBdM4QHKlw5r55fVK-l87RKrkOR2zM4kG3lV6wuDA/viewform"
+                                            target="_blank">here</a> to be added to the mailing list and receive calendar invites!
                                         </p>
                                     </section>
 
@@ -657,64 +737,195 @@ Bagdasaryan</span> -->
                                         <h2 class="title is-4 mb-4">
                                             <i class="fas fa-flask mr-2"></i>Research
                                         </h2>
-                                        <p>
-                                            <strong>Security: </strong>We worked on backdoor
-                                            <a href="https://arxiv.org/abs/1807.00459" target="_blank" >attacks in
-                                            federated learning</a >
-                                            and proposed frameworks
-                                            <a href="https://arxiv.org/abs/2005.03823" target="_blank" >Backdoors101</a
-                                            >
-                                            and
-                                            <a href="https://arxiv.org/abs/2302.04977" target="_blank" >Mithridates</a
-                                            >, and an
-                                            <a href="https://arxiv.org/abs/2112.05224" target="_blank" >attack</a >
-                                            on generative language models covered by
-                                            <a
-                                            href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused"
-                                            target="_blank" >VentureBeat</a >
-                                            and
-                                            <a
-                                            href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awr"
-                                            target="_blank" >The Economist</a >. We studied
-                                            vulnerabilities in multi-modal and agentic systems:
-                                            <a href="https://arxiv.org/abs/2407.08970" target="_blank" >self-interpreting images</a >,
-                                            <a href="https://arxiv.org/abs/2308.11804" target="_blank" >adversarial
-                                            illusions</a >
-                                            and <a href="https://arxiv.org/abs/2406.15213" target="_blank" >backdooring bias</a > into diffusion models. We recently did an <a href="https://arxiv.org/abs/2502.02542" target="_blank" >OverThink</a> attack on reasoning models.
-                                        </p>
-                                        <p>
-                                            <strong>Privacy: </strong>We proposed
-                                            <a href="https://ancile-project.github.io/" target="_blank" >AirGapAgent</a >
-                                            for privacy protection in agentic applications leveraging
-                                            <a href="https://arxiv.org/abs/2408.02373" target="_blank"
-                                            >Contextual Integrity</a >. Before, I also worked on aspects of differential privacy including
-                                            fairness
-                                            <a href="https://arxiv.org/abs/1905.12101" target="_blank" >trade-offs</a >,
-                                            applications to
-                                            <a href="https://arxiv.org/abs/2111.02356" target="_blank" >location
-                                            heatmaps</a >, and tokenization
-                                            <a href="https://openreview.net/forum?id=rhz7nqYfF-q" target="_blank"
-                                            >methods</a >
-                                            for private federated learning. Additionally, we built the
-                                            <a href="https://github.com/ancile-project/ancile" target="_blank"
-                                            >Ancile</a >
-                                            system that enforces use-based privacy of user data.
-                                        </p>
+                                        
+                                        <!-- Research Topics -->
+                                        <div class="content">
+                                            <!-- Agents Topic -->
+                                            <div class="mb-5 topic-entry-left">
+                                                <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
+                                                    <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
+                                                        <i class="fas fa-robot mr-2 text-primary"></i>Agents
+                                                    </h3>
+                                                    <p>
+                                                        We proposed <a href="https://arxiv.org/abs/2405.05175" target="_blank">AirGapAgent</a>
+                                                        for privacy and <a
+                                                        href="https://arxiv.org/abs/2501.17070">Conseca</a> for security
+                                                       protection, leveraging the theory of
+                                                        <a href="https://arxiv.org/abs/2408.02373" target="_blank">Contextual Integrity</a>.
+                                                        <!-- We also studied vulnerabilities in agentic systems and developed -->
+                                                        <!-- <a href="https://arxiv.org/abs/2405.05175" target="_blank">privacy-conscious agents</a> -->
+                                                        <!-- for real-world deployment.  -->
+                                                        Recently, we studied prompt leakage
+                                                        in <a href="https://arxiv.org/abs/2508.20282" target="_blank">Research Agents</a>.
+                                                    </p>
+                                                </div>
+                                            </div>
 
-                                        <p>PhD student(s): <a href="https://www.securegradients.com/" target="_blank">Abhinav
-                                        Kumar</a>.
-                                        Recent collaborators: 
-                                        <a href="https://people.cs.umass.edu/~amir/" target="_blank">Amir Houmansadr</a>,
-                                        <a href="https://groups.cs.umass.edu/shlomo/" target="_blank">Shlomo Zilberstein</a>,
-                                        <a href="https://people.cs.umass.edu/~brian/" target="_blank">Brian Levine</a>,
-                                        <a href="https://kylewray.com/" target="_blank">Kyle Wray</a>,
-                                        <a href="https://ali7naseh.github.io/" target="_blank">Ali Naseh</a>,
-                                        <a href="https://jrohsc.github.io/" target="_blank">Jaechul Roh</a>,
-                                        <a href="https://dzungvpham.github.io/" target="_blank">Dzung Pham</a>,
-                                        <a href="https://scholar.google.com/citations?user=AyI0uIYAAAAJ&hl=en" target="_blank">June Jeong</a>,
-                                        and many others.
-                                        </p>
-                                        <!-- Current Funding Section (Research) -->
+                                            <!-- Backdoors Topic -->
+                                            <div class="mb-5 topic-entry-right">
+                                                <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
+                                                    <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
+                                                        <i class="fas fa-bug mr-2 text-danger"></i>Backdoors
+                                                    </h3>
+                                                    <p>
+                                                        We worked on backdoor <a href="https://arxiv.org/abs/1807.00459" target="_blank">attacks in
+                                                        federated learning</a> and proposed frameworks
+                                                        <a href="https://arxiv.org/abs/2005.03823" target="_blank">Backdoors101</a>
+                                                        and <a href="https://arxiv.org/abs/2302.04977" target="_blank">Mithridates</a>
+                                                        for understanding and defending against backdoor attacks. We also studied
+                                                        <a href="https://arxiv.org/abs/2406.15213" target="_blank">backdooring bias</a>
+                                                        into diffusion models.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Multimodal Security Topic -->
+                                            <div class="mb-5 topic-entry-alt">
+                                                <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
+                                                    <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
+                                                        <i class="fas fa-eye mr-2 text-warning"></i>Multimodal Security
+                                                    </h3>
+                                                    <p>
+                                                        We studied vulnerabilities in multi-modal systems including
+                                                        <a href="https://arxiv.org/abs/2407.08970" target="_blank">self-interpreting images</a>
+                                                        and <a href="https://arxiv.org/abs/2308.11804" target="_blank">adversarial illusions</a>
+                                                        that can manipulate vision-language models. Our work demonstrates novel
+                                                        attack vectors in systems that process both visual and textual information.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <!-- LLM Attacks Topic -->
+                                            <div class="mb-5 topic-entry-right">
+                                                <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
+                                                    <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
+                                                        <i class="fas fa-brain mr-2 text-info"></i>LLM and Reasoning Attacks
+                                                    </h3>
+                                                    <p>
+                                                        We developed attacks on large language models including an
+                                                        <a href="https://arxiv.org/abs/2112.05224" target="_blank">attack</a>
+                                                        on generative language models that enables propaganda generation.
+                                                        We recently proposed the <a href="https://arxiv.org/abs/2502.02542" target="_blank">OverThink</a>
+                                                        attack on reasoning models that exploits their chain-of-thought mechanisms.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Privacy Topic -->
+                                            <div class="mb-5 topic-entry-left">
+                                                <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
+                                                    <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
+                                                        <i class="fas fa-user-shield mr-2 text-success"></i>Privacy
+                                                    </h3>
+                                                    <p>
+                                                        We worked on aspects of differential privacy including fairness
+                                                        <a href="https://arxiv.org/abs/1905.12101" target="_blank">trade-offs</a>,
+                                                        applications to <a href="https://arxiv.org/abs/2111.02356" target="_blank">location
+                                                        heatmaps</a>, and tokenization
+                                                        <a href="https://openreview.net/forum?id=rhz7nqYfF-q" target="_blank">methods</a>
+                                                        for private federated learning. We built the
+                                                        <a href="https://ancile-project.github.io/" target="_blank">Ancile</a>
+                                                        system that enforces use-based privacy of user data.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="mt-4">
+                                            <p><strong>PhD students:</strong> <a href="https://www.securegradients.com/" target="_blank">Abhinav
+                                            Kumar</a>, <a href="https://hyejunjeong.github.io/" target="_blank">June
+                                            Jeong</a> (co-advised w Amir Houmansadr).</p>
+                                            <p><strong>Recent collaborators:</strong> 
+                                            <a href="https://people.cs.umass.edu/~amir/" target="_blank">Amir Houmansadr</a>,
+                                            <a href="https://groups.cs.umass.edu/shlomo/" target="_blank">Shlomo Zilberstein</a>,
+                                            <a href="https://people.cs.umass.edu/~brian/" target="_blank">Brian Levine</a>,
+                                            <a href="https://kylewray.com/" target="_blank">Kyle Wray</a>,
+                                            <a href="https://ali7naseh.github.io/" target="_blank">Ali Naseh</a>,
+                                            <a href="https://jrohsc.github.io/" target="_blank">Jaechul Roh</a>,
+                                            <a href="https://dzungvpham.github.io/" target="_blank">Dzung Pham</a>,
+                                            
+                                            and many others.
+                                            </p>
+                                        </div>
+                                    </section>
+
+                                    <!-- Selected Papers Section -->
+                                    <!-- <section id="selected-papers" class="section-content mt-6">
+                                        <h2 class="title is-4 mb-4">
+                                            <i class="fas fa-star mr-2"></i>Selected Papers
+                                        </h2>
+                                        <div class="content">
+                                            <div class="columns is-multiline">
+                                                <div class="column is-12">
+                                                    <div class="box" style="background: #f9fafb; border-left: 4px solid #48c774;">
+                                                        <div class="content">
+                                                            <h6 class="title is-6 mb-4" style="line-height: 1.3;">
+                                                                <a href="https://arxiv.org/abs/2407.08970" target="_blank">
+                                                                    Self-Interpreting Images: Instruction Injections in Multi-modal Models
+                                                                </a>
+                                                            </h6>
+                                                            <p class="subtitle is-7 mb-4" style="margin-top: 0.5rem; line-height: 1.4;">Zhang et al. • <em>USENIX Security'25</em></p>
+                                                            <span class="tag is-success is-light">Accepted to USENIX Security'25</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="column is-12">
+                                                    <div class="box" style="background: #f9fafb; border-left: 4px solid #f39c12;">
+                                                        <div class="content">
+                                                            <h6 class="title is-6 mb-4" style="line-height: 1.3;">
+                                                                <a href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei" target="_blank">
+                                                                    Adversarial Illusions: Attacks on Multi-modal Models
+                                                                </a>
+                                                            </h6>
+                                                            <p class="subtitle is-7 mb-4" style="margin-top: 0.5rem;
+                                                            line-height: 1.4;">Zhang et al. • <em>USENIX
+                                                            Security'24</em></p>
+                                                            <span class="tag is-warning is-light">Distinguished Paper Award</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <div class="column is-12">
+                                                    <div class="box" style="background: #f9fafb; border-left: 4px solid #3273dc;">
+                                                        <div class="content">
+                                                            <h6 class="title is-6 mb-4" style="line-height: 1.3;">
+                                                                <a href="https://arxiv.org/abs/2405.05175" target="_blank">
+                                                                    Operationalizing Contextual Integrity in Privacy-Conscious Assistants
+                                                                </a>
+                                                            </h6>
+                                                            <p class="subtitle is-7 mb-4" style="margin-top: 0.5rem; line-height: 1.4;">Sahra Ghalebikesabi, Eugene Bagdasaryan et al. • <em>CCS'24</em></p>
+                                                            <span class="tag is-info is-light">Google Research</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </section> -->
+
+                                    <!-- Impact Section -->
+                                    <section id="impact" class="section-content mt-6">
+                                        <h2 class="title is-4 mb-4">
+                                            <i class="fas fa-chart-line mr-2"></i>Impact
+                                        </h2>
+                                        <div class="content">
+                                            <ul>
+                                                <li>Our research has been covered by <a href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused" target="_blank">VentureBeat</a> and <a href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awr" target="_blank">The Economist</a>.</li>
+                                                <li>Our work on adversarial illusions received a <strong>Distinguished
+                                                Paper Award</strong> at USENIX Security'24.</li>
+                                                <li><a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final">NIST
+                                                Taxonomy</a> on Adversarial Machine Learning uses our work
+                                                on Federated Learning and AI Agents for their agenda.</li>
+                                                <li>Multiple research Roadmaps 
+                                                (e.g., <a
+                                                href="file:///Users/ebagdasnryan/Downloads/ki90cxv0c1p0h148qvqipnk3mxcxy2e2.pdf"
+                                                target="_blank">DP</a> and
+                                                <a href="https://arxiv.org/abs/1912.04977" target="_blank">FL</a>    
+                                                ) use our work as a foundation for future studies.</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <!-- Current Funding Section -->
                                         <div class="has-text-left my-4">
                                             <strong>Current Funding: </strong><br />
                                             <div class="has-text-centered">
@@ -800,7 +1011,7 @@ Bagdasaryan</span> -->
                                             <strong>Program Committees:</strong>
                                         </p>
                                         <ul>
-                                            <li>ACM CCS'24/'25, ICLR'25, IEEE S&P'25</li>
+                                            <li>ACM CCS'24/'25, ICLR'25, IEEE S&P'26</li>
                                         </ul>
                                         <p>
                                             <strong>Workshop Organizer:</strong>
