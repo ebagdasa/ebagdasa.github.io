@@ -440,6 +440,47 @@
                     border-right: none !important;
                 }
             }
+
+            .name-note {
+                position: relative;
+                cursor: help;
+                border-bottom: 1px dotted #aaa;
+            }
+
+            .name-note-tooltip {
+                visibility: hidden;
+                opacity: 0;
+                position: absolute;
+                bottom: 125%;
+                left: 50%;
+                transform: translateX(-50%);
+                background: #363636;
+                color: #fff;
+                padding: 0.5rem 0.75rem;
+                border-radius: 4px;
+                font-size: 0.75rem;
+                width: 240px;
+                text-align: center;
+                line-height: 1.4;
+                transition: opacity 0.2s ease;
+                pointer-events: none;
+                z-index: 10;
+            }
+
+            .name-note-tooltip::after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 5px solid transparent;
+                border-top-color: #363636;
+            }
+
+            .name-note:hover .name-note-tooltip {
+                visibility: visible;
+                opacity: 1;
+            }
         </style>
         <!-- Google Analytics Script -->
         <script
@@ -581,10 +622,16 @@
                                 <h1 class="title is-2 has-text-centered-mobile mb-2">
                                     Eugene Bagdasarian
                                 </h1>
+                                <p class="has-text-centered-mobile is-size-7 has-text-grey mb-1" style="margin-top: -0.5rem;">
+                                    <span class="name-note">
+                                        another spelling: <strong>Eugene Bagdasaryan</strong>
+                                        <span class="name-note-tooltip">Most of my family has 'i' instead of 'y' due to changes in transliteration and the spelling of this Armenian name with 'i' is more accurate. 
+                                            Apologies for the confusion, I am fine with any spelling version that you use. 
+                                        </span>
+                                    </span>
+                                </p>
                                 <p class="subtitle has-text-centered-mobile is-6 is-size-7-mobile mt-2" >
                                     <em>Assistant Professor</em> at UMass Amherst.
-                                    <!-- <span class="is-size-7">Other spellings: Eugene Bagdasaryan, Evgeny
-Bagdasaryan</span> -->
                                 </p>
                                 
                                 <div class="content contact-info mb-3">
@@ -681,8 +728,7 @@ Bagdasaryan</span> -->
                                         <p>
                                             I am an Assistant Professor of Computer Science at
                                             <a href="https://www.cics.umass.edu/" target="_blank" >UMass Amherst CICS</a
-                                            >. In our group, we look at security and privacy attack vectors for AI
-                                            systems deployed in real-life. 
+                                            >. 
                                             I co-lead <a href="https://aisec.cs.umass.edu" target="_blank" >AI Security
                                             Lab</a> at UMass with <a href="https://people.cs.umass.edu/~amir/">Amir Houmansadr</a> and co-lead <a href="https://aisafety.cs.umass.edu/"
                                             target="_blank" >AI Safety Initiative</a> with 
@@ -692,6 +738,16 @@ Bagdasaryan</span> -->
                                              and  <a href="https://arxiv.org/abs/2501.17070" target="_blank" >security</a>.
                                         </p>
                                         <p>
+                                            In our group, we look at security and privacy attack vectors for AI
+                                            systems deployed in real-life. 
+                                            My research was recognized by
+                                            <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2021"
+                                            target="_blank" >Apple Scholars in AI/ML Fellowship</a >
+                                            and Usenix Security Distinguished Paper'24
+                                            <a
+                                            href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
+                                            target="_blank" >Award</a >. My group issupported by the
+                                            <a href="https://www.schmidtsciences.org/safetyscience/" target="_blank">Schmidt Sciences Trustworthy AI Grant</a>.
                                             I completed my PhD at
                                             <a href="https://tech.cornell.edu/" target="_blank" >Cornell Tech</a >
                                             advised by
@@ -699,17 +755,7 @@ Bagdasaryan</span> -->
                                             Shmatikov</a >
                                             and
                                             <a href="https://destrin.tech.cornell.edu/" target="_blank" >Deborah
-                                            Estrin</a >. My research was recognized by
-                                            <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2021"
-                                            target="_blank" >Apple Scholars in AI/ML</a >
-                                            and
-                                            <a href="https://www.dli.tech.cornell.edu/doctoralfellows" target="_blank"
-                                            >Digital Life Initiative</a >
-                                            fellowships, and Usenix Security Distinguished Paper
-                                            <a
-                                            href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
-                                            target="_blank" >Award</a >. At UMass, we received
-                                            <a href="https://www.schmidtsciences.org/safetyscience/" target="_blank">Schmidt Sciences AI Safety Grant</a>.
+                                            Estrin</a >.
                                             Before going to the grad school, I got an engineering degree from
                                             <a
                                             href="https://en.wikipedia.org/wiki/Bauman_Moscow_State_Technical_University"
@@ -757,7 +803,7 @@ Bagdasaryan</span> -->
                                             <div class="mb-5 topic-entry-left">
                                                 <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
                                                     <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
-                                                        <i class="fas fa-robot mr-2 text-primary"></i>Agents
+                                                        <i class="fas fa-robot mr-2 text-primary"></i>Multi-Agent AI Systems
                                                     </h3>
                                                     <p>
                                                         We proposed <a href="https://arxiv.org/abs/2405.05175" target="_blank">AirGapAgent</a>(CCS'24)
@@ -775,51 +821,12 @@ Bagdasaryan</span> -->
                                                         and investigated <a href="https://arxiv.org/abs/2509.01619"
                                                         target="_blank">throttling</a> to prevent denial of
                                                         service or scraping by web agents. Finally, our <a
-                                                        href="https://www.arxiv.org/abs/2510.14312" target="_blank">Terrarium</a>
-                                                        framework enables careful studies of multi-agent systems.
+                                                        href="https://arxiv.org/abs/2602.15198" target="_blank">Colosseum</a>
+                                                        framework discovers new collusion artifacts in multi-agent systems.
                                                     </p>
                                                 </div>
                                             </div>
 
-                                            <!-- Backdoors Topic -->
-                                            <div class="mb-5 topic-entry-right">
-                                                <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
-                                                    <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
-                                                        <i class="fas fa-bug mr-2 text-danger"></i>Backdoors
-                                                    </h3>
-                                                    <p>
-                                                        We worked on backdoor <a href="https://arxiv.org/abs/1807.00459" target="_blank">attacks in
-                                                        federated learning</a> (AISTATS'20) and proposed frameworks
-                                                        <a href="https://arxiv.org/abs/2005.03823"
-                                                        target="_blank">Backdoors101</a> (USENIX Security'20)
-                                                        and <a href="https://arxiv.org/abs/2302.04977"
-                                                        target="_blank">Mithridates</a> (CCS'24)
-                                                        for understanding and defending against backdoor attacks. We also studied
-                                                        <a href="https://arxiv.org/abs/2406.15213"
-                                                        target="_blank">backdooring bias</a> (USENIX Security'25)
-                                                        into diffusion models.
-                                                    </p>
-                                                </div>
-                                            </div>
-
-                                            <!-- Multimodal Security Topic -->
-                                            <div class="mb-5 topic-entry-alt">
-                                                <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
-                                                    <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
-                                                        <i class="fas fa-eye mr-2 text-warning"></i>Multi-modal Security
-                                                    </h3>
-                                                    <p>
-                                                        We studied vulnerabilities in multi-modal systems including
-                                                        <a href="https://arxiv.org/abs/2407.08970"
-                                                        target="_blank">self-interpreting images</a> (USENIX
-                                                        Security'25)
-                                                        and <a href="https://arxiv.org/abs/2308.11804"
-                                                        target="_blank">adversarial illusions</a> (USENIX Security'24, Distinguished Paper)
-                                                        that can manipulate vision-language models. Our work demonstrates novel
-                                                        attack vectors in systems that process both visual and textual information.
-                                                    </p>
-                                                </div>
-                                            </div>
 
                                             <!-- LLM Attacks Topic -->
                                             <div class="mb-5 topic-entry-right">
@@ -869,6 +876,46 @@ Bagdasaryan</span> -->
                                                     </p>
                                                 </div>
                                             </div>
+
+                                            <!-- Backdoors Topic -->
+                                            <div class="mb-5 topic-entry-right">
+                                                <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
+                                                    <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
+                                                        <i class="fas fa-bug mr-2 text-danger"></i>Backdoors
+                                                    </h3>
+                                                    <p>
+                                                        We worked on backdoor <a href="https://arxiv.org/abs/1807.00459" target="_blank">attacks in
+                                                        federated learning</a> (AISTATS'20) and proposed frameworks
+                                                        <a href="https://arxiv.org/abs/2005.03823"
+                                                        target="_blank">Backdoors101</a> (USENIX Security'20)
+                                                        and <a href="https://arxiv.org/abs/2302.04977"
+                                                        target="_blank">Mithridates</a> (CCS'24)
+                                                        for understanding and defending against backdoor attacks. We also studied
+                                                        <a href="https://arxiv.org/abs/2406.15213"
+                                                        target="_blank">backdooring bias</a> (USENIX Security'25)
+                                                        into diffusion models.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                            <!-- Multimodal Security Topic -->
+                                            <div class="mb-5 topic-entry-alt">
+                                                <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
+                                                    <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
+                                                        <i class="fas fa-eye mr-2 text-warning"></i>Multi-modal Security
+                                                    </h3>
+                                                    <p>
+                                                        We studied vulnerabilities in multi-modal systems including
+                                                        <a href="https://arxiv.org/abs/2407.08970"
+                                                        target="_blank">self-interpreting images</a> (USENIX
+                                                        Security'25)
+                                                        and <a href="https://arxiv.org/abs/2308.11804"
+                                                        target="_blank">adversarial illusions</a> (USENIX Security'24, Distinguished Paper)
+                                                        that can manipulate vision-language models. Our work demonstrates novel
+                                                        attack vectors in systems that process both visual and textual information.
+                                                    </p>
+                                                </div>
+                                            </div>
                                         </div>
 
                                         <div class="mt-4">
@@ -883,6 +930,7 @@ Bagdasaryan</span> -->
                                             <a href="https://s-abdelnabi.github.io/" target="_blank">Sahar Abdelnabi</a>,
                                             <a href="https://people.cs.umass.edu/~brian/" target="_blank">Brian Levine</a>,
                                             <a href="https://kylewray.com/" target="_blank">Kyle Wray</a>,
+                                            <a href="https://people.cs.umass.edu/~gbiss" target="_blank">George Bissias</a>,
                                             <a href="https://ali7naseh.github.io/" target="_blank">Ali Naseh</a>,
                                             <a href="https://jrohsc.github.io/" target="_blank">Jaechul Roh</a>,
                                             <a href="https://www.masonnakamura.com/" target="_blank">Mason Nakamura</a>,
@@ -962,6 +1010,10 @@ Bagdasaryan</span> -->
                                                     the <a
                                                     href="https://research.google/pubs/googles-approach-to-protecting-privacy-in-the-age-of-ai/">approach
                                                     to protecting privacy in the age of AI</a>.</li>
+                                                <li>Our predicted attacks targeting  <a href="https://arxiv.org/abs/2405.05175">stealing</a>  of user data from AI agents have been 
+                                                    confirmed by OpenAI in their <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" target="_blank">prompt injection design work</a>.</li>
+
+                                                </li>
                                                 <li>Our research has been covered by <a
                                                 href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused"
                                                 target="_blank">VentureBeat</a> and 
@@ -985,9 +1037,12 @@ Bagdasaryan</span> -->
                                         <!-- Current Funding Section -->
                                         <div class="has-text-left my-4">
                                             <strong>Current Funding: </strong><br />
-                                            <div class="has-text-centered">
+                                            <div class="has-text-centered" style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
                                                 <a href="https://www.schmidtsciences.org/safetyscience/" target="_blank">
-                                                    <img src="assets/images/SchmidtSciences.png" alt="Schmidt Sciences Logo" style="height: 80px; width: auto; margin-bottom: 0.5rem;" />
+                                                    <img src="assets/images/SchmidtSciences.png" alt="Schmidt Sciences Logo" style="height: 80px; width: auto;" />
+                                                </a>
+                                                <a href="https://www.nvidia.com/" target="_blank">
+                                                    <img src="assets/images/nvidia.png" alt="NVIDIA Logo" style="height: 80px; width: auto;" />
                                                 </a>
                                             </div>
                                         </div>
