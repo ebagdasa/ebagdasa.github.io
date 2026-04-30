@@ -697,6 +697,10 @@
                                             <i class="fas fa-user"></i>
                                             <span>About</span>
                                         </a>
+                                        <a href="#impact" class="nav-item">
+                                            <i class="fas fa-chart-line"></i>
+                                            <span>Impact</span>
+                                        </a>
                                         <a href="#research" class="nav-item">
                                             <i class="fas fa-flask"></i>
                                             <span>Research</span>
@@ -705,10 +709,6 @@
                                             <i class="fas fa-star"></i>
                                             <span>Papers</span>
                                         </a> -->
-                                        <a href="#impact" class="nav-item">
-                                            <i class="fas fa-chart-line"></i>
-                                            <span>Impact</span>
-                                        </a>
                                         <a href="#teaching" class="nav-item">
                                             <i class="fas fa-chalkboard-teacher"></i>
                                             <span>Teaching</span>
@@ -748,7 +748,7 @@
                                             and Usenix Security Distinguished Paper'24
                                             <a
                                             href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
-                                            target="_blank" >Award</a >. My group issupported by the
+                                            target="_blank" >Award</a >. My group is supported by the
                                             <a href="https://www.schmidtsciences.org/safetyscience/" target="_blank">Schmidt Sciences Trustworthy AI Grant</a>.
                                             I completed my PhD at
                                             <a href="https://tech.cornell.edu/" target="_blank" >Cornell Tech</a >
@@ -784,10 +784,67 @@
                                         </p>
                                     </section>
 
+                                    <!-- Impact Section -->
+                                    <section id="impact" class="section-content mt-6">
+                                        <h2 class="title is-4 mb-4">
+                                            <i class="fas fa-chart-line mr-2"></i>Impact
+                                        </h2>
+                                        <div class="content">
+                                            <ul>
+                                                <li>Our <a href="https://arxiv.org/abs/2501.17070" target="_blank">Contextual Agent Security</a> design was used 
+                                                    as a <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/configure-semantic-governance#the_enforcement_flow" target="_blank">semantic policy engine</a> for <strong>Google's Enterprise Agent Platform</strong>.
+                                                  <!-- Zenity <a href="https://zenity.io/blog/product/continuous-contextual-security" target="_blank">mentions</a> Contextual Security for controlling their agents. -->
+                                                </li>
+                                                <li>Google uses our work on agents (<a href="https://arxiv.org/abs/2501.17070">security</a> and 
+                                                    <a href="https://arxiv.org/abs/2405.05175">privacy</a>) for <a
+                                                href="https://saif.google/focus-on-agents" target="_blank">Secure AI
+                                                    Framework</a> and our <a href="https://arxiv.org/abs/2408.02373"
+                                                    target="_blank">Form-filling paper</a> in
+                                                    the <a
+                                                    href="https://research.google/pubs/googles-approach-to-protecting-privacy-in-the-age-of-ai/">approach
+                                                    to protecting privacy in the age of AI</a>.</li>
+                                                <li>Our attacks on  <a href="https://arxiv.org/abs/2405.05175">stealing</a> user data from AI agents have been 
+                                                    <strong>confirmed</strong> by OpenAI in <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" target="_blank">prompt injection design work</a>.</li>
+
+                                                </li>
+                                                <li>Our research on LLM <a href="https://arxiv.org/abs/2112.05224" target="_blank">propaganda-as-a-service</a> has been <strong>covered</strong> by <a
+                                                href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused"
+                                                target="_blank">VentureBeat</a> and 
+                                                    <a href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awry" target="_blank">The Economist</a>.</li>
+                                                <li>Our work on <a
+                                                href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
+                                                target="_blank">adversarial illusions</a> received a <strong>Distinguished
+                                                Paper Award</strong> at USENIX Security'24.</li>
+                                                <li><a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final">NIST
+                                                Taxonomy</a> on Adversarial Machine Learning uses our work
+                                                on Federated Learning and AI Agents for their agenda.</li>
+                                                <li>Multiple key research roadmaps 
+                                                (e.g., <a
+                                                href="https://arxiv.org/abs/2304.06929"
+                                                target="_blank">DP</a> and
+                                                <a href="https://arxiv.org/abs/1912.04977" target="_blank">FL</a>    
+                                                ) use our work as a foundation for future studies.</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <!-- Current Funding Section -->
+                                        <div class="has-text-left my-4">
+                                            <strong>Current Funding: </strong><br />
+                                            <div class="has-text-centered" style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
+                                                <a href="https://www.schmidtsciences.org/safetyscience/" target="_blank">
+                                                    <img src="assets/images/SchmidtSciences.png" alt="Schmidt Sciences Logo" style="height: 80px; width: auto;" />
+                                                </a>
+                                                <a href="https://www.nvidia.com/" target="_blank">
+                                                    <img src="assets/images/nvidia.png" alt="NVIDIA Logo" style="height: 80px; width: auto;" />
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </section>
+
                                     <!-- Research Section -->
                                     <section id="research" class="section-content mt-6">
                                         <h2 class="title is-4 mb-4">
-                                            <i class="fas fa-flask mr-2"></i>Research
+                                            <i class="fas fa-flask mr-2"></i>Current Research
                                         </h2>
                                         
                                         <!-- Research Topics -->
@@ -869,6 +926,9 @@
                                                     </p>
                                                 </div>
                                             </div>
+                                            <h3 class="title is-4 mb-4">
+                                            <i class="fas fa-flask mr-2"></i>Earlier Topics
+                                            </h3>
 
                                             <!-- Backdoors Topic -->
                                             <div class="mb-5 topic-entry-right">
@@ -986,64 +1046,6 @@
                                             </div>
                                         </div>
                                     </section> -->
-
-                                    <!-- Impact Section -->
-                                    <section id="impact" class="section-content mt-6">
-                                        <h2 class="title is-4 mb-4">
-                                            <i class="fas fa-chart-line mr-2"></i>Impact
-                                        </h2>
-                                        <div class="content">
-                                            <ul>
-                                                <li>Our proposed design in <a href="https://arxiv.org/abs/2501.17070" target="_blank">Contextual Agent Security</a> paper was used 
-                                                    as a <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/configure-semantic-governance#the_enforcement_flow" target="_blank">semantic policy engine</a> for Google's Enterprise Agent Platform.
-                                                  Zenity <a href="https://zenity.io/blog/product/continuous-contextual-security" target="_blank">mentions</a> Contextual Security for controlling their agents.
-                                                </li>
-                                                <li>Google uses our work on agents (contextual <a href="https://arxiv.org/abs/2501.17070">security</a> and 
-                                                    <a href="https://arxiv.org/abs/2405.05175">privacy</a> system
-                                                    designs) for <a
-                                                href="https://saif.google/focus-on-agents" target="_blank">Secure AI
-                                                    Framework</a> and our <a href="https://arxiv.org/abs/2408.02373"
-                                                    target="_blank">paper</a> applying contextual integrity to AI Assistants in
-                                                    the <a
-                                                    href="https://research.google/pubs/googles-approach-to-protecting-privacy-in-the-age-of-ai/">approach
-                                                    to protecting privacy in the age of AI</a>.</li>
-                                                <li>Our predicted attacks targeting  <a href="https://arxiv.org/abs/2405.05175">stealing</a>  of user data from AI agents have been 
-                                                    confirmed by OpenAI in their <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" target="_blank">prompt injection design work</a>.</li>
-
-                                                </li>
-                                                <li>Our research has been covered by <a
-                                                href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused"
-                                                target="_blank">VentureBeat</a> and 
-                                                    <a href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awry" target="_blank">The Economist</a>.</li>
-                                                <li>Our work on <a
-                                                href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
-                                                target="_blank">adversarial illusions</a> received a <strong>Distinguished
-                                                Paper Award</strong> at USENIX Security'24.</li>
-                                                <li><a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final">NIST
-                                                Taxonomy</a> on Adversarial Machine Learning uses our work
-                                                on Federated Learning and AI Agents for their agenda.</li>
-                                                <li>Multiple key research roadmaps 
-                                                (e.g., <a
-                                                href="https://arxiv.org/abs/2304.06929"
-                                                target="_blank">DP</a> and
-                                                <a href="https://arxiv.org/abs/1912.04977" target="_blank">FL</a>    
-                                                ) use our work as a foundation for future studies.</li>
-                                            </ul>
-                                        </div>
-                                        
-                                        <!-- Current Funding Section -->
-                                        <div class="has-text-left my-4">
-                                            <strong>Current Funding: </strong><br />
-                                            <div class="has-text-centered" style="display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap;">
-                                                <a href="https://www.schmidtsciences.org/safetyscience/" target="_blank">
-                                                    <img src="assets/images/SchmidtSciences.png" alt="Schmidt Sciences Logo" style="height: 80px; width: auto;" />
-                                                </a>
-                                                <a href="https://www.nvidia.com/" target="_blank">
-                                                    <img src="assets/images/nvidia.png" alt="NVIDIA Logo" style="height: 80px; width: auto;" />
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </section>
 
 <!--                                     <section id="featured-papers" class="section-content mt-6">
                                         <h2 class="title is-4 mb-4">
