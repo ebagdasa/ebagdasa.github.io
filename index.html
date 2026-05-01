@@ -80,6 +80,21 @@
             .content {
                 font-size: 1.05rem;
             }
+
+            .content a,
+            .recent-news a {
+                color: #156b8d;
+                font-weight: 500;
+                border-bottom: 1px solid rgba(21, 107, 141, 0.32);
+            }
+
+            .content a:hover,
+            .content a:focus-visible,
+            .recent-news a:hover,
+            .recent-news a:focus-visible {
+                color: var(--primary-color);
+                border-bottom-color: rgba(50, 115, 220, 0.58);
+            }
             
             .content p {
                 margin-bottom: 1.2rem;
@@ -245,6 +260,42 @@
                 color: var(--text-color);
                 margin-top: 1.5rem;
                 margin-bottom: 1rem;
+            }
+
+            #impact .content a {
+                color: var(--primary-color);
+                font-weight: 600;
+                border-bottom: 2px solid rgba(44, 62, 80, 0.28);
+                background-color: rgba(52, 152, 219, 0.14);
+                border-radius: 0.22rem;
+                padding: 0.04rem 0.18rem;
+                -webkit-box-decoration-break: clone;
+                box-decoration-break: clone;
+            }
+
+            #impact .content a:hover,
+            #impact .content a:focus-visible {
+                color: var(--primary-color);
+                border-bottom-color: var(--primary-color);
+                background-color: rgba(52, 152, 219, 0.24);
+            }
+
+            #impact .has-text-centered a {
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                padding: 0.45rem 0.7rem;
+                border: 2px solid rgba(44, 62, 80, 0.14);
+                border-radius: 16px;
+                background: rgba(255, 255, 255, 0.92);
+                box-shadow: 0 8px 24px rgba(44, 62, 80, 0.08);
+            }
+
+            #impact .has-text-centered a:hover,
+            #impact .has-text-centered a:focus-visible {
+                border-color: var(--primary-color);
+                box-shadow: 0 14px 30px rgba(52, 152, 219, 0.16);
+                transform: translateY(-1px);
             }
             
             @keyframes fadeIn {
@@ -740,7 +791,7 @@
                                              and  <a href="https://arxiv.org/abs/2501.17070" target="_blank" >security</a>.
                                         </p>
                                         <p>
-                                            In our group, we look at security and privacy attack vectors for AI
+                                            In my group, we look at security and privacy attack vectors for AI
                                             systems deployed in real-life. 
                                             My research was recognized by
                                             <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2021"
@@ -791,11 +842,15 @@
                                         </h2>
                                         <div class="content">
                                             <ul>
-                                                <li>Our <a href="https://arxiv.org/abs/2501.17070" target="_blank">Contextual Agent Security</a> design was used 
+                                                <li><strong>[2026]</strong> Our <a href="https://arxiv.org/abs/2501.17070" target="_blank">Contextual Agent Security</a> design was used 
                                                     as a <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/configure-semantic-governance#the_enforcement_flow" target="_blank">semantic policy engine</a> for <strong>Google's Enterprise Agent Platform</strong>.
                                                   <!-- Zenity <a href="https://zenity.io/blog/product/continuous-contextual-security" target="_blank">mentions</a> Contextual Security for controlling their agents. -->
                                                 </li>
-                                                <li>Google uses our work on agents (<a href="https://arxiv.org/abs/2501.17070">security</a> and 
+                                                <li><strong>[2026]</strong> Our attacks on  <a href="https://arxiv.org/abs/2405.05175">stealing</a> user data from AI agents have been 
+                                                    <strong>confirmed</strong> by OpenAI in <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" target="_blank">prompt injection design work</a>.</li>
+
+                                                </li>
+                                                <li><strong>[2025]</strong> Google uses our work on agents (<a href="https://arxiv.org/abs/2501.17070">security</a> and 
                                                     <a href="https://arxiv.org/abs/2405.05175">privacy</a>) for <a
                                                 href="https://saif.google/focus-on-agents" target="_blank">Secure AI
                                                     Framework</a> and our <a href="https://arxiv.org/abs/2408.02373"
@@ -803,27 +858,28 @@
                                                     the <a
                                                     href="https://research.google/pubs/googles-approach-to-protecting-privacy-in-the-age-of-ai/">approach
                                                     to protecting privacy in the age of AI</a>.</li>
-                                                <li>Our attacks on  <a href="https://arxiv.org/abs/2405.05175">stealing</a> user data from AI agents have been 
-                                                    <strong>confirmed</strong> by OpenAI in <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" target="_blank">prompt injection design work</a>.</li>
-
-                                                </li>
-                                                <li>Our research on LLM <a href="https://arxiv.org/abs/2112.05224" target="_blank">propaganda-as-a-service</a> has been <strong>covered</strong> by <a
-                                                href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused"
-                                                target="_blank">VentureBeat</a> and 
-                                                    <a href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awry" target="_blank">The Economist</a>.</li>
-                                                <li>Our work on <a
+                                                
+                                                    <li><strong>[2025]</strong> <a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final">NIST
+                                                Taxonomy</a> on Adversarial Machine Learning uses our work
+                                                on Federated Learning and AI Agents for their agenda.</li>
+                                                
+                                                <li><strong>[2024]</strong> Our work on <a
                                                 href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
                                                 target="_blank">adversarial illusions</a> received a <strong>Distinguished
                                                 Paper Award</strong> at USENIX Security'24.</li>
-                                                <li><a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final">NIST
-                                                Taxonomy</a> on Adversarial Machine Learning uses our work
-                                                on Federated Learning and AI Agents for their agenda.</li>
-                                                <li>Multiple key research roadmaps 
+
+                                                <li><strong>[2023]</strong>Our research on LLM <a href="https://arxiv.org/abs/2112.05224" target="_blank">propaganda-as-a-service</a> has been <strong>covered</strong> by <a
+                                                href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused"
+                                                target="_blank">VentureBeat</a> and 
+                                                    <a href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awry" target="_blank">The Economist</a>.</li>
+
+                                                
+                                                <li><strong>[2022]</strong> Multiple <strong>research roadmaps</strong> 
                                                 (e.g., <a
                                                 href="https://arxiv.org/abs/2304.06929"
-                                                target="_blank">DP</a> and
-                                                <a href="https://arxiv.org/abs/1912.04977" target="_blank">FL</a>    
-                                                ) use our work as a foundation for future studies.</li>
+                                                target="_blank">Differential Privacy</a> and
+                                                <a href="https://arxiv.org/abs/1912.04977" target="_blank">Federated Learning</a>    
+                                                ) use our work (<a href="https://arxiv.org/abs/1807.00459" target="_blank">backdoors in FL</a> and <a href="https://arxiv.org/abs/1905.12101" target="_blank">fairness vs privacy trade-offs</a>) as a <strong>core foundation</strong> for future studies.</li>
                                             </ul>
                                         </div>
                                         
@@ -1143,14 +1199,15 @@
                                             <strong>Recent Program Committees:</strong>
                                         </p>
                                         <ul>
-                                            <li>ACM CCS'24/'25, ICLR'24/25/26, IEEE S&P'26</li>
+                                            <li>ACM CCS'24/'25, ICLR'24/25/26, IEEE S&P'26, IEEE S&P'27</li>
                                         </ul>
                                         <p>
                                             <strong>Workshop Organizer:</strong>
                                         </p>
                                         <ul>
-                                           <li><a href="https://neurips.cc/virtual/2023/workshop/66550" target="_blank">
-                                            Backdoors Workshop</a> at NeurIPS'23 </ul>
+                                           <li>Google's Workshop on Agentic Privacy and Security</li>
+                                            <li><a href="https://neurips.cc/virtual/2023/workshop/66550" target="_blank">
+                                            Backdoors Workshop</a> at NeurIPS'23 </li>
                                         </ul>
 
                                         <h3>Broadening Participation</h3>

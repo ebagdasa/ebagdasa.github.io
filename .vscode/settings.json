@@ -1,5 +1,11 @@
 {
     "editor.wordWrapColumn": 300,
     "editor.wrappingStrategy": "advanced",
-    "rewrap.wrappingColumn": 120
+    "rewrap.wrappingColumn": 120,
+    "chat.tools.terminal.autoApprove": {
+        "/^npx -y html-validate index\\.html$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
 }
