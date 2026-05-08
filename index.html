@@ -263,12 +263,16 @@
             }
 
             #impact .content a {
-                color: var(--primary-color);
+                color: #1f5f7a;
                 font-weight: 600;
-                border-bottom: 2px solid rgba(44, 62, 80, 0.28);
-                background-color: rgba(52, 152, 219, 0.14);
-                border-radius: 0.22rem;
-                padding: 0.04rem 0.18rem;
+                border-bottom: 1px solid rgba(31, 95, 122, 0.24);
+                background-image: linear-gradient(
+                    transparent 62%,
+                    rgba(72, 199, 116, 0.12) 62%
+                );
+                background-repeat: no-repeat;
+                background-size: 100% 100%;
+                padding: 0 0.04rem;
                 -webkit-box-decoration-break: clone;
                 box-decoration-break: clone;
             }
@@ -276,8 +280,11 @@
             #impact .content a:hover,
             #impact .content a:focus-visible {
                 color: var(--primary-color);
-                border-bottom-color: var(--primary-color);
-                background-color: rgba(52, 152, 219, 0.24);
+                border-bottom-color: rgba(50, 115, 220, 0.45);
+                background-image: linear-gradient(
+                    transparent 54%,
+                    rgba(50, 115, 220, 0.14) 54%
+                );
             }
 
             #impact .has-text-centered a {
@@ -829,7 +836,7 @@
                                             <strong>Announcement:</strong> We are running a
                                             <a href="https://trust-ai-sem.github.io/" target="_blank" >Trustworthy AI Seminar Series</a >
                                             with <a href="https://emilianodc.com/" target="_blank" >Emiliano De Cristofaro</a >. 
-                                                Check the speakers and subscribe up for 
+                                                Check the speakers and subscribe to 
                                                 <a href="https://www.youtube.com/@trust-ai-sem" target="_blank" >videos</a > 
                                                     and <a href="https://www.jiscmail.ac.uk/cgi-bin/wa-jisc.exe?SUBED1=trust-ai-sem&A=1" target="_blank" >emails</a >.
                                         </p>
@@ -842,15 +849,14 @@
                                         </h2>
                                         <div class="content">
                                             <ul>
-                                                <li><strong>[2026]</strong> Our <a href="https://arxiv.org/abs/2501.17070" target="_blank">Contextual Agent Security</a> design was used 
+                                                <li><strong>[2026]</strong> Our <a href="https://arxiv.org/abs/2501.17070" target="_blank">Contextual Agent Security</a> design was used
                                                     as a <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/configure-semantic-governance#the_enforcement_flow" target="_blank">semantic policy engine</a> for <strong>Google's Enterprise Agent Platform</strong>.
                                                   <!-- Zenity <a href="https://zenity.io/blog/product/continuous-contextual-security" target="_blank">mentions</a> Contextual Security for controlling their agents. -->
                                                 </li>
-                                                <li><strong>[2026]</strong> Our attacks on  <a href="https://arxiv.org/abs/2405.05175">stealing</a> user data from AI agents have been 
+                                                <li><strong>[2026]</strong> Our attacks on  <a href="https://arxiv.org/abs/2405.05175">stealing</a> user data from AI agents have been
                                                     <strong>confirmed</strong> by OpenAI in <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" target="_blank">prompt injection design work</a>.</li>
 
-                                                </li>
-                                                <li><strong>[2025]</strong> Google uses our work on agents (<a href="https://arxiv.org/abs/2501.17070">security</a> and 
+                                                <li><strong>[2025]</strong> Google uses our work on agents (<a href="https://arxiv.org/abs/2501.17070">security</a> and
                                                     <a href="https://arxiv.org/abs/2405.05175">privacy</a>) for <a
                                                 href="https://saif.google/focus-on-agents" target="_blank">Secure AI
                                                     Framework</a> and our <a href="https://arxiv.org/abs/2408.02373"
@@ -858,11 +864,11 @@
                                                     the <a
                                                     href="https://research.google/pubs/googles-approach-to-protecting-privacy-in-the-age-of-ai/">approach
                                                     to protecting privacy in the age of AI</a>.</li>
-                                                
+
                                                     <li><strong>[2025]</strong> <a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final">NIST
                                                 Taxonomy</a> on Adversarial Machine Learning uses our work
                                                 on Federated Learning and AI Agents for their agenda.</li>
-                                                
+
                                                 <li><strong>[2024]</strong> Our work on <a
                                                 href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
                                                 target="_blank">adversarial illusions</a> received a <strong>Distinguished
@@ -870,10 +876,9 @@
 
                                                 <li><strong>[2023]</strong>Our research on LLM <a href="https://arxiv.org/abs/2112.05224" target="_blank">propaganda-as-a-service</a> has been <strong>covered</strong> by <a
                                                 href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused"
-                                                target="_blank">VentureBeat</a> and 
+                                                target="_blank">VentureBeat</a> and
                                                     <a href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awry" target="_blank">The Economist</a>.</li>
 
-                                                
                                                 <li><strong>[2022]</strong> Multiple <strong>research roadmaps</strong> 
                                                 (e.g., <a
                                                 href="https://arxiv.org/abs/2304.06929"
@@ -1246,6 +1251,13 @@
                                             <li>
                                                 <i class="fas fa-microphone text-success"></i>
                                                 <div class="news-content">
+                                                    <strong>May 2026</strong>
+                                                    I gave a talk at the <a href="https://kempnerinstitute.harvard.edu/events/workshop-invented-constructed-and-emergent-languages-in-multi-agent-ai-systems/?" target="_blank">Invented, Constructed, and Emergent Languages in Multi-agent AI Systems</a> workshop.
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-microphone text-success"></i>
+                                                <div class="news-content">
                                                     <strong>March 2026</strong>
                                                     I gave a keynote at the <a href="https://simons.berkeley.edu/workshops/trust-decentralized-systems" target="_blank">Trust in Decentralized Systems</a> workshop at the Simons Institute on
                                                     Frontier Agents and Attack Vectors.
@@ -1420,7 +1432,7 @@
 
         <footer class="footer">
             <div class="content has-text-centered">
-                <p>Eugene Bagdasarian • <i>Updated Apr 2026</i>.</p>
+                <p>Eugene Bagdasarian • <i>Updated May 2026</i>.</p>
             </div>
         </footer>
     </body>
