@@ -76,6 +76,18 @@
             .button:hover {
                 transform: translateY(-1px);
             }
+
+            .button.is-orcid {
+                background-color: #f5f9e8;
+                border-color: transparent;
+                color: #4f6500;
+            }
+
+            .button.is-orcid:hover,
+            .button.is-orcid:focus-visible {
+                background-color: #a6ce39;
+                color: #253000;
+            }
             
             .content {
                 font-size: 1.05rem;
@@ -196,14 +208,21 @@
                 font-size: 0.9rem;
             }
             
-            .recent-news {
+            .sidebar-panel {
                 background-color: var(--light-bg);
                 padding: 1.5rem;
                 border-radius: 6px;
-                height: 100%;
+            }
+
+            .sidebar-panel + .sidebar-panel {
+                margin-top: 1.5rem;
+            }
+
+            .sidebar-panel [hidden] {
+                display: none !important;
             }
             
-            .recent-news .title {
+            .sidebar-panel > .title {
                 font-size: 1.4rem;
                 margin-bottom: 1.2rem;
                 border-bottom: 2px solid var(--border-color);
@@ -260,6 +279,51 @@
                 color: var(--text-color);
                 margin-top: 1.5rem;
                 margin-bottom: 1rem;
+            }
+
+            .talk-group-title {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                font-size: 1.15rem;
+                margin: 1rem 0 0.45rem;
+            }
+
+            .talk-group-title .tag {
+                font-family: "Source Sans 3", sans-serif;
+                font-weight: 600;
+            }
+
+            .talk-list {
+                border-top: 1px solid var(--border-color);
+                font-size: 0.95rem;
+            }
+
+            .talk-entry {
+                padding: 0.5rem 0;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .talk-date {
+                color: #66717d;
+                font-size: 0.9rem;
+                font-weight: 600;
+            }
+
+            .talk-entry p {
+                line-height: 1.35;
+                margin-bottom: 0;
+            }
+
+            .talk-empty {
+                border-left: 4px solid var(--accent-color);
+                background-color: #f4faf6;
+                padding: 1rem 1.25rem;
+            }
+
+            .archive-toggle {
+                width: 100%;
+                margin-top: 0.8rem;
             }
 
             #impact .content a {
@@ -464,6 +528,10 @@
                 .recent-news {
                     margin-top: 2rem;
                 }
+
+                .talks-panel {
+                    margin-top: 2rem;
+                }
                 
                 .profile-image-container {
                     width: 150px;
@@ -497,6 +565,7 @@
                     border-left: 4px solid !important;
                     border-right: none !important;
                 }
+
             }
 
             .name-note {
@@ -630,6 +699,57 @@
                 
                 // Initial call to set active state
                 updateActiveNav();
+
+                // Hide feed entries older than two years until requested.
+                const archiveCutoff = new Date();
+                archiveCutoff.setFullYear(archiveCutoff.getFullYear() - 2);
+
+                document.querySelectorAll('[data-archive-control]').forEach((control) => {
+                    const feed = document.getElementById(control.dataset.archiveControl);
+                    const label = control.querySelector('span');
+
+                    if (!feed || !label) {
+                        return;
+                    }
+
+                    const visibleLimit = Number.parseInt(control.dataset.visibleLimit, 10);
+                    const archivedEntries = Array.from(feed.children).filter((entry, index) => {
+                        if (Number.isInteger(visibleLimit) && index >= visibleLimit) {
+                            return true;
+                        }
+
+                        const time = entry.querySelector('time[datetime]');
+                        if (!time) {
+                            return false;
+                        }
+
+                        const dateValue = time.getAttribute('datetime');
+                        const normalizedDate = dateValue.length === 7 ? `${dateValue}-01` : dateValue;
+                        return new Date(`${normalizedDate}T00:00:00`) < archiveCutoff;
+                    });
+
+                    if (archivedEntries.length === 0) {
+                        return;
+                    }
+
+                    archivedEntries.forEach((entry) => {
+                        entry.hidden = true;
+                    });
+                    control.classList.remove('is-hidden');
+
+                    control.addEventListener('click', () => {
+                        const isExpanded = control.getAttribute('aria-expanded') === 'true';
+                        archivedEntries.forEach((entry) => {
+                            entry.hidden = isExpanded;
+                        });
+                        control.setAttribute('aria-expanded', String(!isExpanded));
+                        label.textContent = isExpanded
+                            ? `Show ${archivedEntries.length} older ${archivedEntries.length === 1 ? 'entry' : 'entries'}`
+                            : 'Hide older entries';
+                    });
+
+                    label.textContent = `Show ${archivedEntries.length} older ${archivedEntries.length === 1 ? 'entry' : 'entries'}`;
+                });
             });
         </script>
     </head>
@@ -716,6 +836,10 @@
                                     is-link is-light" target="_blank" >
                                         <i class="fas fa-graduation-cap mr-1"></i>
                                         Papers
+                                    </a>
+                                    <a href="https://orcid.org/0000-0002-7994-6469" class="button is-orcid" target="_blank" aria-label="ORCID profile: 0000-0002-7994-6469">
+                                        <i class="fa-brands fa-orcid mr-1"></i>
+                                    
                                     </a>
                                     <a href="https://bsky.app/profile/ebagdasa.bsky.social" class="button is-info is-light"
                                     target="_blank" >
@@ -849,6 +973,9 @@
                                         </h2>
                                         <div class="content">
                                             <ul>
+                                                <li><strong>[2026]</strong> Our research contributed to security of Gemini models.
+                                                  <!-- Zenity <a href="https://zenity.io/blog/product/continuous-contextual-security" target="_blank">mentions</a> Contextual Security for controlling their agents. -->
+                                                </li>
                                                 <li><strong>[2026]</strong> Our <a href="https://arxiv.org/abs/2501.17070" target="_blank">Contextual Agent Security</a> design was used
                                                     as a <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/configure-semantic-governance#the_enforcement_flow" target="_blank">semantic policy engine</a> for <strong>Google's Enterprise Agent Platform</strong>.
                                                   <!-- Zenity <a href="https://zenity.io/blog/product/continuous-contextual-security" target="_blank">mentions</a> Contextual Security for controlling their agents. -->
@@ -1172,12 +1299,12 @@
                                         <div class="box" style="border-left: 4px solid #1a5490; background: #f4f8fc; box-shadow: none;">
                                             <div class="is-flex is-justify-content-space-between is-align-items-baseline mb-2" style="flex-wrap: wrap; gap: 0.5rem;">
                                                 <span>
-                                                    <strong>CS 690F</strong> &middot; Trustworthy and Responsible AI
+                                                    <strong>CS 684</strong> &middot; Trustworthy and Responsible AI
                                                 </span>
                                                 <span class="is-size-7 has-text-grey">FA'25, FA'26</span>
                                             </div>
                                             <p class="is-size-6 mb-2">
-                                                Graduate course on safety, privacy, and alignment for modern AI systems &mdash; <a href="https://umass-cs690f.github.io/" target="_blank">course site</a>.
+                                                Graduate course on safety, privacy, and alignment for modern AI systems &mdash; <a href="https://cs684-umass.github.io/" target="_blank">course site</a>.
                                             </p>
                                         </div>
 
@@ -1244,21 +1371,81 @@
                             </div>
 
                             <div class="column is-4-desktop">
-                                <div class="recent-news">
+                                <section id="talks" class="sidebar-panel talks-panel">
+                                    <h2 class="title is-4">
+                                        <i class="fas fa-microphone mr-2"></i>Talks
+                                    </h2>
+
+                                    <h3 class="talk-group-title">
+                                        Upcoming
+                                        <span class="tag is-success is-light">Schedule</span>
+                                    </h3>
+                                    <div class="talk-list mb-5">
+                                        <article class="talk-entry">
+                                            <p><time class="talk-date" datetime="2026-08-16">Aug 16, 2026</time> &middot; <a href="https://crypto-ppml.github.io/2026/" target="_blank"><strong>Privacy and Security of Frontier AI Agents</strong></a>, PPML at CRYPTO 2026, Santa Barbara, CA.</p>
+                                        </article>
+                                        <article class="talk-entry">
+                                            <p><time class="talk-date" datetime="2026-09-11">Sep 11, 2026</time> &middot; <a href="https://yacl.cs.yale.edu/seminar/" target="_blank"><strong>Yale CS Crypto Seminar invited talk</strong></a>, New Haven, CT.</p>
+                                        </article>
+                                        <article class="talk-entry">
+                                            <p><time class="talk-date" datetime="2026-10-06">Oct 6&ndash;9, 2026</time> &middot; <a href="https://advml-frontier.github.io/" target="_blank"><strong>AdvML-Frontiers &times; CoTMA workshop</strong></a>, COLM 2026, San Francisco, CA.</p>
+                                        </article>
+                                        <article class="talk-entry">
+                                            <p><time class="talk-date" datetime="2026-10-19">Oct 19&ndash;23, 2026</time> &middot; <a href="https://shonan.nii.ac.jp/seminars/252/" target="_blank"><strong>Exploring Responsible AI through Security and Privacy</strong></a>, NII Shonan Meeting 252, Kanagawa, Japan.</p>
+                                        </article>
+                                        <article class="talk-entry">
+                                            <p><time class="talk-date" datetime="2026-11-15">Nov 15&ndash;19, 2026</time> &middot; <a href="https://sites.google.com/view/agent-sec-2026/" target="_blank"><strong>AGENT-SEC 2026 keynote</strong></a>, ACM CCS 2026, The Hague, Netherlands.</p>
+                                        </article>
+                                    </div>
+
+                                    <h3 class="talk-group-title">
+                                        Past
+                                        <span class="tag is-light">Selected</span>
+                                    </h3>
+                                    <div id="past-talks" class="talk-list">
+                                        <article class="talk-entry" data-archive-entry>
+                                            <p><time class="talk-date" datetime="2026-05">May 2026</time> &middot; <a href="https://kempnerinstitute.harvard.edu/events/workshop-invented-constructed-and-emergent-languages-in-multi-agent-ai-systems/" target="_blank"><strong>Emergent Languages in Multi-Agent AI Systems</strong></a>, Kempner Institute, Harvard.</p>
+                                        </article>
+                                        <article class="talk-entry" data-archive-entry>
+                                            <p><time class="talk-date" datetime="2026-03-17">Mar 2026</time> &middot; <strong>Frontier Agents and Attack Vectors</strong>, Simons Institute [<a href="https://docs.google.com/presentation/d/1vF2UkD0LiaU-6K9CwAj6knKDD5t1JMGnUSXNGdwrB6Y/edit?slide=id.p#slide=id.p" target="_blank">slides</a>, <a href="https://simons.berkeley.edu/talks/eugene-badgasaryan-umass-2026-03-17" target="_blank">video</a>].</p>
+                                        </article>
+                                        <article class="talk-entry" data-archive-entry>
+                                            <p><time class="talk-date" datetime="2025-10">Oct 2025</time> &middot; <strong>Protecting Future AI Agents with Contextual Rules</strong>, AI Security Workshop at ACM CCS [<a href="https://docs.google.com/presentation/d/1KEwTORQVN-D_D2qFiQzxmvbmRbkcjEce6-JtmpHNvuQ/comment" target="_blank">slides</a>].</p>
+                                        </article>
+                                        <article class="talk-entry" data-archive-entry>
+                                            <p><time class="talk-date" datetime="2025-09">Sep 2025</time> &middot; <strong>Invited seminar</strong>, Northeastern Security Group.</p>
+                                        </article>
+                                        <article class="talk-entry" data-archive-entry>
+                                            <p><time class="talk-date" datetime="2025-08">Aug 2025</time> &middot; <a href="https://supa-workshop.github.io/supa.github.io/" target="_blank"><strong>SUPA Workshop keynote</strong></a>.</p>
+                                        </article>
+                                        <article class="talk-entry" data-archive-entry>
+                                            <p><time class="talk-date" datetime="2025-05">May 2025</time> &middot; <strong>Contextual Defenses for Agents</strong>, SAGAI at IEEE S&amp;P [<a href="https://drive.google.com/file/d/1DaiBDz4Yos0okZijblcMSJgr89lglple/view?usp=sharing" target="_blank">slides</a>].</p>
+                                        </article>
+                                        <article class="talk-entry" data-archive-entry>
+                                            <p><time class="talk-date" datetime="2025-03">Mar 2025</time> &middot; <a href="https://sites.google.com/view/dai-2025/" target="_blank"><strong>Attacks on Inference-Heavy Pipelines</strong></a>, Deployable AI Workshop at AAAI.</p>
+                                        </article>
+                                    </div>
+                                    <button class="button is-light archive-toggle is-hidden" type="button" data-archive-control="past-talks" data-visible-limit="4" aria-expanded="false" aria-controls="past-talks">
+                                        <i class="fas fa-clock-rotate-left mr-2"></i>
+                                        <span>Show older entries</span>
+                                    </button>
+                                </section>
+
+                                <div class="recent-news sidebar-panel">
                                     <h2 class="title is-4">Recent News</h2>
                                     <div class="content">
-                                        <ul>
+                                        <ul id="news-feed">
                                             <li>
                                                 <i class="fas fa-microphone text-success"></i>
                                                 <div class="news-content">
-                                                    <strong>May 2026</strong>
+                                                    <time datetime="2026-05"><strong>May 2026</strong></time>
                                                     I gave a talk at the <a href="https://kempnerinstitute.harvard.edu/events/workshop-invented-constructed-and-emergent-languages-in-multi-agent-ai-systems/?" target="_blank">Invented, Constructed, and Emergent Languages in Multi-agent AI Systems</a> workshop.
                                                 </div>
                                             </li>
                                             <li>
                                                 <i class="fas fa-microphone text-success"></i>
                                                 <div class="news-content">
-                                                    <strong>March 2026</strong>
+                                                    <time datetime="2026-03"><strong>March 2026</strong></time>
                                                     I gave a keynote at the <a href="https://simons.berkeley.edu/workshops/trust-decentralized-systems" target="_blank">Trust in Decentralized Systems</a> workshop at the Simons Institute on
                                                     Frontier Agents and Attack Vectors.
                                                     [<a href="https://docs.google.com/presentation/d/1vF2UkD0LiaU-6K9CwAj6knKDD5t1JMGnUSXNGdwrB6Y/edit?slide=id.p#slide=id.p" target="_blank">slides</a>,
@@ -1268,7 +1455,7 @@
                                             <li>
                                                 <i class="fas fa-microphone text-success"></i>
                                                 <div class="news-content">
-                                                    <strong>October 2025</strong>
+                                                    <time datetime="2025-10"><strong>October 2025</strong></time>
                                                     I gave a keynote at the 18th  <a href="https://aisec.cc/" target="_blank">Workshop on AI Security</a> (CCS'25) on
                                                     protecting Future AI Agents with Contextual Rules.
                                                     [<a href="https://docs.google.com/presentation/d/1KEwTORQVN-D_D2qFiQzxmvbmRbkcjEce6-JtmpHNvuQ/comment" target="_blank">slides</a>]
@@ -1277,7 +1464,7 @@
                                             <li>
                                                 <i class="fas fa-flask text-primary"></i>
                                                 <div class="news-content">
-                                                    <strong>October 2025</strong>
+                                                    <time datetime="2025-10"><strong>October 2025</strong></time>
                                                     We released <a href="https://www.arxiv.org/abs/2510.14312"
                                                     target="_blank">Terrarium</a>, a framework for multi-agent safety,
                                                     privacy, and security studies. Play with <a href="https://github.com/umass-aisec/terrarium" target="_blank">code</a>!
@@ -1286,14 +1473,14 @@
                                             <li>
                                                 <i class="fas fa-microphone text-success"></i>
                                                 <div class="news-content">
-                                                    <strong>Sep 2025</strong>
+                                                    <time datetime="2025-09"><strong>Sep 2025</strong></time>
                                                     I gave a seminar talk at the Northeastern Security Group.
                                                 </div>
                                             </li>
                                             <li>
                                                 <i class="fas fa-microphone text-success"></i>
                                                 <div class="news-content">
-                                                    <strong>August 2025</strong>
+                                                    <time datetime="2025-08"><strong>August 2025</strong></time>
                                                     I gave a keynote at the <a href="https://supa-workshop.github.io/supa.github.io/" target="_blank">Supa Workshop</a>.
                                                 </div>
                                             </li>
@@ -1301,7 +1488,7 @@
                                             <li>
                                                 <i class="fas fa-file-alt text-primary"></i>
                                                 <div class="news-content">
-                                                    <strong>June 2025</strong>
+                                                    <time datetime="2025-06"><strong>June 2025</strong></time>
                                                     Two papers accepted to USENIX Security'25: one on <a href="https://arxiv.org/abs/2406.15213"
                                                     target="_blank">backdooring bias</a>
                                                     and one on <a href="https://arxiv.org/abs/2407.08970"
@@ -1312,7 +1499,7 @@
                                             <li>
                                                 <i class="fas fa-microphone text-success"></i>
                                                 <div class="news-content">
-                                                    <strong>May 2025</strong>
+                                                    <time datetime="2025-05"><strong>May 2025</strong></time>
                                                     I gave an invited talk at IEEE S&P'25 <a
                                                     href="https://sites.google.com/ucsd.edu/sagai25-ieee-sp/program"
                                                     target="_blank">SAGAI Workshop</a> on contextual defenses for agents. 
@@ -1324,14 +1511,14 @@
                                             <li>
                                                 <i class="fas fa-microphone text-success"></i>
                                                 <div class="news-content">
-                                                    <strong>May 2025</strong>
+                                                    <time datetime="2025-05"><strong>May 2025</strong></time>
                                                     I gave invited talks at Apple PPML Workshop, Brave Research, Service Now.
                                                 </div>
                                             </li>
                                             <li>
                                                 <i class="fas fa-trophy text-warning"></i>
                                                 <div class="news-content">
-                                                    <strong>June 2025</strong>
+                                                    <time datetime="2025-06"><strong>June 2025</strong></time>
                                                Together with Shlomo Zilberstein, we received
                                                 <a href="https://www.schmidtsciences.org/safetyscience/" target="_blank">Schmidt Sciences Grant</a>
                                                  to study multi-agent safety. [<a href="https://www.cics.umass.edu/news/bagdasarian-zilberstein-schmidt-sciences-grant" target="_blank">news</a>]
@@ -1341,7 +1528,7 @@
                                             <li>
                                                 <i class="fas fa-chalkboard-user text-warning"></i>
                                                 <div class="news-content">
-                                                    <strong>March 2025</strong>
+                                                    <time datetime="2025-03"><strong>March 2025</strong></time>
                                                     I gave a tutorial at AAAI'25 <a href="https://ppai-workshop.github.io/"
                                                     target="_blank">PPAI Workshop</a>
                                                     on contextual integrity for AI agents.
@@ -1350,7 +1537,7 @@
                                             <li>
                                                 <i class="fas fa-microphone text-success"></i>
                                                 <div class="news-content">
-                                                    <strong>March 2025</strong>
+                                                    <time datetime="2025-03"><strong>March 2025</strong></time>
                                                     I gave a keynote at AAAI'25 <a
                                                     href="https://sites.google.com/view/dai-2025/" target="_blank">Deployable AI
                                                     Workshop</a>
@@ -1360,7 +1547,7 @@
                                             <li>
                                                 <i class="fas fa-shield-alt text-primary"></i>
                                                 <div class="news-content">
-                                                    <strong>Oct 2024</strong> - Two papers accepted to CCS'24: one on <a href="https://arxiv.org/abs/2302.04977" target="_blank"
+                                                    <time datetime="2024-10"><strong>Oct 2024</strong></time> - Two papers accepted to CCS'24: one on <a href="https://arxiv.org/abs/2302.04977" target="_blank"
                                                     >resisting backdoor attacks</a >, and one on <a href="https://arxiv.org/abs/2405.05175" target="_blank"
                                                     >privacy-conscious agents</a >.
                                                 </div>
@@ -1369,7 +1556,7 @@
                                             <li>
                                                 <i class="fas fa-trophy text-warning"></i>
                                                 <div class="news-content">
-                                                    <strong>May 2024</strong> – 
+                                                    <time datetime="2024-05"><strong>May 2024</strong></time> – 
                                                     <a
                                                     href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
                                                     target="_blank" >Adversarial Illusions</a >
@@ -1380,6 +1567,10 @@
                                             </li>
                                             <!-- Add more news items here -->
                                         </ul>
+                                        <button class="button is-light archive-toggle is-hidden" type="button" data-archive-control="news-feed" data-visible-limit="6" aria-expanded="false" aria-controls="news-feed">
+                                            <i class="fas fa-clock-rotate-left mr-2"></i>
+                                            <span>Show older entries</span>
+                                        </button>
                                     </div>
                                 </div>
                             </div>
