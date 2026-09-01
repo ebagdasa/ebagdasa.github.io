@@ -724,7 +724,12 @@
                         }
 
                         const dateValue = time.getAttribute('datetime');
-                        const normalizedDate = dateValue.length === 7 ? `${dateValue}-01` : dateValue;
+                        let normalizedDate = dateValue;
+                        if (dateValue.length === 4) {
+                            normalizedDate = `${dateValue}-01-01`;
+                        } else if (dateValue.length === 7) {
+                            normalizedDate = `${dateValue}-01`;
+                        }
                         return new Date(`${normalizedDate}T00:00:00`) < archiveCutoff;
                     });
 
@@ -1381,21 +1386,19 @@
                                         <span class="tag is-success is-light">Schedule</span>
                                     </h3>
                                     <div class="talk-list mb-5">
-                                        <article class="talk-entry">
-                                            <p><time class="talk-date" datetime="2026-08-16">Aug 16, 2026</time> &middot; <a href="https://crypto-ppml.github.io/2026/" target="_blank"><strong>Privacy and Security of Frontier AI Agents</strong></a>, PPML at CRYPTO 2026, Santa Barbara, CA.</p>
-                                        </article>
+                                        
                                         <article class="talk-entry">
                                             <p><time class="talk-date" datetime="2026-09-11">Sep 11, 2026</time> &middot; <a href="https://yacl.cs.yale.edu/seminar/" target="_blank"><strong>Yale CS Crypto Seminar invited talk</strong></a>, New Haven, CT.</p>
                                         </article>
                                         <article class="talk-entry">
                                             <p><time class="talk-date" datetime="2026-10-06">Oct 6&ndash;9, 2026</time> &middot; <a href="https://advml-frontier.github.io/" target="_blank"><strong>AdvML-Frontiers &times; CoTMA workshop</strong></a>, COLM 2026, San Francisco, CA.</p>
                                         </article>
-                                        <article class="talk-entry">
+                                        <!-- <article class="talk-entry">
                                             <p><time class="talk-date" datetime="2026-10-19">Oct 19&ndash;23, 2026</time> &middot; <a href="https://shonan.nii.ac.jp/seminars/252/" target="_blank"><strong>Exploring Responsible AI through Security and Privacy</strong></a>, NII Shonan Meeting 252, Kanagawa, Japan.</p>
-                                        </article>
-                                        <article class="talk-entry">
+                                        </article> -->
+                                        <!-- <article class="talk-entry">
                                             <p><time class="talk-date" datetime="2026-11-15">Nov 15&ndash;19, 2026</time> &middot; <a href="https://sites.google.com/view/agent-sec-2026/" target="_blank"><strong>AGENT-SEC 2026 keynote</strong></a>, ACM CCS 2026, The Hague, Netherlands.</p>
-                                        </article>
+                                        </article> -->
                                     </div>
 
                                     <h3 class="talk-group-title">
@@ -1403,6 +1406,9 @@
                                         <span class="tag is-light">Selected</span>
                                     </h3>
                                     <div id="past-talks" class="talk-list">
+                                        <article class="talk-entry">
+                                            <p><time class="talk-date" datetime="2026-08-16">Aug 16, 2026</time> &middot; <a href="https://crypto-ppml.github.io/2026/" target="_blank"><strong>Privacy and Security of Frontier AI Agents</strong></a>, PPML at CRYPTO 2026, Santa Barbara, CA.</p>
+                                        </article>
                                         <article class="talk-entry" data-archive-entry>
                                             <p><time class="talk-date" datetime="2026-05">May 2026</time> &middot; <a href="https://kempnerinstitute.harvard.edu/events/workshop-invented-constructed-and-emergent-languages-in-multi-agent-ai-systems/" target="_blank"><strong>Emergent Languages in Multi-Agent AI Systems</strong></a>, Kempner Institute, Harvard.</p>
                                         </article>
@@ -1422,6 +1428,12 @@
                                             <p><time class="talk-date" datetime="2025-05">May 2025</time> &middot; <strong>Contextual Defenses for Agents</strong>, SAGAI at IEEE S&amp;P [<a href="https://drive.google.com/file/d/1DaiBDz4Yos0okZijblcMSJgr89lglple/view?usp=sharing" target="_blank">slides</a>].</p>
                                         </article>
                                         <article class="talk-entry" data-archive-entry>
+                                            <p><time class="talk-date" datetime="2025-05">May 2025</time> &middot; <strong>Invited talks</strong>, Apple PPML Workshop, Brave Research, and ServiceNow.</p>
+                                        </article>
+                                        <article class="talk-entry" data-archive-entry>
+                                            <p><time class="talk-date" datetime="2025-03">Mar 2025</time> &middot; <a href="https://ppai-workshop.github.io/" target="_blank"><strong>Contextual Integrity for AI Agents tutorial</strong></a>, PPAI Workshop at AAAI.</p>
+                                        </article>
+                                        <article class="talk-entry" data-archive-entry>
                                             <p><time class="talk-date" datetime="2025-03">Mar 2025</time> &middot; <a href="https://sites.google.com/view/dai-2025/" target="_blank"><strong>Attacks on Inference-Heavy Pipelines</strong></a>, Deployable AI Workshop at AAAI.</p>
                                         </article>
                                     </div>
@@ -1436,29 +1448,47 @@
                                     <div class="content">
                                         <ul id="news-feed">
                                             <li>
-                                                <i class="fas fa-microphone text-success"></i>
+                                                <i class="fas fa-file-alt text-primary"></i>
                                                 <div class="news-content">
-                                                    <time datetime="2026-05"><strong>May 2026</strong></time>
-                                                    I gave a talk at the <a href="https://kempnerinstitute.harvard.edu/events/workshop-invented-constructed-and-emergent-languages-in-multi-agent-ai-systems/?" target="_blank">Invented, Constructed, and Emergent Languages in Multi-agent AI Systems</a> workshop.
+                                                    <time datetime="2026"><strong>2026</strong></time>
+                                                    Two papers on privacy risks accepted: <a href="https://arxiv.org/abs/2505.14549" target="_blank">name recognition in LLMs</a> (FAccT) and
+                                                    <a href="https://arxiv.org/abs/2508.20282" target="_blank">prompt and trait leakage in research agents</a> (USENIX Security).
                                                 </div>
                                             </li>
                                             <li>
-                                                <i class="fas fa-microphone text-success"></i>
+                                                <i class="fas fa-file-alt text-primary"></i>
                                                 <div class="news-content">
-                                                    <time datetime="2026-03"><strong>March 2026</strong></time>
-                                                    I gave a keynote at the <a href="https://simons.berkeley.edu/workshops/trust-decentralized-systems" target="_blank">Trust in Decentralized Systems</a> workshop at the Simons Institute on
-                                                    Frontier Agents and Attack Vectors.
-                                                    [<a href="https://docs.google.com/presentation/d/1vF2UkD0LiaU-6K9CwAj6knKDD5t1JMGnUSXNGdwrB6Y/edit?slide=id.p#slide=id.p" target="_blank">slides</a>,
-                                                    <a href="https://simons.berkeley.edu/talks/eugene-badgasaryan-umass-2026-03-17" target="_blank">video</a>]
+                                                    <time datetime="2026"><strong>2026</strong></time>
+                                                    Our paper on <a href="https://arxiv.org/abs/2502.01822" target="_blank">firewalls for dynamic agentic networks</a> was accepted to TMLR.
                                                 </div>
                                             </li>
                                             <li>
-                                                <i class="fas fa-microphone text-success"></i>
+                                                <i class="fas fa-file-alt text-primary"></i>
                                                 <div class="news-content">
-                                                    <time datetime="2025-10"><strong>October 2025</strong></time>
-                                                    I gave a keynote at the 18th  <a href="https://aisec.cc/" target="_blank">Workshop on AI Security</a> (CCS'25) on
-                                                    protecting Future AI Agents with Contextual Rules.
-                                                    [<a href="https://docs.google.com/presentation/d/1KEwTORQVN-D_D2qFiQzxmvbmRbkcjEce6-JtmpHNvuQ/comment" target="_blank">slides</a>]
+                                                    <time datetime="2026"><strong>2026</strong></time>
+                                                    Our paper on <a href="https://arxiv.org/abs/2602.00851" target="_blank">persuasion in long-running agents</a> was accepted to FAGEN at ICML.
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-file-alt text-primary"></i>
+                                                <div class="news-content">
+                                                    <time datetime="2025"><strong>2025</strong></time>
+                                                    Two papers on contextual privacy accepted: <a href="https://www.arxiv.org/abs/2506.12241" target="_blank">privacy reasoning in ambiguous contexts</a> (NeurIPS) and
+                                                    <a href="https://arxiv.org/abs/2408.02373" target="_blank">privacy-aware form filling</a> (TMLR).
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-file-alt text-primary"></i>
+                                                <div class="news-content">
+                                                    <time datetime="2025"><strong>2025</strong></time>
+                                                    Our paper on <a href="https://arxiv.org/abs/2501.17070" target="_blank">contextual agent security</a> was accepted to HotOS.
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <i class="fas fa-file-alt text-primary"></i>
+                                                <div class="news-content">
+                                                    <time datetime="2025"><strong>2025</strong></time>
+                                                    Our CoLLAB benchmarks paper was accepted to a NeurIPS workshop.
                                                 </div>
                                             </li>
                                             <li>
@@ -1471,21 +1501,6 @@
                                                 </div>
                                             </li>
                                             <li>
-                                                <i class="fas fa-microphone text-success"></i>
-                                                <div class="news-content">
-                                                    <time datetime="2025-09"><strong>Sep 2025</strong></time>
-                                                    I gave a seminar talk at the Northeastern Security Group.
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-microphone text-success"></i>
-                                                <div class="news-content">
-                                                    <time datetime="2025-08"><strong>August 2025</strong></time>
-                                                    I gave a keynote at the <a href="https://supa-workshop.github.io/supa.github.io/" target="_blank">Supa Workshop</a>.
-                                                </div>
-                                            </li>
-                                            
-                                            <li>
                                                 <i class="fas fa-file-alt text-primary"></i>
                                                 <div class="news-content">
                                                     <time datetime="2025-06"><strong>June 2025</strong></time>
@@ -1497,25 +1512,6 @@
                                             </li>
                                             
                                             <li>
-                                                <i class="fas fa-microphone text-success"></i>
-                                                <div class="news-content">
-                                                    <time datetime="2025-05"><strong>May 2025</strong></time>
-                                                    I gave an invited talk at IEEE S&P'25 <a
-                                                    href="https://sites.google.com/ucsd.edu/sagai25-ieee-sp/program"
-                                                    target="_blank">SAGAI Workshop</a> on contextual defenses for agents. 
-                                                    <i class="fas fa-presentation-screen text-info mr-1"></i>
-                                                    <a href="https://drive.google.com/file/d/1DaiBDz4Yos0okZijblcMSJgr89lglple/view?usp=sharing"
-                                                    target="_blank">[slides]</a>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-microphone text-success"></i>
-                                                <div class="news-content">
-                                                    <time datetime="2025-05"><strong>May 2025</strong></time>
-                                                    I gave invited talks at Apple PPML Workshop, Brave Research, Service Now.
-                                                </div>
-                                            </li>
-                                            <li>
                                                 <i class="fas fa-trophy text-warning"></i>
                                                 <div class="news-content">
                                                     <time datetime="2025-06"><strong>June 2025</strong></time>
@@ -1523,25 +1519,6 @@
                                                 <a href="https://www.schmidtsciences.org/safetyscience/" target="_blank">Schmidt Sciences Grant</a>
                                                  to study multi-agent safety. [<a href="https://www.cics.umass.edu/news/bagdasarian-zilberstein-schmidt-sciences-grant" target="_blank">news</a>]
                                                 
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-chalkboard-user text-warning"></i>
-                                                <div class="news-content">
-                                                    <time datetime="2025-03"><strong>March 2025</strong></time>
-                                                    I gave a tutorial at AAAI'25 <a href="https://ppai-workshop.github.io/"
-                                                    target="_blank">PPAI Workshop</a>
-                                                    on contextual integrity for AI agents.
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-microphone text-success"></i>
-                                                <div class="news-content">
-                                                    <time datetime="2025-03"><strong>March 2025</strong></time>
-                                                    I gave a keynote at AAAI'25 <a
-                                                    href="https://sites.google.com/view/dai-2025/" target="_blank">Deployable AI
-                                                    Workshop</a>
-                                                    about attacks on inference-heavy pipelines.
                                                 </div>
                                             </li>
                                             <li>
