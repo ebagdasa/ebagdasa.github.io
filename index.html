@@ -3,7 +3,52 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Eugene Bagdasarian's website</title>
+        <title>Eugene Bagdasarian | AI Security and Privacy</title>
+        <meta name="description" content="Eugene Bagdasarian is an Assistant Professor at UMass Amherst researching security and privacy for AI agents, language models, and multimodal systems.">
+        <link rel="canonical" href="https://ebagdasa.github.io/">
+        <meta property="og:type" content="profile">
+        <meta property="og:title" content="Eugene Bagdasarian | AI Security and Privacy">
+        <meta property="og:description" content="Research on security and privacy for AI agents, language models, and multimodal systems.">
+        <meta property="og:url" content="https://ebagdasa.github.io/">
+        <meta property="og:image" content="https://ebagdasa.github.io/assets/images/zhenya.jpg">
+        <meta property="og:image:alt" content="Eugene Bagdasarian">
+        <meta property="profile:first_name" content="Eugene">
+        <meta property="profile:last_name" content="Bagdasarian">
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:title" content="Eugene Bagdasarian | AI Security and Privacy">
+        <meta name="twitter:description" content="Research on security and privacy for AI agents, language models, and multimodal systems.">
+        <meta name="twitter:image" content="https://ebagdasa.github.io/assets/images/zhenya.jpg">
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Eugene Bagdasarian",
+                "alternateName": "Eugene Bagdasaryan",
+                "url": "https://ebagdasa.github.io/",
+                "image": "https://ebagdasa.github.io/assets/images/zhenya.jpg",
+                "jobTitle": "Assistant Professor of Computer Science",
+                "affiliation": {
+                    "@type": "CollegeOrUniversity",
+                    "name": "University of Massachusetts Amherst",
+                    "url": "https://www.umass.edu/"
+                },
+                "sameAs": [
+                    "https://scholar.google.com/citations?user=_MfoOC8AAAAJ&hl=en",
+                    "https://orcid.org/0000-0002-7994-6469",
+                    "https://bsky.app/profile/ebagdasa.bsky.social",
+                    "https://x.com/ebagdasa",
+                    "https://www.linkedin.com/in/ebagdasa"
+                ],
+                "knowsAbout": [
+                    "AI security",
+                    "AI privacy",
+                    "AI agents",
+                    "large language models",
+                    "multimodal systems",
+                    "Contextual Integrity"
+                ]
+            }
+        </script>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&family=Source+Serif+4:ital,wght@0,400;0,600;1,400&display=swap"
@@ -326,6 +371,51 @@
                 margin-top: 0.8rem;
             }
 
+            .topic-paper-list {
+                margin-top: 1rem;
+                border-top: 1px solid rgba(44, 62, 80, 0.14);
+            }
+
+            .topic-paper-list h4 {
+                margin: 0.75rem 0 0.2rem;
+                color: #59636e;
+                font-size: 0.78rem;
+                font-weight: 600;
+                letter-spacing: 0;
+                text-transform: uppercase;
+            }
+
+            .topic-paper {
+                padding: 0.6rem 0;
+                border-bottom: 1px solid rgba(44, 62, 80, 0.1);
+            }
+
+            .topic-paper:last-child {
+                border-bottom: 0;
+                padding-bottom: 0;
+            }
+
+            .topic-paper-title {
+                font-family: "Source Serif 4", Georgia, serif;
+                font-weight: 600;
+            }
+
+            .topic-paper-authors,
+            .topic-paper-venue {
+                margin-bottom: 0.1rem !important;
+                font-size: 0.86rem;
+                line-height: 1.4;
+            }
+
+            .topic-paper-venue {
+                color: #59636e;
+            }
+
+            .topic-paper .tag {
+                margin-left: 0.35rem;
+                vertical-align: 0.1rem;
+            }
+
             #impact .content a {
                 color: #1f5f7a;
                 font-weight: 600;
@@ -564,6 +654,18 @@
                     border-radius: 8px !important;
                     border-left: 4px solid !important;
                     border-right: none !important;
+                }
+
+                .topic-entry-left {
+                    border-left-color: #48c774 !important;
+                }
+
+                .topic-entry-right {
+                    border-left-color: #3273dc !important;
+                }
+
+                .topic-entry-alt {
+                    border-left-color: #f39c12 !important;
                 }
 
             }
@@ -892,10 +994,6 @@
                                             <i class="fas fa-flask"></i>
                                             <span>Research</span>
                                         </a>
-                                        <!-- <a href="#selected-papers" class="nav-item">
-                                            <i class="fas fa-star"></i>
-                                            <span>Papers</span>
-                                        </a> -->
                                         <a href="#teaching" class="nav-item">
                                             <i class="fas fa-chalkboard-teacher"></i>
                                             <span>Teaching</span>
@@ -928,14 +1026,14 @@
                                         </p>
                                         <p>
                                             In my group, we look at security and privacy attack vectors for AI
-                                            systems deployed in real-life. 
+                                            systems deployed in the real world.
                                             My research was recognized by
                                             <a href="https://machinelearning.apple.com/updates/apple-scholars-aiml-2021"
                                             target="_blank" >Apple Scholars in AI/ML Fellowship</a >
-                                            and Usenix Security Distinguished Paper'24
+                                            and a USENIX Security'24
                                             <a
                                             href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
-                                            target="_blank" >Award</a >. My group is supported by the
+                                            target="_blank" >Distinguished Paper Award</a >. My group is supported by the
                                             <a href="https://www.schmidtsciences.org/safetyscience/" target="_blank">Schmidt Sciences Trustworthy AI Grant</a>.
                                             I completed my PhD at
                                             <a href="https://tech.cornell.edu/" target="_blank" >Cornell Tech</a >
@@ -945,7 +1043,7 @@
                                             and
                                             <a href="https://destrin.tech.cornell.edu/" target="_blank" >Deborah
                                             Estrin</a >.
-                                            Before going to the grad school, I got an engineering degree from
+                                            Before graduate school, I earned an engineering degree from
                                             <a
                                             href="https://en.wikipedia.org/wiki/Bauman_Moscow_State_Technical_University"
                                             target="_blank" >Baumanka</a >
@@ -977,17 +1075,16 @@
                                             <i class="fas fa-chart-line mr-2"></i>Impact
                                         </h2>
                                         <div class="content">
+                                            <h3 class="title is-5">Contextual Privacy and Security for AI Agents</h3>
                                             <ul>
-                                                <li><strong>[2026]</strong> Our research contributed to security of Gemini models.
+                                                <li><strong>[2026]</strong> Our research contributed to the security of Gemini models.
                                                   <!-- Zenity <a href="https://zenity.io/blog/product/continuous-contextual-security" target="_blank">mentions</a> Contextual Security for controlling their agents. -->
                                                 </li>
                                                 <li><strong>[2026]</strong> Our <a href="https://arxiv.org/abs/2501.17070" target="_blank">Contextual Agent Security</a> design was used
-                                                    as a <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/configure-semantic-governance#the_enforcement_flow" target="_blank">semantic policy engine</a> for <strong>Google's Enterprise Agent Platform</strong>.
+                                                    as a <a href="https://docs.cloud.google.com/gemini-enterprise-agent-platform/govern/policies/configure-semantic-governance#the_enforcement_flow" target="_blank">semantic policy engine</a> for <strong>Google Cloud's Gemini Enterprise agent platform</strong>.
                                                   <!-- Zenity <a href="https://zenity.io/blog/product/continuous-contextual-security" target="_blank">mentions</a> Contextual Security for controlling their agents. -->
                                                 </li>
-                                                <li><strong>[2026]</strong> Our attacks on  <a href="https://arxiv.org/abs/2405.05175">stealing</a> user data from AI agents have been
-                                                    <strong>confirmed</strong> by OpenAI in <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" target="_blank">prompt injection design work</a>.</li>
-
+                                                <li><strong>[2026]</strong> OpenAI <a href="https://openai.com/index/designing-agents-to-resist-prompt-injection/" target="_blank">confirmed</a> the data-exfiltration attack from our <a href="https://arxiv.org/abs/2405.05175" target="_blank">AirGapAgent</a> work in its prompt-injection defenses.</li>
                                                 <li><strong>[2025]</strong> Google uses our work on agents (<a href="https://arxiv.org/abs/2501.17070">security</a> and
                                                     <a href="https://arxiv.org/abs/2405.05175">privacy</a>) for <a
                                                 href="https://saif.google/focus-on-agents" target="_blank">Secure AI
@@ -996,27 +1093,15 @@
                                                     the <a
                                                     href="https://research.google/pubs/googles-approach-to-protecting-privacy-in-the-age-of-ai/">approach
                                                     to protecting privacy in the age of AI</a>.</li>
+                                            </ul>
 
-                                                    <li><strong>[2025]</strong> <a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final">NIST
+                                            <h3 class="title is-5">Research Roadmaps and Standards</h3>
+                                            <ul>
+                                                <li><strong>[2025]</strong> The <a href="https://csrc.nist.gov/pubs/ai/100/2/e2025/final" target="_blank">NIST
                                                 Taxonomy</a> on Adversarial Machine Learning uses our work
-                                                on Federated Learning and AI Agents for their agenda.</li>
-
-                                                <li><strong>[2024]</strong> Our work on <a
-                                                href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei"
-                                                target="_blank">adversarial illusions</a> received a <strong>Distinguished
-                                                Paper Award</strong> at USENIX Security'24.</li>
-
-                                                <li><strong>[2023]</strong>Our research on LLM <a href="https://arxiv.org/abs/2112.05224" target="_blank">propaganda-as-a-service</a> has been <strong>covered</strong> by <a
-                                                href="https://venturebeat.com/2021/12/14/propaganda-as-a-service-may-be-on-the-horizon-if-large-language-models-are-abused"
-                                                target="_blank">VentureBeat</a> and
-                                                    <a href="https://www.economist.com/science-and-technology/2023/04/05/it-doesnt-take-much-to-make-machine-learning-algorithms-go-awry" target="_blank">The Economist</a>.</li>
-
-                                                <li><strong>[2022]</strong> Multiple <strong>research roadmaps</strong> 
-                                                (e.g., <a
-                                                href="https://arxiv.org/abs/2304.06929"
-                                                target="_blank">Differential Privacy</a> and
-                                                <a href="https://arxiv.org/abs/1912.04977" target="_blank">Federated Learning</a>    
-                                                ) use our work (<a href="https://arxiv.org/abs/1807.00459" target="_blank">backdoors in FL</a> and <a href="https://arxiv.org/abs/1905.12101" target="_blank">fairness vs privacy trade-offs</a>) as a <strong>core foundation</strong> for future studies.</li>
+                                                on federated learning and AI agents to shape its research agenda.</li>
+                                                <li><strong>[2022]</strong> Research roadmaps on <a href="https://arxiv.org/abs/2304.06929" target="_blank">differential privacy</a> and
+                                                <a href="https://arxiv.org/abs/1912.04977" target="_blank">federated learning</a> use our work on <a href="https://arxiv.org/abs/1807.00459" target="_blank">backdoors in federated learning</a> and <a href="https://arxiv.org/abs/1905.12101" target="_blank">fairness and privacy trade-offs</a> as foundations for future research.</li>
                                             </ul>
                                         </div>
                                         
@@ -1037,7 +1122,7 @@
                                     <!-- Research Section -->
                                     <section id="research" class="section-content mt-6">
                                         <h2 class="title is-4 mb-4">
-                                            <i class="fas fa-flask mr-2"></i>Current Research
+                                            <i class="fas fa-flask mr-2"></i>Current Research and Selected Papers
                                         </h2>
                                         
                                         <!-- Research Topics -->
@@ -1046,12 +1131,12 @@
                                             <div class="mb-5 topic-entry-left">
                                                 <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
                                                     <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
-                                                        <i class="fas fa-robot mr-2 text-primary"></i>Multi-Agent AI Systems
+                                                        <i class="fas fa-robot mr-2 text-primary"></i>Agentic and Multi-Agent Systems
                                                     </h3>
                                                     <p>
-                                                        We proposed <a href="https://arxiv.org/abs/2405.05175" target="_blank">AirGapAgent</a>(CCS'24)
+                                                        We proposed <a href="https://arxiv.org/abs/2405.05175" target="_blank">AirGapAgent</a> (ACM CCS'24)
                                                         for privacy and <a
-                                                        href="https://arxiv.org/abs/2501.17070">Conseca</a>(HotOS'25)
+                                                        href="https://arxiv.org/abs/2501.17070">Conseca</a> (HotOS'25)
                                                         for security of agents
                                                         leveraging the theory of Contextual Integrity. 
                                                     
@@ -1060,13 +1145,31 @@
                                                         <!-- for real-world deployment.  -->
                                                         Recently, we studied 
                                                         <a href="https://arxiv.org/abs/2508.20282"
-                                                        target="_blank">prompt leakage</a>(USENIX Security'26) in research agents
+                                                        target="_blank">prompt leakage</a> (USENIX Security'26) in research agents
                                                         and investigated <a href="https://arxiv.org/abs/2509.01619"
                                                         target="_blank">throttling</a> to prevent denial of
                                                         service or scraping by web agents. Finally, our <a
                                                         href="https://arxiv.org/abs/2602.15198" target="_blank">Colosseum</a>
                                                         framework discovers new collusion artifacts in multi-agent systems.
                                                     </p>
+                                                    <div class="topic-paper-list">
+                                                        <h4>Selected Papers</h4>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/2602.15198" target="_blank">Colosseum: Auditing Collusion in Cooperative Multi-Agent Systems</a>
+                                                            <p class="topic-paper-authors">Mason Nakamura, Abhinav Kumar, Saswat Das, Sahar Abdelnabi, Saaduddin Mahmud, Ferdinando Fioretto, Shlomo Zilberstein, and Eugene Bagdasarian.</p>
+                                                            <p class="topic-paper-venue">arXiv'26</p>
+                                                        </article>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/2501.17070" target="_blank">Contextual Agent Security: A Policy for Every Purpose</a>
+                                                            <p class="topic-paper-authors">Lillian Tsai and Eugene Bagdasarian.</p>
+                                                            <p class="topic-paper-venue">HotOS'25</p>
+                                                        </article>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/2405.05175" target="_blank">AirGapAgent: Protecting Privacy-Conscious Conversational Agents</a>
+                                                            <p class="topic-paper-authors">Eugene Bagdasarian, Ren Yi, Sahra Ghalebikesabi, Peter Kairouz, Marco Gruteser, Sewoong Oh, Borja Balle, and Daniel Ramage.</p>
+                                                            <p class="topic-paper-venue">ACM CCS'24</p>
+                                                        </article>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -1080,11 +1183,24 @@
                                                     <p>
                                                         We developed attacks on large language models including an
                                                         <a href="https://arxiv.org/abs/2112.05224"
-                                                        target="_blank">attack</a> (S&P'22)
+                                                        target="_blank">attack</a> (IEEE S&amp;P'22)
                                                         on generative language models that enables propaganda generation.
                                                         We recently proposed the <a href="https://arxiv.org/abs/2502.02542" target="_blank">OverThink</a>
                                                         attack on reasoning models that exploits their chain-of-thought mechanisms.
                                                     </p>
+                                                    <div class="topic-paper-list">
+                                                        <h4>Selected Papers</h4>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/2502.02542" target="_blank">OverThink: Slowdown Attacks on Reasoning LLMs</a>
+                                                            <p class="topic-paper-authors">Abhinav Kumar, Jaechul Roh, Ali Naseh, Marzena Karpinska, Mohit Iyyer, Amir Houmansadr, and Eugene Bagdasarian.</p>
+                                                            <p class="topic-paper-venue">arXiv'25</p>
+                                                        </article>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/2112.05224" target="_blank">Spinning Language Models: Risks of Propaganda-as-a-Service and Countermeasures</a>
+                                                            <p class="topic-paper-authors">Eugene Bagdasaryan and Vitaly Shmatikov.</p>
+                                                            <p class="topic-paper-venue">IEEE S&amp;P'22</p>
+                                                        </article>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -1095,7 +1211,7 @@
                                                         <i class="fas fa-user-shield mr-2 text-success"></i>Privacy
                                                     </h3>
                                                     <p>
-                                                        We applied Contextual Integrity to  <a href="https://arxiv.org/abs/2408.02373"
+                                                        We applied Contextual Integrity to Agentic problems and  <a href="https://arxiv.org/abs/2408.02373"
                                                         target="_blank">form-filling tasks</a> (TMLR'25)
                                                         and investigated <a href="https://www.arxiv.org/abs/2506.12241"
                                                         target="_blank">context ambiguity</a> (NeurIPS'25) in privacy reasoning.
@@ -1117,11 +1233,21 @@
                                                         target="_blank">privacy-preserving NLP</a>(TMLR'25). -->
 
                                                     </p>
+                                                    <div class="topic-paper-list">
+                                                        <h4>Selected Papers</h4>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://www.arxiv.org/abs/2506.12241" target="_blank">Privacy Reasoning in Ambiguous Contexts</a>
+                                                            <p class="topic-paper-authors">Ren Yi, Octavian Suciu, Adria Gascon, Sarah Meiklejohn, Eugene Bagdasarian, and Marco Gruteser.</p>
+                                                            <p class="topic-paper-venue">NeurIPS'25</p>
+                                                        </article>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/1905.12101" target="_blank">Differential Privacy Has Disparate Impact on Model Accuracy</a>
+                                                            <p class="topic-paper-authors">Eugene Bagdasaryan, Omid Poursaeed, and Vitaly Shmatikov.</p>
+                                                            <p class="topic-paper-venue">NeurIPS'19</p>
+                                                        </article>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <h3 class="title is-4 mb-4">
-                                            <i class="fas fa-flask mr-2"></i>Earlier Topics
-                                            </h3>
 
                                             <!-- Backdoors Topic -->
                                             <div class="mb-5 topic-entry-right">
@@ -1133,14 +1259,32 @@
                                                         We worked on backdoor <a href="https://arxiv.org/abs/1807.00459" target="_blank">attacks in
                                                         federated learning</a> (AISTATS'20) and proposed frameworks
                                                         <a href="https://arxiv.org/abs/2005.03823"
-                                                        target="_blank">Backdoors101</a> (USENIX Security'20)
+                                                        target="_blank">Backdoors101</a> (USENIX Security'21)
                                                         and <a href="https://arxiv.org/abs/2302.04977"
-                                                        target="_blank">Mithridates</a> (CCS'24)
+                                                        target="_blank">Mithridates</a> (ACM CCS'24)
                                                         for understanding and defending against backdoor attacks. We also studied
                                                         <a href="https://arxiv.org/abs/2406.15213"
                                                         target="_blank">backdooring bias</a> (USENIX Security'25)
                                                         into diffusion models.
                                                     </p>
+                                                    <div class="topic-paper-list">
+                                                        <h4>Selected Papers</h4>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/2406.15213" target="_blank">Backdooring Bias (B²) into Stable Diffusion Models</a>
+                                                            <p class="topic-paper-authors">Ali Naseh, Jaechul Roh, Eugene Bagdasarian, and Amir Houmansadr.</p>
+                                                            <p class="topic-paper-venue">USENIX Security'25</p>
+                                                        </article>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/2005.03823" target="_blank">Blind Backdoors in Deep Learning Models</a>
+                                                            <p class="topic-paper-authors">Eugene Bagdasaryan and Vitaly Shmatikov.</p>
+                                                            <p class="topic-paper-venue">USENIX Security'21</p>
+                                                        </article>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/1807.00459" target="_blank">How to Backdoor Federated Learning</a>
+                                                            <p class="topic-paper-authors">Eugene Bagdasaryan, Andreas Veit, Yiqing Hua, Deborah Estrin, and Vitaly Shmatikov.</p>
+                                                            <p class="topic-paper-venue">AISTATS'20</p>
+                                                        </article>
+                                                    </div>
                                                 </div>
                                             </div>
 
@@ -1148,18 +1292,39 @@
                                             <div class="mb-5 topic-entry-alt">
                                                 <div class="box" style="background: transparent; box-shadow: none; border: none; padding: 1.5rem;">
                                                     <h3 class="title is-5 mb-3 short-underline" style="padding-bottom: 0.5rem;">
-                                                        <i class="fas fa-eye mr-2 text-warning"></i>Multi-modal Security
+                                                        <i class="fas fa-eye mr-2 text-warning"></i>Multimodal Security
                                                     </h3>
                                                     <p>
-                                                        We studied vulnerabilities in multi-modal systems including
+                                                        We studied vulnerabilities in multimodal systems including
                                                         <a href="https://arxiv.org/abs/2407.08970"
                                                         target="_blank">self-interpreting images</a> (USENIX
                                                         Security'25)
                                                         and <a href="https://arxiv.org/abs/2308.11804"
-                                                        target="_blank">adversarial illusions</a> (USENIX Security'24, Distinguished Paper)
+                                                        target="_blank">adversarial illusions</a> (USENIX Security'24, Distinguished Paper Award)
                                                         that can manipulate vision-language models. Our work demonstrates novel
                                                         attack vectors in systems that process both visual and textual information.
+                                                        We also study how attacks on <a href="https://arxiv.org/abs/2606.09499" target="_blank">world models</a>
+                                                        can compromise robot learning pipelines.
                                                     </p>
+                                                    <div class="topic-paper-list">
+                                                        <h4>Selected Papers</h4>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/2606.09499" target="_blank">Targeting World Models to Compromise Robot Learning Pipelines</a>
+                                                            <p class="topic-paper-authors">Ethan Rathbun, Ahmed Agha, Saaduddin Mahmud, Christopher Amato, Alina Oprea, and Eugene Bagdasarian.</p>
+                                                            <p class="topic-paper-venue">Preprint'26</p>
+                                                        </article>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://arxiv.org/abs/2407.08970" target="_blank">Self-interpreting Adversarial Images</a>
+                                                            <p class="topic-paper-authors">Tingwei Zhang, Collin Zhang, John X. Morris, Eugene Bagdasarian, and Vitaly Shmatikov.</p>
+                                                            <p class="topic-paper-venue">USENIX Security'25</p>
+                                                        </article>
+                                                        <article class="topic-paper">
+                                                            <a class="topic-paper-title" href="https://www.usenix.org/conference/usenixsecurity24/presentation/zhang-tingwei" target="_blank">Adversarial Illusions in Multi-Modal Embeddings</a>
+                                                            <span class="tag is-warning is-light">Distinguished Paper Award</span>
+                                                            <p class="topic-paper-authors">Tingwei Zhang, Rishi Jha, Eugene Bagdasaryan, and Vitaly Shmatikov.</p>
+                                                            <p class="topic-paper-venue">USENIX Security'24</p>
+                                                        </article>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1391,13 +1556,13 @@
                                             <p><time class="talk-date" datetime="2026-09-11">Sep 11, 2026</time> &middot; <a href="https://yacl.cs.yale.edu/seminar/" target="_blank"><strong>Yale CS Crypto Seminar invited talk</strong></a>, New Haven, CT.</p>
                                         </article>
                                         <article class="talk-entry">
-                                            <p><time class="talk-date" datetime="2026-10-06">Oct 6&ndash;9, 2026</time> &middot; <a href="https://advml-frontier.github.io/" target="_blank"><strong>AdvML-Frontiers &times; CoTMA workshop</strong></a>, COLM 2026, San Francisco, CA.</p>
+                                            <p><time class="talk-date" datetime="2026-10-06">Oct 6&ndash;9, 2026</time> &middot; <a href="https://advml-frontier.github.io/" target="_blank"><strong>AdvML-Frontiers &times; CoTMA workshop</strong></a>, COLM'26, San Francisco, CA.</p>
                                         </article>
                                         <!-- <article class="talk-entry">
                                             <p><time class="talk-date" datetime="2026-10-19">Oct 19&ndash;23, 2026</time> &middot; <a href="https://shonan.nii.ac.jp/seminars/252/" target="_blank"><strong>Exploring Responsible AI through Security and Privacy</strong></a>, NII Shonan Meeting 252, Kanagawa, Japan.</p>
                                         </article> -->
                                         <!-- <article class="talk-entry">
-                                            <p><time class="talk-date" datetime="2026-11-15">Nov 15&ndash;19, 2026</time> &middot; <a href="https://sites.google.com/view/agent-sec-2026/" target="_blank"><strong>AGENT-SEC 2026 keynote</strong></a>, ACM CCS 2026, The Hague, Netherlands.</p>
+                                            <p><time class="talk-date" datetime="2026-11-15">Nov 15&ndash;19, 2026</time> &middot; <a href="https://sites.google.com/view/agent-sec-2026/" target="_blank"><strong>AGENT-SEC'26 keynote</strong></a>, ACM CCS'26, The Hague, Netherlands.</p>
                                         </article> -->
                                     </div>
 
@@ -1407,7 +1572,7 @@
                                     </h3>
                                     <div id="past-talks" class="talk-list">
                                         <article class="talk-entry">
-                                            <p><time class="talk-date" datetime="2026-08-16">Aug 16, 2026</time> &middot; <a href="https://crypto-ppml.github.io/2026/" target="_blank"><strong>Privacy and Security of Frontier AI Agents</strong></a>, PPML at CRYPTO 2026, Santa Barbara, CA.</p>
+                                            <p><time class="talk-date" datetime="2026-08-16">Aug 16, 2026</time> &middot; <a href="https://crypto-ppml.github.io/2026/" target="_blank"><strong>Privacy and Security of Frontier AI Agents</strong></a>, PPML at CRYPTO'26, Santa Barbara, CA.</p>
                                         </article>
                                         <article class="talk-entry" data-archive-entry>
                                             <p><time class="talk-date" datetime="2026-05">May 2026</time> &middot; <a href="https://kempnerinstitute.harvard.edu/events/workshop-invented-constructed-and-emergent-languages-in-multi-agent-ai-systems/" target="_blank"><strong>Emergent Languages in Multi-Agent AI Systems</strong></a>, Kempner Institute, Harvard.</p>
@@ -1448,6 +1613,13 @@
                                     <div class="content">
                                         <ul id="news-feed">
                                             <li>
+                                                <i class="fas fa-flask text-primary"></i>
+                                                <div class="news-content">
+                                                    <time datetime="2026"><strong>2026</strong></time>
+                                                    We released <a href="https://arxiv.org/abs/2602.15198" target="_blank">Colosseum</a>, a framework for discovering collusion artifacts in multi-agent systems.
+                                                </div>
+                                            </li>
+                                            <li>
                                                 <i class="fas fa-file-alt text-primary"></i>
                                                 <div class="news-content">
                                                     <time datetime="2026"><strong>2026</strong></time>
@@ -1465,13 +1637,6 @@
                                             <li>
                                                 <i class="fas fa-file-alt text-primary"></i>
                                                 <div class="news-content">
-                                                    <time datetime="2026"><strong>2026</strong></time>
-                                                    Our paper on <a href="https://arxiv.org/abs/2602.00851" target="_blank">persuasion in long-running agents</a> was accepted to FAGEN at ICML.
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-file-alt text-primary"></i>
-                                                <div class="news-content">
                                                     <time datetime="2025"><strong>2025</strong></time>
                                                     Two papers on contextual privacy accepted: <a href="https://www.arxiv.org/abs/2506.12241" target="_blank">privacy reasoning in ambiguous contexts</a> (NeurIPS) and
                                                     <a href="https://arxiv.org/abs/2408.02373" target="_blank">privacy-aware form filling</a> (TMLR).
@@ -1482,13 +1647,6 @@
                                                 <div class="news-content">
                                                     <time datetime="2025"><strong>2025</strong></time>
                                                     Our paper on <a href="https://arxiv.org/abs/2501.17070" target="_blank">contextual agent security</a> was accepted to HotOS.
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-file-alt text-primary"></i>
-                                                <div class="news-content">
-                                                    <time datetime="2025"><strong>2025</strong></time>
-                                                    Our CoLLAB benchmarks paper was accepted to a NeurIPS workshop.
                                                 </div>
                                             </li>
                                             <li>
@@ -1524,7 +1682,8 @@
                                             <li>
                                                 <i class="fas fa-shield-alt text-primary"></i>
                                                 <div class="news-content">
-                                                    <time datetime="2024-10"><strong>Oct 2024</strong></time> - Two papers accepted to CCS'24: one on <a href="https://arxiv.org/abs/2302.04977" target="_blank"
+                                                    <time datetime="2024-10"><strong>October 2024</strong></time>
+                                                    Two papers accepted to ACM CCS'24: one on <a href="https://arxiv.org/abs/2302.04977" target="_blank"
                                                     >resisting backdoor attacks</a >, and one on <a href="https://arxiv.org/abs/2405.05175" target="_blank"
                                                     >privacy-conscious agents</a >.
                                                 </div>
@@ -1544,7 +1703,7 @@
                                             </li>
                                             <!-- Add more news items here -->
                                         </ul>
-                                        <button class="button is-light archive-toggle is-hidden" type="button" data-archive-control="news-feed" data-visible-limit="6" aria-expanded="false" aria-controls="news-feed">
+                                        <button class="button is-light archive-toggle is-hidden" type="button" data-archive-control="news-feed" data-visible-limit="8" aria-expanded="false" aria-controls="news-feed">
                                             <i class="fas fa-clock-rotate-left mr-2"></i>
                                             <span>Show older entries</span>
                                         </button>
@@ -1600,7 +1759,7 @@
 
         <footer class="footer">
             <div class="content has-text-centered">
-                <p>Eugene Bagdasarian • <i>Updated May 2026</i>.</p>
+                <p>Eugene Bagdasarian • <i>Updated Sep'26</i>.</p>
             </div>
         </footer>
     </body>
