@@ -138,19 +138,30 @@
                 font-size: 1.05rem;
             }
 
+            /* Link affordance: quiet in prose, structure preserved in the sidebar. */
             .content a,
             .recent-news a {
-                color: #156b8d;
-                font-weight: 500;
-                border-bottom: 1px solid rgba(21, 107, 141, 0.32);
+                color: inherit;
+                border-bottom: 1px solid rgba(21, 107, 141, 0.35);
             }
 
             .content a:hover,
             .content a:focus-visible,
             .recent-news a:hover,
             .recent-news a:focus-visible {
-                color: var(--primary-color);
-                border-bottom-color: rgba(50, 115, 220, 0.58);
+                color: var(--secondary-color);
+                border-bottom-color: var(--secondary-color);
+            }
+
+            .talk-entry a {
+                color: inherit;
+                border-bottom: 1px solid transparent;
+            }
+
+            .talk-entry a:hover,
+            .talk-entry a:focus-visible {
+                color: var(--secondary-color);
+                border-bottom-color: rgba(26, 124, 170, 0.45);
             }
             
             .content p {
@@ -414,31 +425,6 @@
             .topic-paper .tag {
                 margin-left: 0.35rem;
                 vertical-align: 0.1rem;
-            }
-
-            #impact .content a {
-                color: #1f5f7a;
-                font-weight: 600;
-                border-bottom: 1px solid rgba(31, 95, 122, 0.24);
-                background-image: linear-gradient(
-                    transparent 62%,
-                    rgba(72, 199, 116, 0.12) 62%
-                );
-                background-repeat: no-repeat;
-                background-size: 100% 100%;
-                padding: 0 0.04rem;
-                -webkit-box-decoration-break: clone;
-                box-decoration-break: clone;
-            }
-
-            #impact .content a:hover,
-            #impact .content a:focus-visible {
-                color: var(--primary-color);
-                border-bottom-color: rgba(50, 115, 220, 0.45);
-                background-image: linear-gradient(
-                    transparent 54%,
-                    rgba(50, 115, 220, 0.14) 54%
-                );
             }
 
             #impact .has-text-centered a {
